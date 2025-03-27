@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kaio.rmdourado\\OneDrive - SENAC - SP\\Documentos\\kaior\\25.03\\LogiStock\\LogiStock.csproj",
+      "projectUniqueName": "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\LogiStock.csproj",
       "projectName": "LogiStock",
-      "projectPath": "C:\\Users\\kaio.rmdourado\\OneDrive - SENAC - SP\\Documentos\\kaior\\25.03\\LogiStock\\LogiStock.csproj",
+      "projectPath": "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\LogiStock.csproj",
       "packagesPath": "C:\\Users\\kaio.rmdourado\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kaio.rmdourado\\OneDrive - SENAC - SP\\Documentos\\kaior\\25.03\\LogiStock\\obj\\",
+      "outputPath": "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
