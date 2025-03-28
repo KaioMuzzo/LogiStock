@@ -35,7 +35,8 @@
             btnAcess = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
-            label1 = new Label();
+            lblTitle = new Label();
+            panelDesktop = new Panel();
             panelMenu.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -106,6 +107,7 @@
             btnAcess.TextAlign = ContentAlignment.MiddleLeft;
             btnAcess.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAcess.UseVisualStyleBackColor = true;
+            btnAcess.Click += btnAcess_Click;
             // 
             // panel1
             // 
@@ -118,29 +120,40 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(39, 39, 58);
-            panel2.Controls.Add(label1);
+            panel2.BackColor = Color.FromArgb(0, 150, 136);
+            panel2.Controls.Add(lblTitle);
             panel2.Dock = DockStyle.Top;
+            panel2.Font = new Font("Segoe UI", 16F);
             panel2.Location = new Point(200, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(708, 80);
             panel2.TabIndex = 1;
             // 
-            // label1
+            // lblTitle
             // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(329, 33);
-            label1.Name = "label1";
-            label1.Size = new Size(42, 15);
-            label1.TabIndex = 0;
-            label1.Text = "HOME";
+            lblTitle.Anchor = AnchorStyles.None;
+            lblTitle.AutoSize = true;
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(318, 25);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(77, 30);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "HOME";
+            // 
+            // panelDesktop
+            // 
+            panelDesktop.Dock = DockStyle.Fill;
+            panelDesktop.Location = new Point(200, 80);
+            panelDesktop.Name = "panelDesktop";
+            panelDesktop.Size = new Size(708, 439);
+            panelDesktop.TabIndex = 2;
             // 
             // LogiStockMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(908, 519);
+            Controls.Add(panelDesktop);
             Controls.Add(panel2);
             Controls.Add(panelMenu);
             Name = "LogiStockMain";
@@ -159,6 +172,7 @@
         private Button button2;
         private Button button1;
         private Panel panel2;
-        private Label label1;
+        private Label lblTitle;
+        private Panel panelDesktop;
     }
 }
