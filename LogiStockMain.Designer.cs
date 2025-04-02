@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogiStockMain));
             panelMenu = new Panel();
             button2 = new Button();
-            button1 = new Button();
+            btnCadastrarMerc = new Button();
             btnAcess = new Button();
             panel1 = new Panel();
             panel2 = new Panel();
@@ -45,7 +45,7 @@
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
             panelMenu.Controls.Add(button2);
-            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(btnCadastrarMerc);
             panelMenu.Controls.Add(btnAcess);
             panelMenu.Controls.Add(panel1);
             panelMenu.Dock = DockStyle.Left;
@@ -72,23 +72,23 @@
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnCadastrarMerc
             // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.Gainsboro;
-            button1.Image = Properties.Resources.acess;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 140);
-            button1.Name = "button1";
-            button1.Padding = new Padding(20, 0, 0, 0);
-            button1.Size = new Size(200, 60);
-            button1.TabIndex = 2;
-            button1.Text = "   Coisa1";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
+            btnCadastrarMerc.Dock = DockStyle.Top;
+            btnCadastrarMerc.FlatAppearance.BorderSize = 0;
+            btnCadastrarMerc.FlatStyle = FlatStyle.Flat;
+            btnCadastrarMerc.ForeColor = Color.Gainsboro;
+            btnCadastrarMerc.Image = Properties.Resources.acess;
+            btnCadastrarMerc.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCadastrarMerc.Location = new Point(0, 140);
+            btnCadastrarMerc.Name = "btnCadastrarMerc";
+            btnCadastrarMerc.Padding = new Padding(20, 0, 0, 0);
+            btnCadastrarMerc.Size = new Size(200, 60);
+            btnCadastrarMerc.TabIndex = 2;
+            btnCadastrarMerc.Text = "   Cadastrar Mercadoria";
+            btnCadastrarMerc.TextAlign = ContentAlignment.MiddleLeft;
+            btnCadastrarMerc.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCadastrarMerc.UseVisualStyleBackColor = true;
             // 
             // btnAcess
             // 
@@ -139,6 +139,7 @@
             lblTitle.Size = new Size(77, 30);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "HOME";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelDesktop
             // 
@@ -170,7 +171,7 @@
         private Panel panel1;
         private Button btnAcess;
         private Button button2;
-        private Button button1;
+        private Button btnCadastrarMerc;
         private Panel panel2;
         private Label lblTitle;
         private Panel panelDesktop;
