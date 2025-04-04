@@ -23,12 +23,16 @@ namespace LogiStock
             this.panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = childForm.Text;
         }
 
         private void btnAcess_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormAcess(), sender);
+            
+        }
+
+        private void btnRegisterUser_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.formRegister(), sender);
         }
     }
 }

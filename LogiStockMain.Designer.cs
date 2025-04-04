@@ -30,20 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogiStockMain));
             panelMenu = new Panel();
+            btnRegisterUser = new Button();
+            button1 = new Button();
             button2 = new Button();
             btnCadastrarMerc = new Button();
             btnAcess = new Button();
             panel1 = new Panel();
-            panel2 = new Panel();
-            lblTitle = new Label();
             panelDesktop = new Panel();
             panelMenu.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.Controls.Add(btnRegisterUser);
+            panelMenu.Controls.Add(button1);
             panelMenu.Controls.Add(button2);
             panelMenu.Controls.Add(btnCadastrarMerc);
             panelMenu.Controls.Add(btnAcess);
@@ -51,8 +52,44 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(200, 519);
+            panelMenu.Size = new Size(200, 978);
             panelMenu.TabIndex = 0;
+            // 
+            // btnRegisterUser
+            // 
+            btnRegisterUser.Dock = DockStyle.Top;
+            btnRegisterUser.FlatAppearance.BorderSize = 0;
+            btnRegisterUser.FlatStyle = FlatStyle.Flat;
+            btnRegisterUser.ForeColor = Color.Gainsboro;
+            btnRegisterUser.Image = Properties.Resources.acess;
+            btnRegisterUser.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegisterUser.Location = new Point(0, 320);
+            btnRegisterUser.Name = "btnRegisterUser";
+            btnRegisterUser.Padding = new Padding(20, 0, 0, 0);
+            btnRegisterUser.Size = new Size(200, 60);
+            btnRegisterUser.TabIndex = 5;
+            btnRegisterUser.Text = "   Cadastro";
+            btnRegisterUser.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRegisterUser.UseVisualStyleBackColor = true;
+            btnRegisterUser.Click += btnRegisterUser_Click;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Top;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.Gainsboro;
+            button1.Image = Properties.Resources.acess;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 260);
+            button1.Name = "button1";
+            button1.Padding = new Padding(20, 0, 0, 0);
+            button1.Size = new Size(200, 60);
+            button1.TabIndex = 4;
+            button1.Text = "   Coisa2";
+            button1.TextAlign = ContentAlignment.MiddleLeft;
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -103,7 +140,7 @@
             btnAcess.Padding = new Padding(20, 0, 0, 0);
             btnAcess.Size = new Size(200, 60);
             btnAcess.TabIndex = 1;
-            btnAcess.Text = "   Acesso";
+            btnAcess.Text = "   Login";
             btnAcess.TextAlign = ContentAlignment.MiddleLeft;
             btnAcess.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAcess.UseVisualStyleBackColor = true;
@@ -118,50 +155,29 @@
             panel1.Size = new Size(200, 80);
             panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(0, 150, 136);
-            panel2.Controls.Add(lblTitle);
-            panel2.Dock = DockStyle.Top;
-            panel2.Font = new Font("Segoe UI", 16F);
-            panel2.Location = new Point(200, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(708, 80);
-            panel2.TabIndex = 1;
-            // 
-            // lblTitle
-            // 
-            lblTitle.Anchor = AnchorStyles.None;
-            lblTitle.AutoSize = true;
-            lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(318, 25);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(77, 30);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "HOME";
-            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // panelDesktop
             // 
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(200, 80);
+            panelDesktop.Location = new Point(200, 0);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(708, 439);
+            panelDesktop.Size = new Size(1704, 978);
             panelDesktop.TabIndex = 2;
             // 
             // LogiStockMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(908, 519);
+            ClientSize = new Size(1904, 978);
             Controls.Add(panelDesktop);
-            Controls.Add(panel2);
             Controls.Add(panelMenu);
+            MaximizeBox = false;
+            MaximumSize = new Size(1920, 1017);
+            MinimizeBox = false;
+            MinimumSize = new Size(1918, 1017);
             Name = "LogiStockMain";
             Text = "LogiStock";
+            WindowState = FormWindowState.Maximized;
             panelMenu.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -172,8 +188,8 @@
         private Button btnAcess;
         private Button button2;
         private Button btnCadastrarMerc;
-        private Panel panel2;
-        private Label lblTitle;
         private Panel panelDesktop;
+        private Button btnRegisterUser;
+        private Button button1;
     }
 }
