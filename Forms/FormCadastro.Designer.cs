@@ -42,10 +42,10 @@
             txtNome.BackColor = Color.White;
             txtNome.BorderStyle = BorderStyle.None;
             txtNome.Cursor = Cursors.IBeam;
-            txtNome.Font = new Font("Segoe UI", 30F);
-            txtNome.Location = new Point(308, 286);
+            txtNome.Font = new Font("Segoe UI", 25F);
+            txtNome.Location = new Point(308, 291);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(507, 54);
+            txtNome.Size = new Size(507, 45);
             txtNome.TabIndex = 0;
             txtNome.TextAlign = HorizontalAlignment.Center;
             // 
@@ -54,10 +54,10 @@
             txtMatricula.BackColor = Color.White;
             txtMatricula.BorderStyle = BorderStyle.None;
             txtMatricula.Cursor = Cursors.IBeam;
-            txtMatricula.Font = new Font("Segoe UI", 30F);
-            txtMatricula.Location = new Point(905, 286);
+            txtMatricula.Font = new Font("Segoe UI", 25F);
+            txtMatricula.Location = new Point(905, 290);
             txtMatricula.Name = "txtMatricula";
-            txtMatricula.Size = new Size(507, 54);
+            txtMatricula.Size = new Size(507, 45);
             txtMatricula.TabIndex = 1;
             txtMatricula.TextAlign = HorizontalAlignment.Center;
             // 
@@ -66,10 +66,10 @@
             txtUsuario.BackColor = Color.White;
             txtUsuario.BorderStyle = BorderStyle.None;
             txtUsuario.Cursor = Cursors.IBeam;
-            txtUsuario.Font = new Font("Segoe UI", 30F);
-            txtUsuario.Location = new Point(308, 457);
+            txtUsuario.Font = new Font("Segoe UI", 25F);
+            txtUsuario.Location = new Point(308, 460);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(507, 54);
+            txtUsuario.Size = new Size(507, 45);
             txtUsuario.TabIndex = 0;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
             // 
@@ -78,10 +78,10 @@
             txtTelefone.BackColor = Color.White;
             txtTelefone.BorderStyle = BorderStyle.None;
             txtTelefone.Cursor = Cursors.IBeam;
-            txtTelefone.Font = new Font("Segoe UI", 30F);
-            txtTelefone.Location = new Point(605, 627);
+            txtTelefone.Font = new Font("Segoe UI", 25F);
+            txtTelefone.Location = new Point(605, 633);
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(507, 54);
+            txtTelefone.Size = new Size(507, 45);
             txtTelefone.TabIndex = 0;
             txtTelefone.TextAlign = HorizontalAlignment.Center;
             // 
@@ -90,10 +90,10 @@
             txtEmail.BackColor = Color.White;
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Cursor = Cursors.IBeam;
-            txtEmail.Font = new Font("Segoe UI", 30F);
-            txtEmail.Location = new Point(905, 457);
+            txtEmail.Font = new Font("Segoe UI", 25F);
+            txtEmail.Location = new Point(906, 460);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(507, 54);
+            txtEmail.Size = new Size(507, 45);
             txtEmail.TabIndex = 1;
             txtEmail.TextAlign = HorizontalAlignment.Center;
             // 

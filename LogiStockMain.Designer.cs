@@ -126,6 +126,7 @@
             btnCadastrarMerc.TextAlign = ContentAlignment.MiddleLeft;
             btnCadastrarMerc.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCadastrarMerc.UseVisualStyleBackColor = true;
+            btnCadastrarMerc.Click += btnCadastrarMerc_Click;
             // 
             // btnAcess
             // 
@@ -175,8 +176,8 @@
             MinimizeBox = false;
             MinimumSize = new Size(1918, 1017);
             Name = "LogiStockMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LogiStock";
-            WindowState = FormWindowState.Maximized;
             panelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }

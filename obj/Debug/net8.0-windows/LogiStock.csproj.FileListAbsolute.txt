@@ -35,3 +35,5 @@ C:\Users\kaio.rmdourado\Source\Repos\LogiStock\bin\Debug\net8.0-windows\runtimes
 C:\Users\kaio.rmdourado\Source\Repos\LogiStock\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\kaio.rmdourado\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiStock.csproj.AssemblyReference.cache
 C:\Users\kaio.rmdourado\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiStock.csproj.Up2Date
+C:\Users\kaio.rmdourado\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiStock.Forms.FormLogin.resources
+C:\Users\kaio.rmdourado\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiStock.Forms.FormListarMercadorias.resources

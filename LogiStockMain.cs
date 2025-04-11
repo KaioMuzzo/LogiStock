@@ -27,12 +27,17 @@ namespace LogiStock
 
         private void btnAcess_Click(object sender, EventArgs e)
         {
-            
+            OpenChildForm(new Forms.FormLogin(), sender);
         }
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.formRegister(), sender);
+        }
+
+        private void btnCadastrarMerc_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormListarMercadorias(), sender);
         }
     }
 }

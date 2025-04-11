@@ -1,33 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-
-namespace LogiStock.Forms
+namespace LogiStock
 {
-    public partial class formRegister : Form
+    class bdLogistock
     {
-        string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
-        public formRegister()
-        {
-            InitializeComponent();
-        }
+        static  string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
 
-        private void CriarCadastro()
+        public void CadastrarFuncionario(string txtMatricula, string txtUsuario, string txtNome, string txtTelefone, string txtEmail)
         {
-            int matricula = Convert.ToInt32(txtMatricula.Text);
-            string usuario = txtUsuario.Text;
-            string nome = txtNome.Text;
-            string telefone = txtTelefone.Text;
-            string email = txtEmail.Text;
+            int matricula = Convert.ToInt32(txtMatricula);
+            string usuario = txtUsuario;
+            string nome = txtNome;
+            string telefone = txtTelefone;
+            string email = txtEmail;
             int cargo = 2;
             string senha = "testeteste";
 
@@ -50,9 +41,18 @@ namespace LogiStock.Forms
             }
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        public static void ListarMercadorias(DataGridView tblGrid)
         {
-            CriarCadastro();
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                string query = "SELECT * FROM mercadorias";
+                MySqlDataAdapter listClient = new MySqlDataAdapter(query, conn);
+                DataTable dataTable = new DataTable();
+                listClient.Fill(dataTable);
+
+                tblGrid.DataSource = dataTable;
+            }
         }
     }
 }
