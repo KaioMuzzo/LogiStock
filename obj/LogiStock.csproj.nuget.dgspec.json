@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\LogiStock.csproj": {}
+    "C:\\Users\\leonardo.gapinto\\Source\\Repos\\LogiStock\\LogiStock.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\LogiStock.csproj": {
+    "C:\\Users\\leonardo.gapinto\\Source\\Repos\\LogiStock\\LogiStock.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\LogiStock.csproj",
+        "projectUniqueName": "C:\\Users\\leonardo.gapinto\\Source\\Repos\\LogiStock\\LogiStock.csproj",
         "projectName": "LogiStock",
-        "projectPath": "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\LogiStock.csproj",
-        "packagesPath": "C:\\Users\\kaio.rmdourado\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaio.rmdourado\\Source\\Repos\\LogiStock\\obj\\",
+        "projectPath": "C:\\Users\\leonardo.gapinto\\Source\\Repos\\LogiStock\\LogiStock.csproj",
+        "packagesPath": "C:\\Users\\leonardo.gapinto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\leonardo.gapinto\\Source\\Repos\\LogiStock\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kaio.rmdourado\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\leonardo.gapinto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

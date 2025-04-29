@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\kaio.rmdourado\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\kaio.rmdourado\\.nuget\\packages",
+      "C:\\Users\\leonardo.gapinto\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\leonardo.gapinto\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

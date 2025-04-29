@@ -54,5 +54,27 @@ namespace LogiStock
                 tblGrid.DataSource = dataTable;
             }
         }
+
+        public static void FazerLogin(string usuario, string senha)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                string query = "SELECT * FROM clientes WHERE usuario = @usuario AND senha = @senha";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+            }
+        }
     }
 }

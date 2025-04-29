@@ -71,6 +71,7 @@
             btnRegisterUser.Text = "   Cadastro";
             btnRegisterUser.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRegisterUser.UseVisualStyleBackColor = true;
+            btnRegisterUser.Visible = false;
             btnRegisterUser.Click += btnRegisterUser_Click;
             // 
             // button1
@@ -90,6 +91,7 @@
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = true;
+            button1.Visible = false;
             // 
             // button2
             // 
@@ -108,6 +110,7 @@
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
             button2.UseVisualStyleBackColor = true;
+            button2.Visible = false;
             // 
             // btnCadastrarMerc
             // 
@@ -126,6 +129,7 @@
             btnCadastrarMerc.TextAlign = ContentAlignment.MiddleLeft;
             btnCadastrarMerc.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCadastrarMerc.UseVisualStyleBackColor = true;
+            btnCadastrarMerc.Visible = false;
             btnCadastrarMerc.Click += btnCadastrarMerc_Click;
             // 
             // btnAcess
