@@ -71,7 +71,6 @@
             btnRegisterUser.Text = "   Cadastro";
             btnRegisterUser.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRegisterUser.UseVisualStyleBackColor = true;
-            btnRegisterUser.Visible = false;
             btnRegisterUser.Click += btnRegisterUser_Click;
             // 
             // button1

@@ -29,100 +29,117 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formRegister));
+            btnCadastro = new Button();
             txtNome = new TextBox();
             txtMatricula = new TextBox();
             txtUsuario = new TextBox();
-            txtTelefone = new TextBox();
             txtEmail = new TextBox();
-            btnCadastrar = new Button();
+            txtTelefone = new TextBox();
+            txtSenha = new TextBox();
             SuspendLayout();
+            // 
+            // btnCadastro
+            // 
+            btnCadastro.BackColor = Color.Transparent;
+            btnCadastro.Cursor = Cursors.Hand;
+            btnCadastro.FlatAppearance.BorderSize = 0;
+            btnCadastro.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnCadastro.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnCadastro.FlatStyle = FlatStyle.Flat;
+            btnCadastro.Location = new Point(657, 810);
+            btnCadastro.Name = "btnCadastro";
+            btnCadastro.Size = new Size(396, 90);
+            btnCadastro.TabIndex = 0;
+            btnCadastro.UseVisualStyleBackColor = false;
+            btnCadastro.Click += btnCadastro_Click;
             // 
             // txtNome
             // 
-            txtNome.BackColor = Color.White;
             txtNome.BorderStyle = BorderStyle.None;
+            txtNome.CausesValidation = false;
             txtNome.Cursor = Cursors.IBeam;
-            txtNome.Font = new Font("Segoe UI", 25F);
-            txtNome.Location = new Point(308, 291);
+            txtNome.Font = new Font("Segoe UI", 27.75F);
+            txtNome.Location = new Point(302, 311);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(507, 45);
-            txtNome.TabIndex = 0;
+            txtNome.Size = new Size(475, 50);
+            txtNome.TabIndex = 1;
             txtNome.TextAlign = HorizontalAlignment.Center;
             // 
             // txtMatricula
             // 
-            txtMatricula.BackColor = Color.White;
             txtMatricula.BorderStyle = BorderStyle.None;
+            txtMatricula.CausesValidation = false;
             txtMatricula.Cursor = Cursors.IBeam;
-            txtMatricula.Font = new Font("Segoe UI", 25F);
-            txtMatricula.Location = new Point(905, 290);
+            txtMatricula.Font = new Font("Segoe UI", 27.75F);
+            txtMatricula.Location = new Point(955, 311);
             txtMatricula.Name = "txtMatricula";
-            txtMatricula.Size = new Size(507, 45);
-            txtMatricula.TabIndex = 1;
+            txtMatricula.Size = new Size(475, 50);
+            txtMatricula.TabIndex = 2;
             txtMatricula.TextAlign = HorizontalAlignment.Center;
             // 
             // txtUsuario
             // 
-            txtUsuario.BackColor = Color.White;
             txtUsuario.BorderStyle = BorderStyle.None;
+            txtUsuario.CausesValidation = false;
             txtUsuario.Cursor = Cursors.IBeam;
-            txtUsuario.Font = new Font("Segoe UI", 25F);
-            txtUsuario.Location = new Point(308, 460);
+            txtUsuario.Font = new Font("Segoe UI", 27.75F);
+            txtUsuario.Location = new Point(302, 487);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(507, 45);
-            txtUsuario.TabIndex = 0;
+            txtUsuario.Size = new Size(475, 50);
+            txtUsuario.TabIndex = 3;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtTelefone
-            // 
-            txtTelefone.BackColor = Color.White;
-            txtTelefone.BorderStyle = BorderStyle.None;
-            txtTelefone.Cursor = Cursors.IBeam;
-            txtTelefone.Font = new Font("Segoe UI", 25F);
-            txtTelefone.Location = new Point(605, 633);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(507, 45);
-            txtTelefone.TabIndex = 0;
-            txtTelefone.TextAlign = HorizontalAlignment.Center;
             // 
             // txtEmail
             // 
-            txtEmail.BackColor = Color.White;
             txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.CausesValidation = false;
             txtEmail.Cursor = Cursors.IBeam;
-            txtEmail.Font = new Font("Segoe UI", 25F);
-            txtEmail.Location = new Point(906, 460);
+            txtEmail.Font = new Font("Segoe UI", 27.75F);
+            txtEmail.Location = new Point(955, 487);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(507, 45);
-            txtEmail.TabIndex = 1;
+            txtEmail.Size = new Size(475, 50);
+            txtEmail.TabIndex = 4;
             txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
-            // btnCadastrar
+            // txtTelefone
             // 
-            btnCadastrar.BackgroundImage = (Image)resources.GetObject("btnCadastrar.BackgroundImage");
-            btnCadastrar.Cursor = Cursors.Hand;
-            btnCadastrar.FlatAppearance.BorderSize = 0;
-            btnCadastrar.FlatStyle = FlatStyle.Flat;
-            btnCadastrar.Location = new Point(661, 749);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(394, 92);
-            btnCadastrar.TabIndex = 2;
-            btnCadastrar.UseVisualStyleBackColor = true;
-            btnCadastrar.Click += btnCadastrar_Click;
+            txtTelefone.BorderStyle = BorderStyle.None;
+            txtTelefone.CausesValidation = false;
+            txtTelefone.Cursor = Cursors.IBeam;
+            txtTelefone.Font = new Font("Segoe UI", 27.75F);
+            txtTelefone.Location = new Point(302, 668);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(475, 50);
+            txtTelefone.TabIndex = 5;
+            txtTelefone.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtSenha
+            // 
+            txtSenha.BorderStyle = BorderStyle.None;
+            txtSenha.CausesValidation = false;
+            txtSenha.Cursor = Cursors.IBeam;
+            txtSenha.Font = new Font("Segoe UI", 27.75F);
+            txtSenha.Location = new Point(955, 668);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(475, 50);
+            txtSenha.TabIndex = 6;
+            txtSenha.TextAlign = HorizontalAlignment.Center;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // formRegister
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.telaCadastro;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1704, 978);
-            Controls.Add(btnCadastrar);
-            Controls.Add(txtEmail);
+            Controls.Add(txtSenha);
             Controls.Add(txtTelefone);
-            Controls.Add(txtMatricula);
+            Controls.Add(txtEmail);
             Controls.Add(txtUsuario);
+            Controls.Add(txtMatricula);
             Controls.Add(txtNome);
+            Controls.Add(btnCadastro);
             MaximizeBox = false;
             MaximumSize = new Size(1720, 1017);
             MinimizeBox = false;
@@ -135,11 +152,12 @@
 
         #endregion
 
+        private Button btnCadastro;
         private TextBox txtNome;
         private TextBox txtMatricula;
         private TextBox txtUsuario;
-        private TextBox txtTelefone;
         private TextBox txtEmail;
-        private Button btnCadastrar;
+        private TextBox txtTelefone;
+        private TextBox txtSenha;
     }
 }

@@ -47,13 +47,13 @@
             // btnAcessar
             // 
             btnAcessar.BackColor = Color.Transparent;
-            btnAcessar.Cursor = Cursors.Help;
+            btnAcessar.Cursor = Cursors.Hand;
             btnAcessar.FlatAppearance.BorderColor = Color.FromArgb(0, 34, 80);
             btnAcessar.FlatAppearance.BorderSize = 0;
             btnAcessar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnAcessar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnAcessar.FlatStyle = FlatStyle.Flat;
-            btnAcessar.Location = new Point(660, 781);
+            btnAcessar.Location = new Point(660, 782);
             btnAcessar.Name = "btnAcessar";
             btnAcessar.Size = new Size(396, 90);
             btnAcessar.TabIndex = 1;

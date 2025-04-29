@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using MySql.Data.MySqlClient;
 
 namespace LogiStock
@@ -12,20 +7,20 @@ namespace LogiStock
     {
         static  string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
 
-        public void CadastrarFuncionario(string txtMatricula, string txtUsuario, string txtNome, string txtTelefone, string txtEmail)
+        public void CadastrarFuncionario(string txtNome, string txtMatricula, string txtUsuario, string txtEmail, string txtTelefone, string txtSenha)
         {
+            string nome = txtNome;
             int matricula = Convert.ToInt32(txtMatricula);
             string usuario = txtUsuario;
-            string nome = txtNome;
-            string telefone = txtTelefone;
             string email = txtEmail;
-            int cargo = 2;
-            string senha = "testeteste";
+            string telefone = txtTelefone;
+            int cargo = 0;
+            string senha = Criptografia.GerarHash(txtSenha);
 
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 conn.Open();
-                string query = "INSERT INTO clientes (matricula, nome, usuario, senha, telefone, email, cargo) VALUES (@matricula, @nome, @usuario, @senha, @telefone, @email, @cargo)";
+                string query = "INSERT INTO usuarios (matricula, nome, usuario, senha, telefone, email, cargo) VALUES (@matricula, @nome, @usuario, @senha, @telefone, @email, @cargo)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 cmd.Parameters.AddWithValue("@matricula", matricula);
@@ -37,7 +32,7 @@ namespace LogiStock
                 cmd.Parameters.AddWithValue("@cargo", cargo);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Pessoa cadastrada com sucesso");
+                MessageBox.Show("Usuario cadastrada com sucesso!");
             }
         }
 
@@ -60,7 +55,7 @@ namespace LogiStock
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 conn.Open();
-                string query = "SELECT * FROM clientes WHERE usuario = @usuario AND senha = @senha";
+                string query = "SELECT * FROM usuarios WHERE usuario = @usuario AND senha = @senha";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@senha", senha);
