@@ -8,7 +8,7 @@ namespace LogiStock
             InitializeComponent();
         }
 
-        public void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
             {
@@ -27,22 +27,30 @@ namespace LogiStock
 
         private void btnAcess_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormLogin(), sender);
+            OpenChildForm(new Forms.FormLogin(this));
         }
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.formRegister(), sender);
+            OpenChildForm(new Forms.formRegister());
         }
 
         private void btnCadastrarMerc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormListarMercadorias(), sender);
+            OpenChildForm(new Forms.FormListarMercadorias());
         }
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormFuncionarios(), sender);
+            OpenChildForm(new Forms.FormFuncionarios());
+        }
+
+        public void UsuarioConectado()
+        {
+            btnAcess.Visible = false;
+            btnCadastrarMerc.Visible = true;
+            btnFuncionario.Visible = true;
+            btnRegisterUser.Visible = true;
         }
     }
 }

@@ -64,7 +64,7 @@ namespace LogiStock
             }
         }
 
-        public static void FazerLogin(string usuario, string senha)
+        public static bool FazerLogin(string usuario, string senha)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -77,11 +77,11 @@ namespace LogiStock
 
                 if (reader.Read())
                 {
-                    
+                    return true;
                 }
                 else
                 {
-                    
+                    return false;
                 }
             }
         }

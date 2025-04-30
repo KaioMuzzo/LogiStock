@@ -71,6 +71,7 @@
             btnRegisterUser.Text = "   Cadastro";
             btnRegisterUser.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRegisterUser.UseVisualStyleBackColor = true;
+            btnRegisterUser.Visible = false;
             btnRegisterUser.Click += btnRegisterUser_Click;
             // 
             // button1
@@ -109,6 +110,7 @@
             btnFuncionario.TextAlign = ContentAlignment.MiddleLeft;
             btnFuncionario.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnFuncionario.UseVisualStyleBackColor = true;
+            btnFuncionario.Visible = false;
             btnFuncionario.Click += btnFuncionario_Click;
             // 
             // btnCadastrarMerc
