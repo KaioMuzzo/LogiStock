@@ -1,42 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\",
+  "WorkspaceRootPath": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\bdlogistock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\bdlogistock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:bdlogistock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\criptografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:criptografia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\forms\\formcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\leonardo.gapinto\\source\\repos\\logistock\\forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,10 +62,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
@@ -88,60 +76,48 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FormLogin.cs",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\logistock\\Forms\\FormLogin.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormLogin.cs",
               "RelativeDocumentMoniker": "Forms\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\logistock\\Forms\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormLogin.cs",
               "RelativeToolTip": "Forms\\FormLogin.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAgwB0AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-30T00:44:42.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "LogiStockMain.cs",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\LogiStockMain.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs",
               "RelativeDocumentMoniker": "LogiStockMain.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\LogiStockMain.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs",
               "RelativeToolTip": "LogiStockMain.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowDUAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T23:35:51.084Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "bdLogistock.cs",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\bdLogistock.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\bdLogistock.cs",
               "RelativeDocumentMoniker": "bdLogistock.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\bdLogistock.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\bdLogistock.cs",
               "RelativeToolTip": "bdLogistock.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAA1wFUAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T00:47:12.555Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormLogin.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\logistock\\Forms\\FormLogin.cs",
-              "RelativeDocumentMoniker": "Forms\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\logistock\\Forms\\FormLogin.cs [Projeto]",
-              "RelativeToolTip": "Forms\\FormLogin.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T00:44:38.812Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "FormFuncionarios.cs",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
               "RelativeDocumentMoniker": "Forms\\FormFuncionarios.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
               "RelativeToolTip": "Forms\\FormFuncionarios.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -150,36 +126,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormFuncionarios.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
-              "RelativeDocumentMoniker": "Forms\\FormFuncionarios.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs [Projeto]",
-              "RelativeToolTip": "Forms\\FormFuncionarios.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T23:27:01.644Z",
-              "EditorCaption": " [Projeto]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Criptografia.cs",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Criptografia.cs",
-              "RelativeDocumentMoniker": "Criptografia.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Criptografia.cs",
-              "RelativeToolTip": "Criptografia.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:49:10.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "FormCadastro.cs",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Forms\\FormCadastro.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormCadastro.cs",
               "RelativeDocumentMoniker": "Forms\\FormCadastro.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\Forms\\FormCadastro.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormCadastro.cs",
               "RelativeToolTip": "Forms\\FormCadastro.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -188,11 +139,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "FormFuncionarios.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
+              "RelativeDocumentMoniker": "Forms\\FormFuncionarios.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs [Projeto]",
+              "RelativeToolTip": "Forms\\FormFuncionarios.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T23:27:01.644Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "LogiStockMain.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\LogiStockMain.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs",
               "RelativeDocumentMoniker": "LogiStockMain.cs",
-              "ToolTip": "C:\\Users\\leonardo.gapinto\\source\\repos\\LogiStock\\LogiStockMain.cs [Projeto]",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs [Projeto]",
               "RelativeToolTip": "LogiStockMain.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T21:55:28.064Z",
