@@ -50,6 +50,20 @@ namespace LogiStock
             }
         }
 
+        public static void ListarFuncionarios(DataGridView tblGrid)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                string query = "SELECT * FROM usuarios";
+                MySqlDataAdapter listClient = new MySqlDataAdapter(query, conn);
+                DataTable dataTable = new DataTable();
+                listClient.Fill(dataTable);
+
+                tblGrid.DataSource = dataTable;
+            }
+        }
+
         public static void FazerLogin(string usuario, string senha)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))

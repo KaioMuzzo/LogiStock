@@ -8,7 +8,7 @@ namespace LogiStock
             InitializeComponent();
         }
 
-        private void OpenChildForm(Form childForm, object btnSender)
+        public void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
             {
@@ -38,6 +38,11 @@ namespace LogiStock
         private void btnCadastrarMerc_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormListarMercadorias(), sender);
+        }
+
+        private void btnFuncionario_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormFuncionarios(), sender);
         }
     }
 }

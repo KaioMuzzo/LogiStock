@@ -4,6 +4,12 @@
     <Compile Update="Forms\FormCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\FormEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\FormListarMercadorias.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -32,7 +32,7 @@
             panelMenu = new Panel();
             btnRegisterUser = new Button();
             button1 = new Button();
-            button2 = new Button();
+            btnFuncionario = new Button();
             btnCadastrarMerc = new Button();
             btnAcess = new Button();
             panel1 = new Panel();
@@ -45,7 +45,7 @@
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
             panelMenu.Controls.Add(btnRegisterUser);
             panelMenu.Controls.Add(button1);
-            panelMenu.Controls.Add(button2);
+            panelMenu.Controls.Add(btnFuncionario);
             panelMenu.Controls.Add(btnCadastrarMerc);
             panelMenu.Controls.Add(btnAcess);
             panelMenu.Controls.Add(panel1);
@@ -92,24 +92,24 @@
             button1.UseVisualStyleBackColor = true;
             button1.Visible = false;
             // 
-            // button2
+            // btnFuncionario
             // 
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.Gainsboro;
-            button2.Image = Properties.Resources.acess;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(0, 200);
-            button2.Name = "button2";
-            button2.Padding = new Padding(20, 0, 0, 0);
-            button2.Size = new Size(200, 60);
-            button2.TabIndex = 3;
-            button2.Text = "   Coisa2";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button2.UseVisualStyleBackColor = true;
-            button2.Visible = false;
+            btnFuncionario.Dock = DockStyle.Top;
+            btnFuncionario.FlatAppearance.BorderSize = 0;
+            btnFuncionario.FlatStyle = FlatStyle.Flat;
+            btnFuncionario.ForeColor = Color.Gainsboro;
+            btnFuncionario.Image = Properties.Resources.acess;
+            btnFuncionario.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFuncionario.Location = new Point(0, 200);
+            btnFuncionario.Name = "btnFuncionario";
+            btnFuncionario.Padding = new Padding(20, 0, 0, 0);
+            btnFuncionario.Size = new Size(200, 60);
+            btnFuncionario.TabIndex = 3;
+            btnFuncionario.Text = "   Funcionários";
+            btnFuncionario.TextAlign = ContentAlignment.MiddleLeft;
+            btnFuncionario.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFuncionario.UseVisualStyleBackColor = true;
+            btnFuncionario.Click += btnFuncionario_Click;
             // 
             // btnCadastrarMerc
             // 
@@ -190,7 +190,7 @@
         private Panel panelMenu;
         private Panel panel1;
         private Button btnAcess;
-        private Button button2;
+        private Button btnFuncionario;
         private Button btnCadastrarMerc;
         private Panel panelDesktop;
         private Button btnRegisterUser;
