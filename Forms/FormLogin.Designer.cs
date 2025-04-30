@@ -56,7 +56,7 @@
             btnAcessar.Location = new Point(660, 782);
             btnAcessar.Name = "btnAcessar";
             btnAcessar.Size = new Size(396, 90);
-            btnAcessar.TabIndex = 1;
+            btnAcessar.TabIndex = 2;
             btnAcessar.UseVisualStyleBackColor = false;
             btnAcessar.Click += btnAcessar_Click;
             // 
@@ -67,7 +67,7 @@
             txtSenha.Location = new Point(611, 637);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(500, 64);
-            txtSenha.TabIndex = 2;
+            txtSenha.TabIndex = 1;
             txtSenha.TextAlign = HorizontalAlignment.Center;
             txtSenha.UseSystemPasswordChar = true;
             // 

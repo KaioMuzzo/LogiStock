@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LogiStock")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f92161b32bf9c3f9e129c7e426060e54cd09b487")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a35ff1b3ac89d57afaf4423ef7e04ec8f42626e")]
 [assembly: System.Reflection.AssemblyProductAttribute("LogiStock")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LogiStock")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

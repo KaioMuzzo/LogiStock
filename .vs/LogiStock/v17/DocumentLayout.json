@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,10 +73,6 @@
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "FormLogin.cs",
@@ -86,8 +82,7 @@
               "RelativeToolTip": "Forms\\FormLogin.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T00:44:42.086Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T00:44:42.086Z"
             },
             {
               "$type": "Document",
@@ -112,8 +107,7 @@
               "RelativeToolTip": "bdLogistock.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAowFEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T00:47:12.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T00:47:12.555Z"
             },
             {
               "$type": "Document",
@@ -138,8 +132,7 @@
               "RelativeToolTip": "Forms\\FormCadastro.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:40:46.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T22:40:46.194Z"
             },
             {
               "$type": "Document",
@@ -150,8 +143,7 @@
               "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs [Projeto]",
               "RelativeToolTip": "Forms\\FormFuncionarios.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T23:27:01.644Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-04-29T23:27:01.644Z"
             },
             {
               "$type": "Document",
