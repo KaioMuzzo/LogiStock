@@ -2,23 +2,9 @@
 # Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/LogiStock/FileContentIndex
-
-# Arquivos temporários
 *.log
 *.tmp
-
-# Ignora a pasta bin e obj (projetos .NET)
 bin/
 obj/
-
-# Ignora arquivos do VSCode
 .vs/
-
-# Ignora arquivos de build
-dist/
-build/
-
-# Ignora credenciais
-*.env
-secrets.json
+*.user

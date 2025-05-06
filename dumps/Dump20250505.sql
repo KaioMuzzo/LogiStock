@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `categorias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `categorias` (
-  `id_categoria` int NOT NULL,
-  `nome_categoria` varchar(255) NOT NULL,
+  `id_categoria` int NOT NULL AUTO_INCREMENT,
+  `tipo_categoria` varchar(255) DEFAULT NULL,
   `descricao` text,
-  `data_cadastro` date DEFAULT NULL,
+  `data_cadastro` date DEFAULT (curdate()),
   PRIMARY KEY (`id_categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'Alimentos','Categoria de produtos alimentícios, como grãos, carnes, bebidas e derivados.','2025-04-10'),(2,'Tecnologia','Produtos de tecnologia, incluindo computadores, eletrônicos e acessórios.','2025-04-05'),(3,'Bebidas','Categoria de bebidas, incluindo refrigerantes, sucos, cervejas e destilados.','2025-04-08'),(4,'Produtos Orgânicos','Produtos cultivados sem agrotóxicos e fertilizantes químicos, como frutas e verduras.','2025-03-20');
+INSERT INTO `categorias` VALUES (1,'Alimentos','Categoria de produtos alimentícios, como grãos, carnes, bebidas e derivados.','2025-04-10'),(2,'Tecnologia','Produtos de tecnologia, incluindo computadores, eletrônicos e acessórios.','2025-04-05'),(3,'Bebidas','Categoria de bebidas, incluindo refrigerantes, sucos, cervejas e destilados.','2025-04-08'),(4,'Produtos Orgânicos','Produtos cultivados sem agrotóxicos e fertilizantes químicos, como frutas e verduras.','2025-03-20'),(5,'LED','Categoria para produtos com tecnologia de iluminação LED.','2025-05-05');
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,17 +49,18 @@ DROP TABLE IF EXISTS `fornecedores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fornecedores` (
-  `id_fornecedor` int NOT NULL,
+  `id_fornecedor` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `endereco` varchar(255) DEFAULT NULL,
-  `telefone` varchar(20) DEFAULT NULL,
+  `telefone` varchar(11) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `site` varchar(100) DEFAULT NULL,
-  `cpf_cnpj` varchar(20) DEFAULT NULL,
+  `cnpj` varchar(14) DEFAULT NULL,
   `data_cadastro` date DEFAULT NULL,
   `status` enum('ativo','inativo') DEFAULT 'ativo',
-  PRIMARY KEY (`id_fornecedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id_fornecedor`),
+  UNIQUE KEY `telefone` (`telefone`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +69,7 @@ CREATE TABLE `fornecedores` (
 
 LOCK TABLES `fornecedores` WRITE;
 /*!40000 ALTER TABLE `fornecedores` DISABLE KEYS */;
-INSERT INTO `fornecedores` VALUES (1,'Alimentos S.A.','Rua dos Alimentos, 100, São Paulo - SP','(11) 1234-5678','contato@alimentossa.com.br','www.alimentossa.com.br','12.345.678/0001-90','2025-04-10','ativo'),(2,'Tecnologia Avançada','Avenida da Tecnologia, 2500, Campinas - SP','(19) 9876-5432','suporte@tecavancada.com','www.tecavancada.com','23.456.789/0001-01','2025-04-05','ativo'),(3,'Distribuidora de Bebidas','Rua da Cerveja, 500, Belo Horizonte - MG','(31) 5555-1234','contato@bebidasdistribuicao.com','www.bebidasdistribuicao.com','34.567.890/0001-02','2025-04-08','ativo'),(4,'Fazenda Orgânica','Estrada Rural, 120, Uberlândia - MG','(34) 6123-4321','fazenda@organicos.com','www.organicos.com','45.678.901/0001-03','2025-03-20','ativo');
+INSERT INTO `fornecedores` VALUES (1,'Alimentos S.A.','Rua dos Alimentos, 100, São Paulo - SP','1112345678','contato@alimentossa.com.br','www.alimentossa.com.br','12345678000190','2025-04-10','ativo'),(2,'Tecnologia Avançada','Avenida da Tecnologia, 2500, Campinas - SP','1998765432','suporte@tecavancada.com','www.tecavancada.com','23456789000101','2025-04-05','ativo'),(3,'Distribuidora de Bebidas','Rua da Cerveja, 500, Belo Horizonte - MG','3155551234','contato@bebidasdistribuicao.com','www.bebidasdistribuicao.com','34567890000102','2025-04-08','ativo'),(4,'Fazenda Orgânica','Estrada Rural, 120, Uberlândia - MG','3461234321','fazenda@organicos.com','www.organicos.com','45678901000103','2025-03-20','ativo'),(5,'Comercial Silva Ltda','Rua das Flores, 123 - Centro','11987654321','contato@comercialsilva.com.br','https://www.comercialsilva.com.br','12345678000199','2025-05-05','ativo');
 /*!40000 ALTER TABLE `fornecedores` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,4 +175,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-29 19:58:37
+-- Dump completed on 2025-05-05 22:39:37
