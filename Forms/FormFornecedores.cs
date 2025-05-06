@@ -19,6 +19,8 @@ namespace LogiStock.Forms
         {
             InitializeComponent();
             logiStockmain = main;
+            bdLogistock.ListaFornecedores(cmbFornecedor);
+            bdLogistock.ListaCategorias(cmbCategoria);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -76,6 +78,9 @@ namespace LogiStock.Forms
                 txtEmailFornecedor.Text = null;
                 txtSiteFornecedor.Text = null;
                 txtCNPJFornecedor.Text = null;
+
+                bdLogistock.ListaFornecedores(cmbFornecedor);
+                bdLogistock.ListaCategorias(cmbCategoria);
                 return;
             }
             else
@@ -102,11 +107,14 @@ namespace LogiStock.Forms
                 return;
             }
 
-            if(bdLogistock.CadastrarCategoria(tipo, descricao))
+            if (bdLogistock.CadastrarCategoria(tipo, descricao))
             {
                 MessageBox.Show("Nova categoria cadastrada com sucesso!");
                 txtTipoCategoria.Text = null;
                 txtDescricaoCategoria.Text = null;
+
+                bdLogistock.ListaFornecedores(cmbFornecedor);
+                bdLogistock.ListaCategorias(cmbCategoria);
                 return;
             }
             else
@@ -118,10 +126,9 @@ namespace LogiStock.Forms
 
         private void btnAtribuirFornCate_Click(object sender, EventArgs e)
         {
-            cmbCategoria.Items.AddRange(new string[] { "aqui vao ficar os dados" });
-            cmbCategoria.SelectedIndex = 0;
-            cmbFornecedor.Items.AddRange(new string[] { "aqui vao ficar os dados" });
-            cmbFornecedor.SelectedIndex = 0;
+            int id_fornecedor = Convert.ToInt16(cmbFornecedor.SelectedValue);
+            int id_categoria = Convert.ToInt16(cmbCategoria.SelectedValue);
+            bdLogistock.AtribuirCategoriaForne(id_fornecedor, id_categoria);
         }
     }
 }

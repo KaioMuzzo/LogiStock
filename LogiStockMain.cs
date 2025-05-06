@@ -57,6 +57,7 @@ namespace LogiStock
             btnCadastrarMerc.Visible = true;
             btnFuncionario.Visible = true;
             btnRegisterUser.Visible = true;
+            btnCadastroForn.Visible = true;
         }
     }
 }

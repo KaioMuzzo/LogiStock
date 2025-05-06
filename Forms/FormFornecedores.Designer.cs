@@ -120,22 +120,25 @@
             // 
             // cmbFornecedor
             // 
+            cmbFornecedor.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbFornecedor.FlatStyle = FlatStyle.Flat;
-            cmbFornecedor.Font = new Font("Segoe UI", 25F);
+            cmbFornecedor.Font = new Font("Segoe UI", 20F);
             cmbFornecedor.FormattingEnabled = true;
-            cmbFornecedor.Location = new Point(833, 671);
+            cmbFornecedor.Location = new Point(833, 676);
             cmbFornecedor.Name = "cmbFornecedor";
-            cmbFornecedor.Size = new Size(325, 53);
+            cmbFornecedor.Size = new Size(325, 45);
             cmbFornecedor.TabIndex = 10;
             // 
             // cmbCategoria
             // 
+            cmbCategoria.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbCategoria.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbCategoria.FlatStyle = FlatStyle.Flat;
-            cmbCategoria.Font = new Font("Segoe UI", 25F);
+            cmbCategoria.Font = new Font("Segoe UI", 20F);
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(1253, 672);
+            cmbCategoria.Location = new Point(1254, 677);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(325, 53);
+            cmbCategoria.Size = new Size(325, 45);
             cmbCategoria.TabIndex = 11;
             // 
             // btnCadastrarFornecedor
@@ -190,6 +193,7 @@
             btnAtribuirFornCate.TabIndex = 12;
             btnAtribuirFornCate.Text = "Atribuir";
             btnAtribuirFornCate.UseVisualStyleBackColor = false;
+            btnAtribuirFornCate.Click += btnAtribuirFornCate_Click;
             // 
             // btnVoltar
             // 

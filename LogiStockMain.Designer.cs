@@ -71,6 +71,7 @@
             btnCadastroForn.Text = "   CadastroFornecedor";
             btnCadastroForn.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCadastroForn.UseVisualStyleBackColor = true;
+            btnCadastroForn.Visible = false;
             btnCadastroForn.Click += btnCadastroForn_Click;
             // 
             // btnRegisterUser

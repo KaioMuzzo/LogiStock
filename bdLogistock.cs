@@ -39,6 +39,28 @@ namespace LogiStock
             }
         }
 
+        public static bool FazerLogin(string usuario, string senha)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                string query = "SELECT * FROM usuarios WHERE usuario = @usuario AND senha = @senha";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public static void ListarMercadorias(DataGridView tblGrid)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
@@ -64,28 +86,6 @@ namespace LogiStock
                 listClient.Fill(dataTable);
 
                 tblGrid.DataSource = dataTable;
-            }
-        }
-
-        public static bool FazerLogin(string usuario, string senha)
-        {
-            using (MySqlConnection conn = new MySqlConnection(conexao))
-            {
-                conn.Open();
-                string query = "SELECT * FROM usuarios WHERE usuario = @usuario AND senha = @senha";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@senha", senha);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
             }
         }
 
@@ -141,6 +141,90 @@ namespace LogiStock
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        public static void ListaFornecedores(ComboBox cmb)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT id_fornecedor, nome FROM fornecedores";
+                    MySqlDataAdapter listaFornecedores = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    listaFornecedores.Fill(dt);
+
+                    cmb.DataSource = dt;
+                    cmb.DisplayMember = "nome";
+                    cmb.ValueMember = "id_fornecedor";
+                    cmb.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar a lista de fornecedores: " + ex.Message);
+                }
+            }
+        }
+
+        public static void ListaCategorias(ComboBox cmb)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT id_categoria, tipo_categoria FROM categorias";
+                    MySqlDataAdapter listaFornecedores = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    listaFornecedores.Fill(dt);
+
+                    cmb.DataSource = dt;
+                    cmb.DisplayMember = "tipo_categoria";
+                    cmb.ValueMember = "id_categoria";
+                    cmb.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar a lista de categorias: " + ex.Message);
+                }
+            }
+        }
+
+
+        public static void AtribuirCategoriaForne(int id_fornecedor, int id_categoria)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM fornecedores_categorias WHERE id_fornecedor = @id_fornecedor AND id_categoria = @id_categoria";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id_fornecedor", id_fornecedor);
+                    cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+                    int count = Convert.ToInt16(cmd.ExecuteScalar());
+
+                    if (count == 0)
+                    {
+                        query = "INSERT INTO fornecedores_categorias (id_fornecedor, id_categoria) VALUES (@id_fornecedor, @id_categoria)";
+                        cmd = new MySqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@id_fornecedor", id_fornecedor);
+                        cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("De/Para fornecedor e categoria criado com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não foi possível realizar a adição do De/Para, essa associação já foi criada.");
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao inserir o de/para de fornecedor com categoria: " + ex.Message);
+                }
             }
         }
     }
