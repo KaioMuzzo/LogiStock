@@ -1,5 +1,8 @@
 ﻿using System.Data;
+using System.Linq.Expressions;
+using System.Security.Policy;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace LogiStock
 {
@@ -83,6 +86,61 @@ namespace LogiStock
                 {
                     return false;
                 }
+            }
+        }
+
+        public static bool CadastrarFornecedor(string nome, string endereco, string telefone, string email, string site, string cnpj)
+        {
+            try 
+            {
+                using (MySqlConnection conn = new MySqlConnection(conexao))
+                {
+                    DateTime dataSql = DateTime.Now;
+
+                    conn.Open();
+                    string query = "INSERT INTO fornecedores (nome, endereco, telefone, email, site, cnpj, data_cadastro) VALUES (@nome, @endereco, @telefone, @email, @site, @cnpj, @data_cadastro)";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@endereco", endereco);
+                    cmd.Parameters.AddWithValue("@telefone", telefone);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@site", site);
+                    cmd.Parameters.AddWithValue("@cnpj", cnpj);
+                    cmd.Parameters.AddWithValue("@data_cadastro", dataSql);
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public static bool CadastrarCategoria(string tipo_categoria, string descricao)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(conexao))
+                {
+                    DateTime dataSql = DateTime.Now;
+
+                    conn.Open();
+                    string query = "INSERT INTO categorias (tipo_categoria, descricao) VALUES (@tipo_categoria, @descricao)";
+
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@tipo_categoria", tipo_categoria);
+                    cmd.Parameters.AddWithValue("@descricao", descricao);
+
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            } 
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

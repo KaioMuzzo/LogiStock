@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formfornecedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formfornecedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\bdlogistock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:bdlogistock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formfuncionarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formcadastro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\forms\\formfornecedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:forms\\formfornecedores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|c:\\users\\kaio.rmdourado\\source\\repos\\logistock\\logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{B5FB95EF-2DC1-4567-B952-DC552B9B4951}|LogiStock.csproj|solutionrelative:logistockmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,15 +66,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormLogin.cs",
-              "RelativeDocumentMoniker": "Forms\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormLogin.cs",
-              "RelativeToolTip": "Forms\\FormLogin.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAAdAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "bdLogistock.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\bdLogistock.cs",
+              "RelativeDocumentMoniker": "bdLogistock.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\bdLogistock.cs",
+              "RelativeToolTip": "bdLogistock.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAcwHkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T00:44:42.086Z"
+              "WhenOpened": "2025-05-05T23:06:00.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormFornecedores.cs",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFornecedores.cs",
+              "RelativeDocumentMoniker": "Forms\\FormFornecedores.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFornecedores.cs",
+              "RelativeToolTip": "Forms\\FormFornecedores.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAQwGQAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T23:03:04.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormFornecedores.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFornecedores.cs",
+              "RelativeDocumentMoniker": "Forms\\FormFornecedores.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFornecedores.cs [Projeto]",
+              "RelativeToolTip": "Forms\\FormFornecedores.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T21:43:27.108Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LogiStockMain.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs",
+              "RelativeDocumentMoniker": "LogiStockMain.cs",
+              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs [Projeto]",
+              "RelativeToolTip": "LogiStockMain.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T22:31:18.157Z",
+              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
@@ -92,70 +122,10 @@
               "RelativeDocumentMoniker": "LogiStockMain.cs",
               "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs",
               "RelativeToolTip": "LogiStockMain.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAowB0AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowDIAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T23:35:51.084Z",
+              "WhenOpened": "2025-05-05T22:49:08.846Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "bdLogistock.cs",
-              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\bdLogistock.cs",
-              "RelativeDocumentMoniker": "bdLogistock.cs",
-              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\bdLogistock.cs",
-              "RelativeToolTip": "bdLogistock.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAowFEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T00:47:12.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormFuncionarios.cs",
-              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
-              "RelativeDocumentMoniker": "Forms\\FormFuncionarios.cs",
-              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
-              "RelativeToolTip": "Forms\\FormFuncionarios.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T23:32:07.295Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormCadastro.cs",
-              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormCadastro.cs",
-              "RelativeDocumentMoniker": "Forms\\FormCadastro.cs",
-              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormCadastro.cs",
-              "RelativeToolTip": "Forms\\FormCadastro.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:40:46.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormFuncionarios.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs",
-              "RelativeDocumentMoniker": "Forms\\FormFuncionarios.cs",
-              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\Forms\\FormFuncionarios.cs [Projeto]",
-              "RelativeToolTip": "Forms\\FormFuncionarios.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T23:27:01.644Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LogiStockMain.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs",
-              "RelativeDocumentMoniker": "LogiStockMain.cs",
-              "ToolTip": "C:\\Users\\kaio.rmdourado\\source\\repos\\LogiStock\\LogiStockMain.cs [Projeto]",
-              "RelativeToolTip": "LogiStockMain.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T21:55:28.064Z",
-              "EditorCaption": " [Projeto]"
             }
           ]
         }

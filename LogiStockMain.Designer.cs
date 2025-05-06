@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogiStockMain));
             panelMenu = new Panel();
+            btnCadastroForn = new Button();
             btnRegisterUser = new Button();
-            button1 = new Button();
             btnFuncionario = new Button();
             btnCadastrarMerc = new Button();
             btnAcess = new Button();
@@ -43,8 +43,8 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.Controls.Add(btnCadastroForn);
             panelMenu.Controls.Add(btnRegisterUser);
-            panelMenu.Controls.Add(button1);
             panelMenu.Controls.Add(btnFuncionario);
             panelMenu.Controls.Add(btnCadastrarMerc);
             panelMenu.Controls.Add(btnAcess);
@@ -55,6 +55,24 @@
             panelMenu.Size = new Size(200, 978);
             panelMenu.TabIndex = 0;
             // 
+            // btnCadastroForn
+            // 
+            btnCadastroForn.Dock = DockStyle.Top;
+            btnCadastroForn.FlatAppearance.BorderSize = 0;
+            btnCadastroForn.FlatStyle = FlatStyle.Flat;
+            btnCadastroForn.ForeColor = Color.Gainsboro;
+            btnCadastroForn.Image = Properties.Resources.acess;
+            btnCadastroForn.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCadastroForn.Location = new Point(0, 320);
+            btnCadastroForn.Name = "btnCadastroForn";
+            btnCadastroForn.Padding = new Padding(20, 0, 0, 0);
+            btnCadastroForn.Size = new Size(200, 60);
+            btnCadastroForn.TabIndex = 6;
+            btnCadastroForn.Text = "   CadastroFornecedor";
+            btnCadastroForn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCadastroForn.UseVisualStyleBackColor = true;
+            btnCadastroForn.Click += btnCadastroForn_Click;
+            // 
             // btnRegisterUser
             // 
             btnRegisterUser.Dock = DockStyle.Top;
@@ -63,7 +81,7 @@
             btnRegisterUser.ForeColor = Color.Gainsboro;
             btnRegisterUser.Image = Properties.Resources.acess;
             btnRegisterUser.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegisterUser.Location = new Point(0, 320);
+            btnRegisterUser.Location = new Point(0, 260);
             btnRegisterUser.Name = "btnRegisterUser";
             btnRegisterUser.Padding = new Padding(20, 0, 0, 0);
             btnRegisterUser.Size = new Size(200, 60);
@@ -73,25 +91,6 @@
             btnRegisterUser.UseVisualStyleBackColor = true;
             btnRegisterUser.Visible = false;
             btnRegisterUser.Click += btnRegisterUser_Click;
-            // 
-            // button1
-            // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.Gainsboro;
-            button1.Image = Properties.Resources.acess;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(0, 260);
-            button1.Name = "button1";
-            button1.Padding = new Padding(20, 0, 0, 0);
-            button1.Size = new Size(200, 60);
-            button1.TabIndex = 4;
-            button1.Text = "   Coisa2";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = true;
-            button1.Visible = false;
             // 
             // btnFuncionario
             // 
@@ -196,6 +195,6 @@
         private Button btnCadastrarMerc;
         private Panel panelDesktop;
         private Button btnRegisterUser;
-        private Button button1;
+        private Button btnCadastroForn;
     }
 }

@@ -46,6 +46,11 @@ namespace LogiStock
             OpenChildForm(new Forms.FormFuncionarios());
         }
 
+        private void btnCadastroForn_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormFornecedores(this));
+        }
+
         public void UsuarioConectado()
         {
             btnAcess.Visible = false;

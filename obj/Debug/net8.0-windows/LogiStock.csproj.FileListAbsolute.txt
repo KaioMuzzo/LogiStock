@@ -118,3 +118,4 @@ C:\Users\bianca.vpsantos1\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiSt
 C:\Users\bianca.vpsantos1\Source\Repos\LogiStock\obj\Debug\net8.0-windows\ref\LogiStock.dll
 C:\Users\kaio.rmdourado\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiStock.Forms.FormEditar.resources
 C:\Users\kaio.rmdourado\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiStock.Forms.FormFuncionarios.resources
+C:\Users\kaio.rmdourado\Source\Repos\LogiStock\obj\Debug\net8.0-windows\LogiStock.Forms.FormFornecedores.resources
