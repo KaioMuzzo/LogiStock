@@ -39,6 +39,75 @@ namespace LogiStock
             }
         }
 
+
+        public static void ListarMercadorias(DataGridView tblGrid)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                string query = "SELECT * FROM mercadorias";
+                MySqlDataAdapter listMercadorias = new MySqlDataAdapter(query, conn);
+                DataTable dataTable = new DataTable();
+                listMercadorias.Fill(dataTable);
+                tblGrid.DataSource = dataTable;
+            }
+        }
+
+        public static void ListarFuncionarios(DataGridView tblGrid)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                string query = "SELECT matricula, nome, usuario, telefone, email, cargo FROM usuarios";
+                MySqlDataAdapter listarFuncionarios = new MySqlDataAdapter(query, conn);
+                DataTable dataTable = new DataTable();
+                listarFuncionarios.Fill(dataTable);
+                tblGrid.DataSource = dataTable;
+            }
+        }
+
+
+        public static void FuncionariosFiltro(DataGridView tblGrid, ComboBox cmbFiltro, string valor)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                if (cmbFiltro.SelectedIndex != -1)
+                {
+                    string query = $"SELECT matricula, nome, usuario, telefone, email, cargo FROM usuarios WHERE {cmbFiltro.Text} LIKE @valor";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
+                    MySqlDataAdapter listarFuncionariosFiltro = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    listarFuncionariosFiltro.Fill(dataTable);
+                    tblGrid.DataSource = dataTable;
+                }
+            }
+        }
+
+        public static void EditarFuncionarios(string matricula, Dictionary<string, string> campos)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                List<string> updates = new List<string>();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+
+                foreach (var campo in campos)
+                {
+                    string param = "@" + campo.Key;
+                    updates.Add($"{campo.Key} = {param}");
+                    cmd.Parameters.AddWithValue(param, campo.Value);
+                }
+
+                cmd.Parameters.AddWithValue("@matricula", matricula);
+                string query = $"UPDATE usuarios SET {string.Join(", ", updates)} WHERE matricula = @matricula";
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public static bool FazerLogin(string usuario, string senha)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
@@ -58,34 +127,6 @@ namespace LogiStock
                 {
                     return false;
                 }
-            }
-        }
-
-        public static void ListarMercadorias(DataGridView tblGrid)
-        {
-            using (MySqlConnection conn = new MySqlConnection(conexao))
-            {
-                conn.Open();
-                string query = "SELECT * FROM mercadorias";
-                MySqlDataAdapter listClient = new MySqlDataAdapter(query, conn);
-                DataTable dataTable = new DataTable();
-                listClient.Fill(dataTable);
-
-                tblGrid.DataSource = dataTable;
-            }
-        }
-
-        public static void ListarFuncionarios(DataGridView tblGrid)
-        {
-            using (MySqlConnection conn = new MySqlConnection(conexao))
-            {
-                conn.Open();
-                string query = "SELECT * FROM usuarios";
-                MySqlDataAdapter listClient = new MySqlDataAdapter(query, conn);
-                DataTable dataTable = new DataTable();
-                listClient.Fill(dataTable);
-
-                tblGrid.DataSource = dataTable;
             }
         }
 

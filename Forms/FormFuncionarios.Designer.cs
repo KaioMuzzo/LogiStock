@@ -33,21 +33,26 @@
             Cadastrar = new Button();
             btnEditar = new Button();
             btnExcluir = new Button();
+            txtFiltro = new TextBox();
+            cmbFiltro = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(131, 312);
+            dataGridView1.Location = new Point(141, 312);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1338, 446);
+            dataGridView1.Size = new Size(1319, 446);
             dataGridView1.TabIndex = 0;
             // 
             // Cadastrar
             // 
             Cadastrar.BackColor = Color.Transparent;
+            Cadastrar.Cursor = Cursors.Hand;
             Cadastrar.FlatAppearance.BorderSize = 0;
             Cadastrar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             Cadastrar.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -59,10 +64,12 @@
             Cadastrar.TabIndex = 1;
             Cadastrar.Text = "Cadastrar";
             Cadastrar.UseVisualStyleBackColor = false;
+            Cadastrar.Click += Cadastrar_Click;
             // 
             // btnEditar
             // 
             btnEditar.BackColor = Color.Transparent;
+            btnEditar.Cursor = Cursors.Hand;
             btnEditar.FlatAppearance.BorderSize = 0;
             btnEditar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnEditar.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -79,6 +86,7 @@
             // btnExcluir
             // 
             btnExcluir.BackColor = Color.Transparent;
+            btnExcluir.Cursor = Cursors.Hand;
             btnExcluir.FlatAppearance.BorderSize = 0;
             btnExcluir.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnExcluir.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -90,6 +98,27 @@
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // txtFiltro
+            // 
+            txtFiltro.BorderStyle = BorderStyle.None;
+            txtFiltro.Font = new Font("Segoe UI", 20F);
+            txtFiltro.Location = new Point(115, 199);
+            txtFiltro.Name = "txtFiltro";
+            txtFiltro.Size = new Size(922, 36);
+            txtFiltro.TabIndex = 4;
+            txtFiltro.KeyDown += txtFiltro_KeyDown;
+            // 
+            // cmbFiltro
+            // 
+            cmbFiltro.FlatStyle = FlatStyle.Flat;
+            cmbFiltro.Font = new Font("Segoe UI", 20F);
+            cmbFiltro.FormattingEnabled = true;
+            cmbFiltro.Location = new Point(1172, 194);
+            cmbFiltro.Name = "cmbFiltro";
+            cmbFiltro.Size = new Size(278, 45);
+            cmbFiltro.TabIndex = 5;
             // 
             // FormFuncionarios
             // 
@@ -97,6 +126,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1704, 978);
+            Controls.Add(cmbFiltro);
+            Controls.Add(txtFiltro);
             Controls.Add(btnExcluir);
             Controls.Add(btnEditar);
             Controls.Add(Cadastrar);
@@ -106,6 +137,7 @@
             Load += FormFuncionarios_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -114,5 +146,7 @@
         private Button Cadastrar;
         private Button btnEditar;
         private Button btnExcluir;
+        private TextBox txtFiltro;
+        private ComboBox cmbFiltro;
     }
 }

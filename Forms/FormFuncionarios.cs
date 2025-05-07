@@ -2,10 +2,15 @@
 {
     public partial class FormFuncionarios : Form
     {
-        public FormFuncionarios()
+        private LogiStockMain logiStockMain;
+
+        public FormFuncionarios(LogiStockMain main)
         {
             InitializeComponent();
             bdLogistock.ListarFuncionarios(dataGridView1);
+            cmbFiltro.Items.AddRange(new string[] { "matricula", "nome", "usuario", "telefone", "email", "cargo" });
+            cmbFiltro.SelectedIndex = 0;
+            logiStockMain = main;
         }
 
         private void FormFuncionarios_Load(object sender, EventArgs e)
@@ -13,11 +18,48 @@
 
         }
 
+        private void Cadastrar_Click(object sender, EventArgs e)
+        {
+            logiStockMain.OpenChildForm(new Forms.formRegister());
+        }
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            FormEditar editar = new FormEditar();
-            //bdLogistock.op
-            
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                var row = dataGridView1.SelectedRows[0];
+                string matricula = row.Cells["matricula"].Value.ToString();
+                string nome = row.Cells["nome"].Value.ToString();
+                string usuario = row.Cells["usuario"].Value.ToString();
+                string telefone = row.Cells["telefone"].Value.ToString();
+                string email = row.Cells["email"].Value.ToString();
+
+                logiStockMain.OpenChildForm(new Forms.FormEditar(matricula, nome, usuario, telefone, email));
+            }
+            else
+            {
+                MessageBox.Show("Seleciona pelo menos 1 funcionário para editar a informação dele.");
+            }
+        }
+
+        private void txtFiltro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bdLogistock.FuncionariosFiltro(dataGridView1, cmbFiltro, txtFiltro.Text);
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                // falta essa parte aqui
+            }
+            else
+            {
+                MessageBox.Show("Seleciona pelo menos 1 funcionário para editar a informação dele.");
+            }
         }
     }
 }

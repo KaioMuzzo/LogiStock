@@ -29,80 +29,97 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditar));
-            Nome = new TextBox();
-            Telefone = new TextBox();
-            Senha = new TextBox();
-            Email = new TextBox();
-            Usuario = new TextBox();
-            Matricula = new TextBox();
+            txtNome = new TextBox();
+            txtTelefone = new TextBox();
+            txtSenha = new TextBox();
+            txtEmail = new TextBox();
+            txtUsuario = new TextBox();
+            txtMatricula = new TextBox();
+            btnSalvar = new Button();
             SuspendLayout();
             // 
-            // Nome
+            // txtNome
             // 
-            Nome.BorderStyle = BorderStyle.None;
-            Nome.Cursor = Cursors.IBeam;
-            Nome.Font = new Font("Segoe UI", 27.75F);
-            Nome.Location = new Point(306, 306);
-            Nome.Name = "Nome";
-            Nome.Size = new Size(458, 50);
-            Nome.TabIndex = 0;
-            Nome.TextAlign = HorizontalAlignment.Center;
+            txtNome.BorderStyle = BorderStyle.None;
+            txtNome.Cursor = Cursors.IBeam;
+            txtNome.Font = new Font("Segoe UI", 27.75F);
+            txtNome.Location = new Point(309, 310);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(458, 50);
+            txtNome.TabIndex = 0;
+            txtNome.TextAlign = HorizontalAlignment.Center;
             // 
-            // Telefone
+            // txtTelefone
             // 
-            Telefone.BorderStyle = BorderStyle.None;
-            Telefone.Cursor = Cursors.IBeam;
-            Telefone.Font = new Font("Segoe UI", 27.75F);
-            Telefone.Location = new Point(306, 665);
-            Telefone.Name = "Telefone";
-            Telefone.Size = new Size(458, 50);
-            Telefone.TabIndex = 1;
-            Telefone.TextAlign = HorizontalAlignment.Center;
+            txtTelefone.BorderStyle = BorderStyle.None;
+            txtTelefone.Cursor = Cursors.IBeam;
+            txtTelefone.Font = new Font("Segoe UI", 27.75F);
+            txtTelefone.Location = new Point(309, 669);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(458, 50);
+            txtTelefone.TabIndex = 1;
+            txtTelefone.TextAlign = HorizontalAlignment.Center;
             // 
-            // Senha
+            // txtSenha
             // 
-            Senha.BorderStyle = BorderStyle.None;
-            Senha.Cursor = Cursors.IBeam;
-            Senha.Font = new Font("Segoe UI", 27.75F);
-            Senha.Location = new Point(952, 665);
-            Senha.Name = "Senha";
-            Senha.Size = new Size(472, 50);
-            Senha.TabIndex = 2;
-            Senha.TextAlign = HorizontalAlignment.Center;
-            Senha.UseSystemPasswordChar = true;
+            txtSenha.BorderStyle = BorderStyle.None;
+            txtSenha.Cursor = Cursors.IBeam;
+            txtSenha.Font = new Font("Segoe UI", 27.75F);
+            txtSenha.Location = new Point(959, 669);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(472, 50);
+            txtSenha.TabIndex = 2;
+            txtSenha.TextAlign = HorizontalAlignment.Center;
+            txtSenha.UseSystemPasswordChar = true;
             // 
-            // Email
+            // txtEmail
             // 
-            Email.BorderStyle = BorderStyle.None;
-            Email.Cursor = Cursors.IBeam;
-            Email.Font = new Font("Segoe UI", 27.75F);
-            Email.Location = new Point(952, 484);
-            Email.Name = "Email";
-            Email.Size = new Size(472, 50);
-            Email.TabIndex = 3;
-            Email.TextAlign = HorizontalAlignment.Center;
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Cursor = Cursors.IBeam;
+            txtEmail.Font = new Font("Segoe UI", 27.75F);
+            txtEmail.Location = new Point(959, 487);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(472, 50);
+            txtEmail.TabIndex = 3;
+            txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
-            // Usuario
+            // txtUsuario
             // 
-            Usuario.BorderStyle = BorderStyle.None;
-            Usuario.Cursor = Cursors.IBeam;
-            Usuario.Font = new Font("Segoe UI", 27.75F);
-            Usuario.Location = new Point(306, 484);
-            Usuario.Name = "Usuario";
-            Usuario.Size = new Size(458, 50);
-            Usuario.TabIndex = 4;
-            Usuario.TextAlign = HorizontalAlignment.Center;
+            txtUsuario.BorderStyle = BorderStyle.None;
+            txtUsuario.Cursor = Cursors.IBeam;
+            txtUsuario.Font = new Font("Segoe UI", 27.75F);
+            txtUsuario.Location = new Point(309, 487);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(458, 50);
+            txtUsuario.TabIndex = 4;
+            txtUsuario.TextAlign = HorizontalAlignment.Center;
             // 
-            // Matricula
+            // txtMatricula
             // 
-            Matricula.BorderStyle = BorderStyle.None;
-            Matricula.Cursor = Cursors.IBeam;
-            Matricula.Font = new Font("Segoe UI", 27.75F);
-            Matricula.Location = new Point(952, 306);
-            Matricula.Name = "Matricula";
-            Matricula.Size = new Size(472, 50);
-            Matricula.TabIndex = 5;
-            Matricula.TextAlign = HorizontalAlignment.Center;
+            txtMatricula.BorderStyle = BorderStyle.None;
+            txtMatricula.Cursor = Cursors.IBeam;
+            txtMatricula.Font = new Font("Segoe UI", 27.75F);
+            txtMatricula.Location = new Point(959, 310);
+            txtMatricula.Name = "txtMatricula";
+            txtMatricula.ReadOnly = true;
+            txtMatricula.Size = new Size(472, 50);
+            txtMatricula.TabIndex = 5;
+            txtMatricula.TextAlign = HorizontalAlignment.Center;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.BackColor = Color.Transparent;
+            btnSalvar.Cursor = Cursors.Hand;
+            btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Location = new Point(660, 810);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(394, 90);
+            btnSalvar.TabIndex = 6;
+            btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // FormEditar
             // 
@@ -110,25 +127,28 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1704, 978);
-            Controls.Add(Matricula);
-            Controls.Add(Usuario);
-            Controls.Add(Email);
-            Controls.Add(Senha);
-            Controls.Add(Telefone);
-            Controls.Add(Nome);
+            Controls.Add(btnSalvar);
+            Controls.Add(txtMatricula);
+            Controls.Add(txtUsuario);
+            Controls.Add(txtEmail);
+            Controls.Add(txtSenha);
+            Controls.Add(txtTelefone);
+            Controls.Add(txtNome);
             Name = "FormEditar";
             Text = "FormEditar";
+            Load += FormEditar_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox Nome;
-        private TextBox Telefone;
-        private TextBox Senha;
-        private TextBox Email;
-        private TextBox Usuario;
-        private TextBox Matricula;
+        private TextBox txtNome;
+        private TextBox txtTelefone;
+        private TextBox txtSenha;
+        private TextBox txtEmail;
+        private TextBox txtUsuario;
+        private TextBox txtMatricula;
+        private Button btnSalvar;
     }
 }
