@@ -43,7 +43,7 @@ namespace LogiStock
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormFuncionarios());
+            OpenChildForm(new Forms.FormFuncionarios(this));
         }
 
         private void btnCadastroForn_Click(object sender, EventArgs e)
@@ -56,7 +56,6 @@ namespace LogiStock
             btnAcess.Visible = false;
             btnCadastrarMerc.Visible = true;
             btnFuncionario.Visible = true;
-            btnRegisterUser.Visible = true;
         }
     }
 }

@@ -39,6 +39,7 @@
             dtGridMerc.AllowUserToDeleteRows = false;
             dtGridMerc.AllowUserToResizeColumns = false;
             dtGridMerc.AllowUserToResizeRows = false;
+            dtGridMerc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtGridMerc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dtGridMerc, "dtGridMerc");
             dtGridMerc.Name = "dtGridMerc";
