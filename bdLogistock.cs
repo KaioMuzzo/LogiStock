@@ -253,6 +253,77 @@ namespace LogiStock
             }
         }
 
+        public static void ListaProdutos(ComboBox cmb)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT id_produto, nome_produto FROM mercadorias";
+                    MySqlDataAdapter listaProdutos = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    listaProdutos.Fill(dt);
+
+                    cmb.DataSource = dt;
+                    cmb.DisplayMember = "nome_produto";
+                    cmb.ValueMember = "id_produto";
+                    cmb.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar a lista de produtos: " + ex.Message);
+                }
+            }
+        }
+
+        public static void ListaUnidades(ComboBox cmb)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT id_unidade, sigla FROM unidades";
+                    MySqlDataAdapter listaProdutos = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    listaProdutos.Fill(dt);
+
+                    cmb.DataSource = dt;
+                    cmb.DisplayMember = "sigla";
+                    cmb.ValueMember = "id_unidade";
+                    cmb.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar a lista de unidades: " + ex.Message);
+                }
+            }
+        }
+
+        public static void relacionarUnidade(int id_produto, int id_unidade_origem, int id_unidade_destino, Decimal fator_conversao)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "insert into depara_unidades (id_produto, id_unidade_origem, id_unidade_destino, fator_conversao) VALUES (@id_produto, @id_unidade_origem, @id_unidade_destino, @fator_conversao)";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id_produto", id_produto);
+                    cmd.Parameters.AddWithValue("@id_unidade_origem", id_unidade_origem);
+                    cmd.Parameters.AddWithValue("@id_unidade_destino", id_unidade_destino);
+                    cmd.Parameters.AddWithValue("@fator_conversao", fator_conversao);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("De/para realizado com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+            }
+        }
+
         public static void AtribuirCategoriaForne(int id_fornecedor, int id_categoria)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))

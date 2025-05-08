@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogiStockMain));
             panelMenu = new Panel();
+            btnCadastroMerc = new Button();
             btnCadastroForn = new Button();
             btnFuncionario = new Button();
             btnCadastrarMerc = new Button();
@@ -42,6 +43,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.Controls.Add(btnCadastroMerc);
             panelMenu.Controls.Add(btnCadastroForn);
             panelMenu.Controls.Add(btnFuncionario);
             panelMenu.Controls.Add(btnCadastrarMerc);
@@ -52,6 +54,25 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(200, 978);
             panelMenu.TabIndex = 0;
+            // 
+            // btnCadastroMerc
+            // 
+            btnCadastroMerc.Dock = DockStyle.Top;
+            btnCadastroMerc.FlatAppearance.BorderSize = 0;
+            btnCadastroMerc.FlatStyle = FlatStyle.Flat;
+            btnCadastroMerc.ForeColor = Color.Gainsboro;
+            btnCadastroMerc.Image = Properties.Resources.acess;
+            btnCadastroMerc.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCadastroMerc.Location = new Point(0, 320);
+            btnCadastroMerc.Name = "btnCadastroMerc";
+            btnCadastroMerc.Padding = new Padding(20, 0, 0, 0);
+            btnCadastroMerc.Size = new Size(200, 60);
+            btnCadastroMerc.TabIndex = 7;
+            btnCadastroMerc.Text = "   Cadastro Mercadoria";
+            btnCadastroMerc.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCadastroMerc.UseVisualStyleBackColor = true;
+            btnCadastroMerc.Visible = false;
+            btnCadastroMerc.Click += btnCadastroMerc_Click;
             // 
             // btnCadastroForn
             // 
@@ -105,7 +126,7 @@
             btnCadastrarMerc.Padding = new Padding(20, 0, 0, 0);
             btnCadastrarMerc.Size = new Size(200, 60);
             btnCadastrarMerc.TabIndex = 2;
-            btnCadastrarMerc.Text = "   Cadastrar Mercadoria";
+            btnCadastrarMerc.Text = "   Listar Mercadoria";
             btnCadastrarMerc.TextAlign = ContentAlignment.MiddleLeft;
             btnCadastrarMerc.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCadastrarMerc.UseVisualStyleBackColor = true;
@@ -175,5 +196,6 @@
         private Button btnCadastrarMerc;
         private Panel panelDesktop;
         private Button btnCadastroForn;
+        private Button btnCadastroMerc;
     }
 }

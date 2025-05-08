@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroMerc));
             textBox3 = new TextBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            cmbProduto = new ComboBox();
+            cmbUnidadeOrigem = new ComboBox();
+            cmbUnidadeDestino = new ComboBox();
             btnRelacionar = new Button();
             btnVoltar = new Button();
             SuspendLayout();
@@ -47,35 +47,35 @@
             textBox3.Size = new Size(357, 36);
             textBox3.TabIndex = 2;
             // 
-            // comboBox1
+            // cmbProduto
             // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Segoe UI", 20F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(1198, 328);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(357, 45);
-            comboBox1.TabIndex = 3;
+            cmbProduto.FlatStyle = FlatStyle.Flat;
+            cmbProduto.Font = new Font("Segoe UI", 20F);
+            cmbProduto.FormattingEnabled = true;
+            cmbProduto.Location = new Point(1198, 328);
+            cmbProduto.Name = "cmbProduto";
+            cmbProduto.Size = new Size(357, 45);
+            cmbProduto.TabIndex = 3;
             // 
-            // comboBox2
+            // cmbUnidadeOrigem
             // 
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.Font = new Font("Segoe UI", 20F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(1198, 451);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(357, 45);
-            comboBox2.TabIndex = 4;
+            cmbUnidadeOrigem.FlatStyle = FlatStyle.Flat;
+            cmbUnidadeOrigem.Font = new Font("Segoe UI", 20F);
+            cmbUnidadeOrigem.FormattingEnabled = true;
+            cmbUnidadeOrigem.Location = new Point(1198, 451);
+            cmbUnidadeOrigem.Name = "cmbUnidadeOrigem";
+            cmbUnidadeOrigem.Size = new Size(357, 45);
+            cmbUnidadeOrigem.TabIndex = 4;
             // 
-            // comboBox3
+            // cmbUnidadeDestino
             // 
-            comboBox3.FlatStyle = FlatStyle.Flat;
-            comboBox3.Font = new Font("Segoe UI", 20F);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(1198, 576);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(357, 45);
-            comboBox3.TabIndex = 5;
+            cmbUnidadeDestino.FlatStyle = FlatStyle.Flat;
+            cmbUnidadeDestino.Font = new Font("Segoe UI", 20F);
+            cmbUnidadeDestino.FormattingEnabled = true;
+            cmbUnidadeDestino.Location = new Point(1198, 576);
+            cmbUnidadeDestino.Name = "cmbUnidadeDestino";
+            cmbUnidadeDestino.Size = new Size(357, 45);
+            cmbUnidadeDestino.TabIndex = 5;
             // 
             // btnRelacionar
             // 
@@ -92,6 +92,7 @@
             btnRelacionar.TabIndex = 6;
             btnRelacionar.Text = "Relacionar";
             btnRelacionar.UseVisualStyleBackColor = false;
+            btnRelacionar.Click += btnRelacionar_Click;
             // 
             // btnVoltar
             // 
@@ -117,9 +118,9 @@
             ClientSize = new Size(1704, 978);
             Controls.Add(btnVoltar);
             Controls.Add(btnRelacionar);
-            Controls.Add(comboBox3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbUnidadeDestino);
+            Controls.Add(cmbUnidadeOrigem);
+            Controls.Add(cmbProduto);
             Controls.Add(textBox3);
             Name = "FormCadastroMerc";
             Text = "FormCadastroMerc";
@@ -130,9 +131,9 @@
         #endregion
 
         private TextBox textBox3;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox cmbProduto;
+        private ComboBox cmbUnidadeOrigem;
+        private ComboBox cmbUnidadeDestino;
         private Button btnRelacionar;
         private Button btnVoltar;
     }
