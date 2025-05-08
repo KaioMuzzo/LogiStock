@@ -18,8 +18,7 @@
 --
 -- Table structure for table `categorias`
 --
-create database logiStock;
-use logiStock;
+
 DROP TABLE IF EXISTS `categorias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -29,7 +28,7 @@ CREATE TABLE `categorias` (
   `descricao` text,
   `data_cadastro` date DEFAULT (curdate()),
   PRIMARY KEY (`id_categoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,8 +37,38 @@ CREATE TABLE `categorias` (
 
 LOCK TABLES `categorias` WRITE;
 /*!40000 ALTER TABLE `categorias` DISABLE KEYS */;
-INSERT INTO `categorias` VALUES (1,'Alimentos','Categoria de produtos alimentícios, como grãos, carnes, bebidas e derivados.','2025-04-10'),(2,'Tecnologia','Produtos de tecnologia, incluindo computadores, eletrônicos e acessórios.','2025-04-05'),(3,'Bebidas','Categoria de bebidas, incluindo refrigerantes, sucos, cervejas e destilados.','2025-04-08'),(4,'Produtos Orgânicos','Produtos cultivados sem agrotóxicos e fertilizantes químicos, como frutas e verduras.','2025-03-20'),(5,'LED','Categoria para produtos com tecnologia de iluminação LED.','2025-05-05');
+INSERT INTO `categorias` VALUES (1,'Alimentos','Produtos alimentícios','2025-05-07'),(2,'Bebidas','Líquidos para consumo','2025-05-07'),(3,'Limpeza','Produtos de limpeza','2025-05-07'),(4,'Higiene','Higiene pessoal','2025-05-07'),(5,'Pet','Produtos para animais','2025-05-07'),(6,'Papelaria','Material de escritório','2025-05-07'),(7,'Eletrônicos','Aparelhos eletrônicos','2025-05-07'),(8,'Roupas','Vestuário em geral','2025-05-07'),(9,'Ferramentas','Itens de manutenção','2025-05-07'),(10,'Brinquedos','Itens infantis','2025-05-07');
 /*!40000 ALTER TABLE `categorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `depara_unidades`
+--
+
+DROP TABLE IF EXISTS `depara_unidades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `depara_unidades` (
+  `id_depara` int NOT NULL AUTO_INCREMENT,
+  `id_unidade_origem` int NOT NULL,
+  `id_unidade_destino` int NOT NULL,
+  `fator_conversao` decimal(10,4) NOT NULL,
+  PRIMARY KEY (`id_depara`),
+  KEY `id_unidade_origem` (`id_unidade_origem`),
+  KEY `id_unidade_destino` (`id_unidade_destino`),
+  CONSTRAINT `depara_unidades_ibfk_1` FOREIGN KEY (`id_unidade_origem`) REFERENCES `unidades` (`id_unidade`),
+  CONSTRAINT `depara_unidades_ibfk_2` FOREIGN KEY (`id_unidade_destino`) REFERENCES `unidades` (`id_unidade`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `depara_unidades`
+--
+
+LOCK TABLES `depara_unidades` WRITE;
+/*!40000 ALTER TABLE `depara_unidades` DISABLE KEYS */;
+INSERT INTO `depara_unidades` VALUES (1,5,1,10.0000),(2,2,1,12.0000),(3,6,1,12.0000),(4,10,1,24.0000),(5,3,1,1.0000),(6,4,1,1.0000),(7,7,1,1.0000),(8,8,1,1.0000),(9,9,1,20.0000),(10,2,5,1.2000);
+/*!40000 ALTER TABLE `depara_unidades` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -97,7 +126,6 @@ CREATE TABLE `fornecedores_categorias` (
 
 LOCK TABLES `fornecedores_categorias` WRITE;
 /*!40000 ALTER TABLE `fornecedores_categorias` DISABLE KEYS */;
-INSERT INTO `fornecedores_categorias` VALUES (1,1),(2,2),(1,3),(3,3),(4,4);
 /*!40000 ALTER TABLE `fornecedores_categorias` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -116,6 +144,8 @@ CREATE TABLE `mercadorias` (
   `id_fornecedor` int DEFAULT NULL,
   `custo_produto` decimal(10,2) DEFAULT NULL,
   `valor_venda` decimal(10,2) DEFAULT NULL,
+  `quantidade` int DEFAULT '0',
+  `id_unidade` int DEFAULT NULL,
   `data_cadastro` date DEFAULT NULL,
   `status_produto` tinyint(1) DEFAULT NULL,
   `codigo_barras` bigint DEFAULT NULL,
@@ -123,9 +153,11 @@ CREATE TABLE `mercadorias` (
   PRIMARY KEY (`id_produto`),
   KEY `id_categoria` (`id_categoria`),
   KEY `id_fornecedor` (`id_fornecedor`),
+  KEY `fk_unidade_mercadoria` (`id_unidade`),
+  CONSTRAINT `fk_unidade_mercadoria` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`id_unidade`),
   CONSTRAINT `mercadorias_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`),
   CONSTRAINT `mercadorias_ibfk_2` FOREIGN KEY (`id_fornecedor`) REFERENCES `fornecedores` (`id_fornecedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -134,8 +166,68 @@ CREATE TABLE `mercadorias` (
 
 LOCK TABLES `mercadorias` WRITE;
 /*!40000 ALTER TABLE `mercadorias` DISABLE KEYS */;
-INSERT INTO `mercadorias` VALUES (1,'Arroz Integral','Arroz integral de 5kg, embalagem ecológica.',1,1,15.50,25.90,'2025-04-01',1,7891234567890,'2026-04-01'),(2,'Macarrão Integral','Macarrão integral tipo penne, 500g.',1,1,6.20,12.50,'2025-04-02',1,7891234567891,'2026-04-02'),(3,'Cerveja Premium','Cerveja artesanal de 350ml, sabor encorpado.',3,3,3.80,9.90,'2025-04-03',1,7891234567892,'2025-12-31'),(4,'Suco de Laranja Natural','Suco 100% natural, sem adição de açúcar, 1L.',3,1,4.50,8.90,'2025-04-04',1,7891234567893,'2025-06-30'),(5,'Teclado Mecânico','Teclado mecânico com switches azuis, retroiluminado.',2,2,150.00,299.90,'2025-04-05',1,7891234567894,NULL),(6,'Mouse Gamer','Mouse gamer com DPI ajustável, até 3200 DPI.',2,2,80.00,159.90,'2025-04-06',1,7891234567895,NULL),(7,'Smartphone Android','Smartphone com 64GB de armazenamento, tela de 6.2 polegadas.',2,2,700.00,1399.90,'2025-04-07',1,7891234567896,NULL),(8,'Caderno Universitário','Caderno espiral com 200 folhas, capa dura.',1,1,8.00,15.00,'2025-04-08',1,7891234567897,'2026-04-08'),(9,'Água Mineral','Água mineral sem gás, garrafa de 500ml.',3,3,1.50,3.00,'2025-04-09',1,7891234567898,'2026-04-09'),(10,'Chocolate Meio Amargo','Chocolate meio amargo 70% cacau, 100g.',1,1,5.50,12.00,'2025-04-10',1,7891234567899,'2026-04-10'),(11,'Macarrão Espaguete','Macarrão espaguete, 500g, embalagem prática.',1,1,4.50,9.00,'2025-04-11',1,7891234567900,'2026-04-11'),(12,'Iogurte Natural','Iogurte natural 400g, sem conservantes.',1,1,3.00,6.00,'2025-04-12',1,7891234567901,'2025-07-01'),(13,'Notebook Gamer','Notebook com processador Intel i7 e 16GB de RAM, 512GB SSD.',2,2,3000.00,5999.90,'2025-04-13',1,7891234567902,NULL),(14,'Fone de Ouvido Bluetooth','Fone de ouvido sem fio, até 12 horas de autonomia.',2,2,50.00,129.90,'2025-04-14',1,7891234567903,NULL),(15,'Cerveja Pilsen','Cerveja Pilsen, lata de 350ml.',3,3,2.80,5.90,'2025-04-15',1,7891234567904,'2025-12-31'),(16,'Fralda Descartável','Fralda descartável tamanho G, pacote com 20 unidades.',1,1,20.00,39.90,'2025-04-16',1,7891234567905,'2026-04-16'),(17,'Biscoito de Polvilho','Biscoito de polvilho 200g, sem glúten.',1,1,4.00,9.90,'2025-04-17',1,7891234567906,'2026-04-17'),(18,'Cafeteira Elétrica','Cafeteira elétrica com capacidade para 12 xícaras.',2,2,100.00,229.90,'2025-04-18',1,7891234567907,NULL),(19,'Celular Xiaomi','Celular Xiaomi com 128GB de armazenamento, tela AMOLED.',2,2,600.00,1299.00,'2025-04-19',1,7891234567908,NULL),(20,'Carne Bovina Congelada','Carne bovina congelada, corte de picanha, 1kg.',1,3,22.00,45.00,'2025-04-20',1,7891234567909,'2025-10-20'),(21,'Fruta Orgânica','Maçã orgânica, pacote com 5 unidades.',4,4,8.00,20.00,'2025-04-21',1,7891234567910,'2025-12-31');
+INSERT INTO `mercadorias` VALUES (42,'Arroz Branco Tipo 1','Pacote de 5kg de arroz branco',1,1,15.50,22.90,100,5,'2025-05-01',1,7891234567890,'2026-05-01'),(43,'Feijão Carioca','Feijão tipo 1, pacote de 1kg',1,2,7.20,10.90,200,1,'2025-05-01',1,7891234567891,'2026-01-01'),(44,'Óleo de Soja','Garrafa de 900ml',2,1,4.80,7.50,150,4,'2025-05-01',1,7891234567892,'2026-03-15'),(45,'Macarrão Espaguete','Pacote de 500g',1,1,3.50,5.90,180,5,'2025-05-01',1,7891234567893,'2025-12-01'),(46,'Açúcar Refinado','Pacote de 1kg de açúcar',1,1,3.00,4.70,220,1,'2025-05-01',1,7891234567894,'2026-02-28'),(47,'Café Torrado e Moído','Pacote de 500g',1,1,8.40,12.90,130,5,'2025-05-01',1,7891234567895,'2025-10-01'),(48,'Leite UHT Integral','Caixa de 1 litro',2,1,3.90,6.20,160,4,'2025-05-01',1,7891234567896,'2025-09-15'),(49,'Farinha de Trigo','Pacote de 1kg',1,1,2.90,4.50,190,1,'2025-05-01',1,7891234567897,'2026-01-15'),(50,'Sabão em Pó','Pacote de 800g',3,5,6.00,9.80,140,5,'2025-05-01',1,7891234567898,'2026-06-01'),(51,'Detergente Líquido','Frasco de 500ml',3,5,1.50,2.70,300,4,'2025-05-01',1,7891234567899,'2025-11-01');
 /*!40000 ALTER TABLE `mercadorias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedidos`
+--
+
+DROP TABLE IF EXISTS `pedidos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos` (
+  `id_pedido` int NOT NULL AUTO_INCREMENT,
+  `id_produto` int NOT NULL,
+  `id_unidade` int NOT NULL,
+  `quantidade` decimal(10,2) NOT NULL,
+  `matricula` int NOT NULL,
+  `data_pedido` datetime DEFAULT CURRENT_TIMESTAMP,
+  `tipo_movimentacao` enum('entrada','saida') NOT NULL DEFAULT 'entrada',
+  PRIMARY KEY (`id_pedido`),
+  KEY `id_produto` (`id_produto`),
+  KEY `id_unidade` (`id_unidade`),
+  KEY `matricula` (`matricula`),
+  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `mercadorias` (`id_produto`),
+  CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`id_unidade`),
+  CONSTRAINT `pedidos_ibfk_3` FOREIGN KEY (`matricula`) REFERENCES `usuarios` (`matricula`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedidos`
+--
+
+LOCK TABLES `pedidos` WRITE;
+/*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `unidades`
+--
+
+DROP TABLE IF EXISTS `unidades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `unidades` (
+  `id_unidade` int NOT NULL AUTO_INCREMENT,
+  `sigla` varchar(10) NOT NULL,
+  `descricao` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_unidade`),
+  UNIQUE KEY `sigla` (`sigla`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `unidades`
+--
+
+LOCK TABLES `unidades` WRITE;
+/*!40000 ALTER TABLE `unidades` DISABLE KEYS */;
+INSERT INTO `unidades` VALUES (1,'UN','Unidade'),(2,'CX','Caixa'),(3,'KG','Quilo'),(4,'L','Litro'),(5,'PAC','Pacote'),(6,'DZ','Dúzia'),(7,'MT','Metro'),(8,'LT','Litro'),(9,'SC','Saco'),(10,'FD','Fardo');
+/*!40000 ALTER TABLE `unidades` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -163,7 +255,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1511007,'Kaio Ryan Muzzo','kaiormuzzo','fc247bef18995df81a1957b31e1410cdd691a359f00fa78209be4ad1c6bb6ff0','11985982268','kaio.rmdourado@gmail.com',0),(1511008,'Igor Pinheiro','IgorPinho','c02fdeab17b53d4260c2fec1442004b9d4715ce75c01afdc70f5fb1cb2534daa','11985982267','pinheirinho@logistock.com',0);
+INSERT INTO `usuarios` VALUES (1511006,'admin','admin','8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918','11985982264','admin',0),(1511007,'Kaio Ryan Muzzo','kaiormuzzo','fc247bef18995df81a1957b31e1410cdd691a359f00fa78209be4ad1c6bb6ff0','11985982268','kaio.rmdourado@gmail.com',0),(1511008,'Igor Pinheiro','IgorPinho','c02fdeab17b53d4260c2fec1442004b9d4715ce75c01afdc70f5fb1cb2534daa','11985982267','pinheirinho@logistock.com',0);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -176,4 +268,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-05 22:39:37
+-- Dump completed on 2025-05-07 22:14:35
