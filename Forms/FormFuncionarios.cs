@@ -20,7 +20,7 @@
 
         private void Cadastrar_Click(object sender, EventArgs e)
         {
-            logiStockMain.OpenChildForm(new Forms.formRegister());
+            logiStockMain.OpenChildForm(new Forms.formRegister(logiStockMain));
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -54,7 +54,9 @@
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
-                // falta essa parte aqui
+                int matricula = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["matricula"].Value);
+                bdLogistock.DeletarFuncionario(matricula);
+                bdLogistock.ListarFuncionarios(dataGridView1);
             }
             else
             {

@@ -2,10 +2,12 @@
 {
     public partial class formRegister : Form
     {
+        private LogiStockMain logiStockMain;
         bdLogistock bd = new bdLogistock();
-        public formRegister()
+        public formRegister(LogiStockMain logiStockMain)
         {
             InitializeComponent();
+            this.logiStockMain = logiStockMain;
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)

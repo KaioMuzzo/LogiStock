@@ -209,6 +209,26 @@ namespace LogiStock
             }
         }
 
+        public static void DeletarFuncionario(int matricula)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "DELETE FROM usuarios WHERE matricula = @matricula";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@matricula", matricula);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Funcionário apagado com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possivel apagar o funcionário");
+                }
+            }
+        }
+
         public static void ListaCategorias(ComboBox cmb)
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
@@ -232,7 +252,6 @@ namespace LogiStock
                 }
             }
         }
-
 
         public static void AtribuirCategoriaForne(int id_fornecedor, int id_categoria)
         {
