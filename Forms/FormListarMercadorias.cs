@@ -11,13 +11,18 @@ using System.Windows.Forms;
 
 namespace LogiStock.Forms
 {
-    public partial class FormListarMercadorias: Form
+    public partial class FormListarMercadorias : Form
     {
         bdLogistock bd = new bdLogistock();
         public FormListarMercadorias()
         {
             InitializeComponent();
             bdLogistock.ListarMercadorias(dtGridMerc);
+        }
+
+        private void FormListarMercadorias_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

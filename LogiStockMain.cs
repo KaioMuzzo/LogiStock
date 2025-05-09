@@ -6,7 +6,8 @@ namespace LogiStock
         public LogiStockMain()
         {
             InitializeComponent();
-            OpenChildForm(new Forms.FormLogin(this));
+            // OpenChildForm(new Forms.FormLogin(this));
+            OpenChildForm(new FormSaida());
         }
 
         public void OpenChildForm(Form childForm)
