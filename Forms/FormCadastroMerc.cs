@@ -18,6 +18,8 @@ namespace LogiStock.Forms
             bdLogistock.ListaProdutos(cmbProduto);
             bdLogistock.ListaUnidades(cmbUnidadeDestino);
             bdLogistock.ListaUnidades(cmbUnidadeOrigem);
+            bdLogistock.ListaCategorias(comboBox4);
+            bdLogistock.ListaFornecedores(comboBox5);
         }
 
         private void btnRelacionar_Click(object sender, EventArgs e)
@@ -29,5 +31,6 @@ namespace LogiStock.Forms
 
             bdLogistock.relacionarUnidade(Convert.ToInt32(cmbProduto.SelectedValue), Convert.ToInt32(cmbProduto.SelectedValue), Convert.ToInt32(cmbProduto.SelectedValue), Convert.ToDecimal(cmbProduto.SelectedValue));
         }
+
     }
 }
