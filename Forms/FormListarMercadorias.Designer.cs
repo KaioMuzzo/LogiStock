@@ -51,6 +51,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(dtGridMerc);
             Name = "FormListarMercadorias";
+            Load += FormListarMercadorias_Load;
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).EndInit();
             ResumeLayout(false);
         }
