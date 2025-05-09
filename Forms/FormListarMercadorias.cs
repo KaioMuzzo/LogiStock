@@ -11,13 +11,33 @@ using System.Windows.Forms;
 
 namespace LogiStock.Forms
 {
-    public partial class FormListarMercadorias: Form
+    public partial class FormListarMercadorias : Form
     {
         bdLogistock bd = new bdLogistock();
         public FormListarMercadorias()
         {
             InitializeComponent();
             bdLogistock.ListarMercadorias(dtGridMerc);
+        }
+
+        private void FormListarMercadorias_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void dtGridMerc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var column = dtGridMerc.Columns[e.ColumnIndex];
+            if (column.ReadOnly)
+            {
+                MessageBox.Show("Essa campo não pode ser editado!");
+
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            bdLogistock.SalvarMercadorias();
         }
     }
 }

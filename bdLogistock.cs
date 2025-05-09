@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Linq.Expressions;
 using System.Security.Policy;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -45,13 +46,72 @@ namespace LogiStock
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 conn.Open();
-                string query = "SELECT * FROM mercadorias";
+                string query = "SELECT mercadorias.id_produto AS ID, " +
+            "mercadorias.nome_produto AS Produto, " +
+            "mercadorias.descricao_produto AS Descrição, " +
+            "categorias.tipo_categoria AS Categoria, " +
+            "fornecedores.nome AS Fornecedores, " +
+            "mercadorias.custo_produto AS `Custo Produto`, " +
+            "mercadorias.valor_venda AS `Valor Produto`, " +
+            "mercadorias.codigo_barras AS `Código Barra`, " +
+            "mercadorias.data_cadastro AS `Data Cadastro`, " +
+            "mercadorias.data_validade AS `Data Validade` " +
+            "FROM mercadorias " +
+            "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
+            "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor";
                 MySqlDataAdapter listMercadorias = new MySqlDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
                 listMercadorias.Fill(dataTable);
                 tblGrid.DataSource = dataTable;
+
+                tblGrid.ReadOnly = false;
+                tblGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                tblGrid.Columns["Código Barra"].ReadOnly = true;
+                tblGrid.Columns["ID"].Visible = false;
+
             }
         }
+
+        public static void SalvarMercadorias()
+        {
+            
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                        string updateQuery = "UPDATE mercadorias SET " +
+                            "nome_produto = @nome, descricao_produto = @descricao, " +
+                            "custo_produto = @custo, valor_venda = @valor, " +
+                            "codigo_barras = @codigo, data_cadastro = @cadastro, data_validade = @validade " +
+                            "WHERE id_produto = @id";
+
+                        using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@nome", row["Produto"]);
+                            cmd.Parameters.AddWithValue("@descricao", row["Descrição"]);
+                            cmd.Parameters.AddWithValue("@custo", row["Custo Produto"]);
+                            cmd.Parameters.AddWithValue("@valor", row["Valor Produto"]);
+                            cmd.Parameters.AddWithValue("@codigo", row["Código Barra"]);
+                            cmd.Parameters.AddWithValue("@cadastro", row["Data Cadastro"]);
+                            cmd.Parameters.AddWithValue("@validade", row["Data Validade"]);
+                            cmd.Parameters.AddWithValue("@id", row["ID"]);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                MessageBox.Show("Alterações salvas com sucesso!");
+                dataTable.AcceptChanges();
+
+            }
+
+
+        }
+
 
         public static void ListarFuncionarios(DataGridView tblGrid)
         {

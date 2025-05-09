@@ -138,6 +138,54 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtGridMerc.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnSalvar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>650, 72</value>
+  </data>
+  <data name="btnSalvar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnSalvar.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSalvar.Text" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="&gt;&gt;btnSalvar.Name" xml:space="preserve">
+    <value>btnSalvar</value>
+  </data>
+  <data name="&gt;&gt;btnSalvar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSalvar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSalvar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnExcluir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>784, 76</value>
+  </data>
+  <data name="btnExcluir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnExcluir.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnExcluir.Text" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="&gt;&gt;btnExcluir.Name" xml:space="preserve">
+    <value>btnExcluir</value>
+  </data>
+  <data name="&gt;&gt;btnExcluir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnExcluir.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnExcluir.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -149,7 +197,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABrgAAAP5CAIAAADCCLiHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAn3BJREFUeF7s3Qd0VGXCx+HPvq5uc5vbd8WCvevae68UQcHewK5r7ygqdteytrX3
+        vQAADr0BR/uQrQAAn3BJREFUeF7s3Qd0VGXCx+HPvq5uc5vbd8WCvevae68UQcHewK5r7ygqdteytrX3
         3nsXRUFEFBXBBgg2BGlSAinflblm45vMZFJm7k3u85zf2cM7mRmSkLDh7yTzf/+3xM6SJEmSJElqSfMv
         sdOU/ReNem/3XwcvUgv71yYr5963S6+4RfAitXLhWZIkSZIkSU3MUFi6DIXlKzxLkiRJkiSpiRkKS5eh
         sHyFZ0mSJEmSJDUxQ2HpMhSWr/AsSZIkSZKkJmYoLF2GwvIVniVJkiRJktTEDIWly1BYvsKzJEmSJEmS

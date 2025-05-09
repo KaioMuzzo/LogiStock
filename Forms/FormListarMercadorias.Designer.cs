@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarMercadorias));
             dtGridMerc = new DataGridView();
+            btnSalvar = new Button();
+            btnExcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).BeginInit();
             SuspendLayout();
             // 
@@ -44,13 +46,30 @@
             resources.ApplyResources(dtGridMerc, "dtGridMerc");
             dtGridMerc.Name = "dtGridMerc";
             dtGridMerc.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dtGridMerc.CellClick += dtGridMerc_CellClick;
+            // 
+            // btnSalvar
+            // 
+            resources.ApplyResources(btnSalvar, "btnSalvar");
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnExcluir
+            // 
+            resources.ApplyResources(btnExcluir, "btnExcluir");
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.UseVisualStyleBackColor = true;
             // 
             // FormListarMercadorias
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnExcluir);
+            Controls.Add(btnSalvar);
             Controls.Add(dtGridMerc);
             Name = "FormListarMercadorias";
+            MouseClick += FormListarMercadorias_MouseClick;
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).EndInit();
             ResumeLayout(false);
         }
@@ -58,5 +77,7 @@
         #endregion
 
         private DataGridView dtGridMerc;
+        private Button btnSalvar;
+        private Button btnExcluir;
     }
 }
