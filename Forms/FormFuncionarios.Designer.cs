@@ -44,9 +44,9 @@
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(141, 312);
+            dataGridView1.Location = new Point(134, 319);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1319, 446);
+            dataGridView1.Size = new Size(1325, 433);
             dataGridView1.TabIndex = 0;
             // 
             // Cadastrar
