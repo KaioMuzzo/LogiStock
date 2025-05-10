@@ -53,12 +53,15 @@ CREATE TABLE `depara_unidades` (
   `id_unidade_origem` int NOT NULL,
   `id_unidade_destino` int NOT NULL,
   `fator_conversao` decimal(10,4) NOT NULL,
+  `id_produto` int NOT NULL,
   PRIMARY KEY (`id_depara`),
   KEY `id_unidade_origem` (`id_unidade_origem`),
   KEY `id_unidade_destino` (`id_unidade_destino`),
+  KEY `fk_depara_produto` (`id_produto`),
   CONSTRAINT `depara_unidades_ibfk_1` FOREIGN KEY (`id_unidade_origem`) REFERENCES `unidades` (`id_unidade`),
-  CONSTRAINT `depara_unidades_ibfk_2` FOREIGN KEY (`id_unidade_destino`) REFERENCES `unidades` (`id_unidade`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `depara_unidades_ibfk_2` FOREIGN KEY (`id_unidade_destino`) REFERENCES `unidades` (`id_unidade`),
+  CONSTRAINT `fk_depara_produto` FOREIGN KEY (`id_produto`) REFERENCES `mercadorias` (`id_produto`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +70,7 @@ CREATE TABLE `depara_unidades` (
 
 LOCK TABLES `depara_unidades` WRITE;
 /*!40000 ALTER TABLE `depara_unidades` DISABLE KEYS */;
-INSERT INTO `depara_unidades` VALUES (1,5,1,10.0000),(2,2,1,12.0000),(3,6,1,12.0000),(4,10,1,24.0000),(5,3,1,1.0000),(6,4,1,1.0000),(7,7,1,1.0000),(8,8,1,1.0000),(9,9,1,20.0000),(10,2,5,1.2000);
+INSERT INTO `depara_unidades` VALUES (12,5,9,15.0000,43),(13,5,9,5.0000,42);
 /*!40000 ALTER TABLE `depara_unidades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +133,39 @@ LOCK TABLES `fornecedores_categorias` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `itens_pedido`
+--
+
+DROP TABLE IF EXISTS `itens_pedido`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `itens_pedido` (
+  `id_item` int NOT NULL AUTO_INCREMENT,
+  `id_pedido` int NOT NULL,
+  `id_produto` int NOT NULL,
+  `id_unidade` int NOT NULL,
+  `quantidade` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`id_item`),
+  KEY `id_pedido` (`id_pedido`),
+  KEY `id_produto` (`id_produto`),
+  KEY `id_unidade` (`id_unidade`),
+  CONSTRAINT `itens_pedido_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`) ON DELETE CASCADE,
+  CONSTRAINT `itens_pedido_ibfk_2` FOREIGN KEY (`id_produto`) REFERENCES `mercadorias` (`id_produto`),
+  CONSTRAINT `itens_pedido_ibfk_3` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`id_unidade`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `itens_pedido`
+--
+
+LOCK TABLES `itens_pedido` WRITE;
+/*!40000 ALTER TABLE `itens_pedido` DISABLE KEYS */;
+INSERT INTO `itens_pedido` VALUES (1,1,51,1,4.00),(2,1,50,1,3.00);
+/*!40000 ALTER TABLE `itens_pedido` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `mercadorias`
 --
 
@@ -179,20 +215,13 @@ DROP TABLE IF EXISTS `pedidos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pedidos` (
   `id_pedido` int NOT NULL AUTO_INCREMENT,
-  `id_produto` int NOT NULL,
-  `id_unidade` int NOT NULL,
-  `quantidade` decimal(10,2) NOT NULL,
   `matricula` int NOT NULL,
   `data_pedido` datetime DEFAULT CURRENT_TIMESTAMP,
   `tipo_movimentacao` enum('entrada','saida') NOT NULL DEFAULT 'entrada',
   PRIMARY KEY (`id_pedido`),
-  KEY `id_produto` (`id_produto`),
-  KEY `id_unidade` (`id_unidade`),
   KEY `matricula` (`matricula`),
-  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`id_produto`) REFERENCES `mercadorias` (`id_produto`),
-  CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`id_unidade`) REFERENCES `unidades` (`id_unidade`),
-  CONSTRAINT `pedidos_ibfk_3` FOREIGN KEY (`matricula`) REFERENCES `usuarios` (`matricula`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`matricula`) REFERENCES `usuarios` (`matricula`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,6 +230,7 @@ CREATE TABLE `pedidos` (
 
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
+INSERT INTO `pedidos` VALUES (1,1511007,'2025-05-09 20:26:11','saida');
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-07 22:14:35
+-- Dump completed on 2025-05-09 21:01:50
