@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogiStockMain));
             panelMenu = new Panel();
+            btnEntrada = new Button();
             btnSaida = new Button();
             btnCadastroMerc = new Button();
             btnCadastroForn = new Button();
@@ -44,6 +45,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.Controls.Add(btnEntrada);
             panelMenu.Controls.Add(btnSaida);
             panelMenu.Controls.Add(btnCadastroMerc);
             panelMenu.Controls.Add(btnCadastroForn);
@@ -56,6 +58,25 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(200, 978);
             panelMenu.TabIndex = 0;
+            // 
+            // btnEntrada
+            // 
+            btnEntrada.Dock = DockStyle.Top;
+            btnEntrada.FlatAppearance.BorderSize = 0;
+            btnEntrada.FlatStyle = FlatStyle.Flat;
+            btnEntrada.ForeColor = Color.Gainsboro;
+            btnEntrada.Image = Properties.Resources.acess;
+            btnEntrada.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEntrada.Location = new Point(0, 440);
+            btnEntrada.Name = "btnEntrada";
+            btnEntrada.Padding = new Padding(20, 0, 0, 0);
+            btnEntrada.Size = new Size(200, 60);
+            btnEntrada.TabIndex = 9;
+            btnEntrada.Text = "   Pedido Entrada";
+            btnEntrada.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEntrada.UseVisualStyleBackColor = true;
+            btnEntrada.Visible = false;
+            btnEntrada.Click += btnEntrada_Click_1;
             // 
             // btnSaida
             // 
@@ -219,5 +240,6 @@
         private Button btnCadastroForn;
         private Button btnCadastroMerc;
         private Button btnSaida;
+        private Button btnEntrada;
     }
 }
