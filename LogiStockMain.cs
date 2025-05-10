@@ -59,11 +59,18 @@ namespace LogiStock
             btnCadastroForn.Visible = true;
             btnCadastroMerc.Visible = true;
             btnSaida.Visible = true;
+            btnEntrada.Visible = true;
         }
 
         private void btnSaida_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormSaida());
+
+        }
+
+        private void btnEntrada_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormEntrada());
         }
     }
 }

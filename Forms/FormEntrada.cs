@@ -1,23 +1,23 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LogiStock
+namespace LogiStock.Forms
 {
-    public partial class FormSaida : Form
+    public partial class FormEntrada: Form
     {
-
-        public FormSaida()
+        public FormEntrada()
         {
             InitializeComponent();
             bdLogistock.ListaUnidades(cmbUnidade);
             bdLogistock.ListaProdutos(cmbProduto);
         }
-
-        private void FormSaida_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnInserir_Click(object sender, EventArgs e)
         {
             if (cmbProduto.SelectedItem != null && cmbUnidade.SelectedItem != null && nudQuantidade.Value >= 1)
@@ -42,7 +42,7 @@ namespace LogiStock
                     Quantidade = quantidade
                 };
 
-                listBox1.Items.Add(item);
+                listbox1.Items.Add(item);
             }
             else
             {
@@ -54,7 +54,7 @@ namespace LogiStock
         {
             List<ItemPedido> itens = new List<ItemPedido>();
 
-            foreach (var obj in listBox1.Items)
+            foreach (var obj in listbox1.Items)
             {
                 if (obj is ItemPedido item)
                 {
@@ -67,8 +67,8 @@ namespace LogiStock
                 string tipoMovimentacao = "saida";
                 bdLogistock.CriarPedido(itens, tipoMovimentacao);
 
-
-                listBox1.Items.Clear();
+                
+                listbox1.Items.Clear();
 
                 cmbProduto.SelectedIndex = -1;
                 cmbUnidade.SelectedIndex = -1;
@@ -81,7 +81,8 @@ namespace LogiStock
                 MessageBox.Show("Nenhum item na lista para criar o pedido.");
             }
 
-
+           
         }
+
     }
 }
