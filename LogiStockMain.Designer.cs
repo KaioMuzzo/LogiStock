@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogiStockMain));
             panelMenu = new Panel();
+            btnSaida = new Button();
             btnCadastroMerc = new Button();
             btnCadastroForn = new Button();
             btnFuncionario = new Button();
@@ -43,6 +44,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.Controls.Add(btnSaida);
             panelMenu.Controls.Add(btnCadastroMerc);
             panelMenu.Controls.Add(btnCadastroForn);
             panelMenu.Controls.Add(btnFuncionario);
@@ -54,6 +56,25 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(200, 978);
             panelMenu.TabIndex = 0;
+            // 
+            // btnSaida
+            // 
+            btnSaida.Dock = DockStyle.Top;
+            btnSaida.FlatAppearance.BorderSize = 0;
+            btnSaida.FlatStyle = FlatStyle.Flat;
+            btnSaida.ForeColor = Color.Gainsboro;
+            btnSaida.Image = Properties.Resources.acess;
+            btnSaida.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSaida.Location = new Point(0, 380);
+            btnSaida.Name = "btnSaida";
+            btnSaida.Padding = new Padding(20, 0, 0, 0);
+            btnSaida.Size = new Size(200, 60);
+            btnSaida.TabIndex = 8;
+            btnSaida.Text = "   Pedido Saida";
+            btnSaida.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSaida.UseVisualStyleBackColor = true;
+            btnSaida.Visible = false;
+            btnSaida.Click += btnSaida_Click;
             // 
             // btnCadastroMerc
             // 
@@ -197,5 +218,6 @@
         private Panel panelDesktop;
         private Button btnCadastroForn;
         private Button btnCadastroMerc;
+        private Button btnSaida;
     }
 }

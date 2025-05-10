@@ -6,8 +6,7 @@ namespace LogiStock
         public LogiStockMain()
         {
             InitializeComponent();
-            // OpenChildForm(new Forms.FormLogin(this));
-            OpenChildForm(new FormSaida());
+            OpenChildForm(new Forms.FormLogin(this));
         }
 
         public void OpenChildForm(Form childForm)
@@ -59,6 +58,12 @@ namespace LogiStock
             btnFuncionario.Visible = true;
             btnCadastroForn.Visible = true;
             btnCadastroMerc.Visible = true;
+            btnSaida.Visible = true;
+        }
+
+        private void btnSaida_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormSaida());
         }
     }
 }

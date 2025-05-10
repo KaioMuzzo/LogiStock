@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Linq.Expressions;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -8,7 +9,8 @@ namespace LogiStock
 {
     class bdLogistock
     {
-        static  string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
+        static string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
+        public static string matriculaUsuarioAtual;
 
         public void CadastrarFuncionario(string txtNome, string txtMatricula, string txtUsuario, string txtEmail, string txtTelefone, string txtSenha)
         {
@@ -121,6 +123,7 @@ namespace LogiStock
 
                 if (reader.Read())
                 {
+                    matriculaUsuarioAtual = reader["matricula"].ToString();
                     return true;
                 }
                 else
@@ -182,6 +185,50 @@ namespace LogiStock
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        public static void CriarPedido(List<ItemPedido> itens, string tipo_movimentacao)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+
+                using (MySqlTransaction transacao = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1. Cria o pedido e obtém o ID gerado
+                        string queryPedido = "INSERT INTO pedidos (matricula, data_pedido, tipo_movimentacao) VALUES (@matricula, NOW(), @tipo)";
+                        MySqlCommand cmdPedido = new MySqlCommand(queryPedido, conn, transacao);
+                        cmdPedido.Parameters.AddWithValue("@matricula", matriculaUsuarioAtual);
+                        cmdPedido.Parameters.AddWithValue("@tipo", tipo_movimentacao);
+                        cmdPedido.ExecuteNonQuery();
+
+                        long idPedido = cmdPedido.LastInsertedId;
+
+                        // 2. Insere os itens do pedido
+                        foreach (var item in itens)
+                        {
+                            string queryItem = @"INSERT INTO itens_pedido (id_pedido, id_produto, id_unidade, quantidade) 
+                                         VALUES (@id_pedido, @id_produto, @id_unidade, @quantidade)";
+                            MySqlCommand cmdItem = new MySqlCommand(queryItem, conn, transacao);
+                            cmdItem.Parameters.AddWithValue("@id_pedido", idPedido);
+                            cmdItem.Parameters.AddWithValue("@id_produto", item.idProduto);
+                            cmdItem.Parameters.AddWithValue("@id_unidade", item.idUnidade);
+                            cmdItem.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                            cmdItem.ExecuteNonQuery();
+                        }
+
+                        transacao.Commit();
+                        MessageBox.Show("Pedido criado com sucesso!");
+                    }
+                    catch (Exception ex)
+                    {
+                        transacao.Rollback();
+                        MessageBox.Show("Erro ao criar pedido: " + ex.Message);
+                    }
+                }
             }
         }
 
