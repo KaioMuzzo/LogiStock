@@ -47,6 +47,7 @@
             dtGridMerc.Name = "dtGridMerc";
             dtGridMerc.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dtGridMerc.CellClick += dtGridMerc_CellClick;
+            dtGridMerc.CellContentClick += dtGridMerc_CellContentClick;
             // 
             // btnSalvar
             // 
@@ -60,6 +61,7 @@
             resources.ApplyResources(btnExcluir, "btnExcluir");
             btnExcluir.Name = "btnExcluir";
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // FormListarMercadorias
             // 

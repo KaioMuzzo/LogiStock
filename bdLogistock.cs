@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.Common;
 using System.Linq.Expressions;
 using System.Security.Policy;
 using System.Windows.Forms;
@@ -7,6 +8,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace LogiStock
 {
+
     class bdLogistock
     {
         static  string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
@@ -46,46 +48,104 @@ namespace LogiStock
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 conn.Open();
+
+                // 1. Carregar mercadorias
                 string query = "SELECT mercadorias.id_produto AS ID, " +
-            "mercadorias.nome_produto AS Produto, " +
-            "mercadorias.descricao_produto AS Descrição, " +
-            "categorias.tipo_categoria AS Categoria, " +
-            "fornecedores.nome AS Fornecedores, " +
-            "mercadorias.custo_produto AS `Custo Produto`, " +
-            "mercadorias.valor_venda AS `Valor Produto`, " +
-            "mercadorias.codigo_barras AS `Código Barra`, " +
-            "mercadorias.data_cadastro AS `Data Cadastro`, " +
-            "mercadorias.data_validade AS `Data Validade` " +
-            "FROM mercadorias " +
-            "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
-            "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor";
+                               "mercadorias.nome_produto AS Produto, " +
+                               "mercadorias.descricao_produto AS Descrição, " +
+                               
+                               "mercadorias.id_categoria AS ID_Categoria, " +
+                               
+                               "mercadorias.custo_produto AS `Custo Produto`, " +
+                               "mercadorias.valor_venda AS `Valor Produto`, " +
+                               "mercadorias.id_fornecedor AS ID_Fornecedor, " +
+                               "mercadorias.codigo_barras AS `Código Barra`, " +
+                               "mercadorias.data_cadastro AS `Data Cadastro`, " +
+                               "mercadorias.data_validade AS `Data Validade` " +
+                               "FROM mercadorias " +
+                               "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
+                               "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor";
+
                 MySqlDataAdapter listMercadorias = new MySqlDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
                 listMercadorias.Fill(dataTable);
-                tblGrid.DataSource = dataTable;
 
+                // 2. Carregar categorias
+                DataTable categoriasTable = new DataTable();
+                string queryCategorias = "SELECT id_categoria, tipo_categoria FROM categorias";
+                new MySqlDataAdapter(queryCategorias, conn).Fill(categoriasTable);
+
+                // 3. Carregar fornecedores
+                DataTable fornecedoresTable = new DataTable();
+                string queryFornecedores = "SELECT id_fornecedor, nome FROM fornecedores";
+                new MySqlDataAdapter(queryFornecedores, conn).Fill(fornecedoresTable);
+
+                // 4. Configurar DataGridView
+                tblGrid.Columns.Clear();
+                tblGrid.DataSource = dataTable;
                 tblGrid.ReadOnly = false;
                 tblGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                tblGrid.Columns["Código Barra"].ReadOnly = true;
+
+                // 5. Adicionar ComboBox de Categoria
+                DataGridViewComboBoxColumn cmbCategoria = new DataGridViewComboBoxColumn
+                {
+                    HeaderText = "Categoria",
+                    DataPropertyName = "ID_Categoria",
+                    DataSource = categoriasTable,
+                    DisplayMember = "tipo_categoria",
+                    ValueMember = "id_categoria",
+                    FlatStyle = FlatStyle.Flat
+                };
+                tblGrid.Columns.Add(cmbCategoria);
+
+                // 6. Adicionar ComboBox de Fornecedor
+                DataGridViewComboBoxColumn cmbFornecedor = new DataGridViewComboBoxColumn
+                {
+                    HeaderText = "Fornecedor",
+                    DataPropertyName = "ID_Fornecedor",
+                    DataSource = fornecedoresTable,
+                    DisplayMember = "nome",
+                    ValueMember = "id_fornecedor",
+                    FlatStyle = FlatStyle.Flat
+                };
+                tblGrid.Columns.Add(cmbFornecedor);
+
+                // 7. Esconder colunas desnecessárias
                 tblGrid.Columns["ID"].Visible = false;
+                tblGrid.Columns["Código Barra"].ReadOnly = true;
+                tblGrid.Columns["ID_Fornecedor"].Visible = false;
+                tblGrid.Columns["ID_Categoria"].Visible = false;
 
             }
         }
 
-        public static void SalvarMercadorias()
+        public void SalvarMercadorias(DataTable dataTable)
         {
-            
+
+            if (dataTable == null || dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma mercadoria carregada para salvar.");
+                return;
+            }
+
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
+                conn.Open();
 
                 foreach (DataRow row in dataTable.Rows)
                 {
                     if (row.RowState == DataRowState.Modified)
                     {
                         string updateQuery = "UPDATE mercadorias SET " +
-                            "nome_produto = @nome, descricao_produto = @descricao, " +
-                            "custo_produto = @custo, valor_venda = @valor, " +
-                            "codigo_barras = @codigo, data_cadastro = @cadastro, data_validade = @validade " +
+                            "nome_produto = @nome, " +
+                            "descricao_produto = @descricao, " +
+                            "custo_produto = @custo, " +
+                            "valor_venda = @valor, " +
+                            "codigo_barras = @codigo, " +
+                            "data_cadastro = @cadastro, " +
+                            "data_validade = @validade, " +
+                            "id_fornecedor = @id_fornecedor, " +
+                            "id_categoria = @id_categoria " +
                             "WHERE id_produto = @id";
 
                         using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
@@ -95,8 +155,10 @@ namespace LogiStock
                             cmd.Parameters.AddWithValue("@custo", row["Custo Produto"]);
                             cmd.Parameters.AddWithValue("@valor", row["Valor Produto"]);
                             cmd.Parameters.AddWithValue("@codigo", row["Código Barra"]);
-                            cmd.Parameters.AddWithValue("@cadastro", row["Data Cadastro"]);
-                            cmd.Parameters.AddWithValue("@validade", row["Data Validade"]);
+                            cmd.Parameters.AddWithValue("@cadastro", Convert.ToDateTime(row["Data Cadastro"]));
+                            cmd.Parameters.AddWithValue("@validade", Convert.ToDateTime(row["Data Validade"]));
+                            cmd.Parameters.AddWithValue("@id_fornecedor", row["ID_Fornecedor"]);
+                            cmd.Parameters.AddWithValue("@id_categoria", row["ID_Categoria"]);
                             cmd.Parameters.AddWithValue("@id", row["ID"]);
 
                             cmd.ExecuteNonQuery();
@@ -106,7 +168,34 @@ namespace LogiStock
 
                 MessageBox.Show("Alterações salvas com sucesso!");
                 dataTable.AcceptChanges();
+            }
+        }
 
+
+        public void DeletarProdutos(DataGridView tblGrid)
+        {
+            if (tblGrid.SelectedRows.Count > 0)
+            {
+                var confirm = MessageBox.Show("Deseja realmente excluir o(s) produto(s)?", "Confirmação", MessageBoxButtons.YesNo);
+                if (confirm != DialogResult.Yes) return;
+
+                using (MySqlConnection conn = new MySqlConnection(conexao))
+                {
+                    foreach (DataGridViewRow row in tblGrid.SelectedRows)
+                    {
+                        int idProduto = Convert.ToInt32(row.Cells["id_produto"].Value);
+
+                        string deleteQuery = "DELETE FROM mercadorias WHERE id_produto = @id";
+
+                        using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", idProduto);
+                            cmd.ExecuteNonQuery();
+                        }
+                        tblGrid.Rows.Remove(row);
+                    }
+                }
+                MessageBox.Show("Produto(s) excluído(s) com sucesso!");
             }
 
 

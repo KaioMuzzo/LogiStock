@@ -18,6 +18,8 @@ namespace LogiStock.Forms
         {
             InitializeComponent();
             bdLogistock.ListarMercadorias(dtGridMerc);
+
+
         }
 
         private void FormListarMercadorias_MouseClick(object sender, MouseEventArgs e)
@@ -37,7 +39,26 @@ namespace LogiStock.Forms
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            bdLogistock.SalvarMercadorias();
+            bdLogistock bd = new bdLogistock();
+
+            if (dtGridMerc.DataSource != null && dtGridMerc.DataSource is DataTable dt)
+            {
+                bd.SalvarMercadorias(dt);
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma mercadoria carregada.");
+            }
+        }
+
+        private void dtGridMerc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
