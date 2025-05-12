@@ -60,8 +60,7 @@ namespace LogiStock
                                "mercadorias.valor_venda AS `Valor Produto`, " +
                                "mercadorias.id_fornecedor AS ID_Fornecedor, " +
                                "mercadorias.codigo_barras AS `Código Barra`, " +
-                               "mercadorias.data_cadastro AS `Data Cadastro`, " +
-                               "mercadorias.data_validade AS `Data Validade` " +
+                               "mercadorias.data_cadastro AS `Data Cadastro` " +
                                "FROM mercadorias " +
                                "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
                                "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor";
