@@ -108,6 +108,7 @@
             txtFiltro.Name = "txtFiltro";
             txtFiltro.Size = new Size(922, 36);
             txtFiltro.TabIndex = 4;
+            txtFiltro.TextChanged += txtFiltro_TextChanged;
             txtFiltro.KeyDown += txtFiltro_KeyDown;
             // 
             // cmbFiltro
@@ -119,6 +120,7 @@
             cmbFiltro.Name = "cmbFiltro";
             cmbFiltro.Size = new Size(278, 45);
             cmbFiltro.TabIndex = 5;
+            cmbFiltro.SelectedIndexChanged += cmbFiltro_SelectedIndexChanged;
             // 
             // FormFuncionarios
             // 

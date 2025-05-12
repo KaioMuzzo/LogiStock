@@ -35,6 +35,8 @@ namespace LogiStock.Forms
                 MessageBox.Show("Essa campo não pode ser editado!");
 
             }
+            
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -58,7 +60,9 @@ namespace LogiStock.Forms
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            
+            bdLogistock bd = new bdLogistock();
+            bd.DeletarMercadorias(dtGridMerc);
         }
+
     }
 }

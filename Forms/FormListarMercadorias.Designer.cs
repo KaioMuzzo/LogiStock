@@ -32,6 +32,7 @@
             dtGridMerc = new DataGridView();
             btnSalvar = new Button();
             btnExcluir = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).BeginInit();
             SuspendLayout();
             // 
@@ -42,6 +43,8 @@
             dtGridMerc.AllowUserToResizeColumns = false;
             dtGridMerc.AllowUserToResizeRows = false;
             dtGridMerc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtGridMerc.BackgroundColor = SystemColors.Window;
+            dtGridMerc.BorderStyle = BorderStyle.None;
             dtGridMerc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dtGridMerc, "dtGridMerc");
             dtGridMerc.Name = "dtGridMerc";
@@ -71,6 +74,7 @@
             Controls.Add(btnSalvar);
             Controls.Add(dtGridMerc);
             Name = "FormListarMercadorias";
+
             MouseClick += FormListarMercadorias_MouseClick;
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).EndInit();
             ResumeLayout(false);
@@ -81,5 +85,6 @@
         private DataGridView dtGridMerc;
         private Button btnSalvar;
         private Button btnExcluir;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

@@ -63,5 +63,15 @@
                 MessageBox.Show("Seleciona pelo menos 1 funcionário para editar a informação dele.");
             }
         }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

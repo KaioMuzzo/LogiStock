@@ -11,7 +11,7 @@ namespace LogiStock
 
     class bdLogistock
     {
-        static  string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
+        static  string conexao = "server=localhost; port=3306; user=root; password=106011; database=logistock";
 
         public void CadastrarFuncionario(string txtNome, string txtMatricula, string txtUsuario, string txtEmail, string txtTelefone, string txtSenha)
         {
@@ -49,13 +49,11 @@ namespace LogiStock
             {
                 conn.Open();
 
-                // 1. Carregar mercadorias
+                
                 string query = "SELECT mercadorias.id_produto AS ID, " +
                                "mercadorias.nome_produto AS Produto, " +
-                               "mercadorias.descricao_produto AS Descrição, " +
-                               
-                               "mercadorias.id_categoria AS ID_Categoria, " +
-                               
+                               "mercadorias.descricao_produto AS Descrição, " +                               
+                               "mercadorias.id_categoria AS ID_Categoria, " +                               
                                "mercadorias.custo_produto AS `Custo Produto`, " +
                                "mercadorias.valor_venda AS `Valor Produto`, " +
                                "mercadorias.id_fornecedor AS ID_Fornecedor, " +
@@ -70,23 +68,23 @@ namespace LogiStock
                 DataTable dataTable = new DataTable();
                 listMercadorias.Fill(dataTable);
 
-                // 2. Carregar categorias
+                
                 DataTable categoriasTable = new DataTable();
                 string queryCategorias = "SELECT id_categoria, tipo_categoria FROM categorias";
                 new MySqlDataAdapter(queryCategorias, conn).Fill(categoriasTable);
 
-                // 3. Carregar fornecedores
+                
                 DataTable fornecedoresTable = new DataTable();
                 string queryFornecedores = "SELECT id_fornecedor, nome FROM fornecedores";
                 new MySqlDataAdapter(queryFornecedores, conn).Fill(fornecedoresTable);
 
-                // 4. Configurar DataGridView
+                
                 tblGrid.Columns.Clear();
                 tblGrid.DataSource = dataTable;
                 tblGrid.ReadOnly = false;
                 tblGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
-                // 5. Adicionar ComboBox de Categoria
+                
                 DataGridViewComboBoxColumn cmbCategoria = new DataGridViewComboBoxColumn
                 {
                     HeaderText = "Categoria",
@@ -98,7 +96,7 @@ namespace LogiStock
                 };
                 tblGrid.Columns.Add(cmbCategoria);
 
-                // 6. Adicionar ComboBox de Fornecedor
+                
                 DataGridViewComboBoxColumn cmbFornecedor = new DataGridViewComboBoxColumn
                 {
                     HeaderText = "Fornecedor",
@@ -107,14 +105,20 @@ namespace LogiStock
                     DisplayMember = "nome",
                     ValueMember = "id_fornecedor",
                     FlatStyle = FlatStyle.Flat
+                    
                 };
                 tblGrid.Columns.Add(cmbFornecedor);
 
-                // 7. Esconder colunas desnecessárias
+                
                 tblGrid.Columns["ID"].Visible = false;
                 tblGrid.Columns["Código Barra"].ReadOnly = true;
                 tblGrid.Columns["ID_Fornecedor"].Visible = false;
                 tblGrid.Columns["ID_Categoria"].Visible = false;
+
+                foreach (DataGridViewColumn column in tblGrid.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
 
             }
         }
@@ -172,7 +176,7 @@ namespace LogiStock
         }
 
 
-        public void DeletarProdutos(DataGridView tblGrid)
+        public void DeletarMercadorias(DataGridView tblGrid)
         {
             if (tblGrid.SelectedRows.Count > 0)
             {
@@ -181,9 +185,10 @@ namespace LogiStock
 
                 using (MySqlConnection conn = new MySqlConnection(conexao))
                 {
+                    conn.Open();
                     foreach (DataGridViewRow row in tblGrid.SelectedRows)
                     {
-                        int idProduto = Convert.ToInt32(row.Cells["id_produto"].Value);
+                        int idProduto = Convert.ToInt32(row.Cells["ID"].Value);
 
                         string deleteQuery = "DELETE FROM mercadorias WHERE id_produto = @id";
 
