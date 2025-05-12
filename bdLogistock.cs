@@ -152,7 +152,6 @@ namespace LogiStock
                     cmd.Parameters.AddWithValue("@site", site);
                     cmd.Parameters.AddWithValue("@cnpj", cnpj);
                     cmd.Parameters.AddWithValue("@data_cadastro", dataSql);
-
                     cmd.ExecuteNonQuery();
                     return true;
                 }
@@ -241,6 +240,33 @@ namespace LogiStock
                     conn.Open();
                     string query = "SELECT id_fornecedor, nome FROM fornecedores";
                     MySqlDataAdapter listaFornecedores = new MySqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    listaFornecedores.Fill(dt);
+
+                    cmb.DataSource = dt;
+                    cmb.DisplayMember = "nome";
+                    cmb.ValueMember = "id_fornecedor";
+                    cmb.SelectedIndex = -1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao carregar a lista de fornecedores: " + ex.Message);
+                }
+            }
+        }
+
+        public static void ListaFornecedoresUnidades(ComboBox cmb, string id_categoria)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT f.id_fornecedor, f.nome FROM fornecedores_categorias fc INNER JOIN fornecedores f ON fc.id_fornecedor = f.id_fornecedor INNER JOIN categorias c ON fc.id_categoria = c.id_categoria WHERE c.id_categoria = @id_categoria";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+
+                    MySqlDataAdapter listaFornecedores = new MySqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     listaFornecedores.Fill(dt);
 
@@ -402,6 +428,37 @@ namespace LogiStock
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao inserir o de/para de fornecedor com categoria: " + ex.Message);
+                }
+            }
+        }
+
+        public static void CadastrarMercadoria(string nome, string descricao, int categoria, int fornecedor, decimal custo, decimal valorVenda, int quantidade, int unidade)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO mercadorias (nome_produto, descricao_produto, id_categoria, id_fornecedor, custo_produto, valor_venda, quantidade, id_unidade, data_cadastro, status_produto) VALUES (@nome, @descricao, @categoria, @fornecedor, @custo, @valorVenda, @quantidade, @unidade, NOW(), 1);";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@descricao", descricao);
+                        cmd.Parameters.AddWithValue("@categoria", categoria);
+                        cmd.Parameters.AddWithValue("@fornecedor", fornecedor);
+                        cmd.Parameters.AddWithValue("@custo", custo);
+                        cmd.Parameters.AddWithValue("@valorVenda", valorVenda);
+                        cmd.Parameters.AddWithValue("@quantidade", quantidade);
+                        cmd.Parameters.AddWithValue("@unidade", unidade);
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Mercadoria Cadastrada com sucesso!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
         }

@@ -33,6 +33,7 @@ namespace LogiStock.Forms
             if (bdLogistock.FazerLogin(usuario, senha))
             {
                 logiStockMain.UsuarioConectado();
+                logiStockMain.OpenChildForm(new Forms.FormListarMercadorias());
                 this.Close();
             }
             else

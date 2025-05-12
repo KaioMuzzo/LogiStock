@@ -40,6 +40,8 @@
             dtGridMerc.AllowUserToResizeColumns = false;
             dtGridMerc.AllowUserToResizeRows = false;
             dtGridMerc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtGridMerc.BackgroundColor = Color.White;
+            dtGridMerc.BorderStyle = BorderStyle.None;
             dtGridMerc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dtGridMerc, "dtGridMerc");
             dtGridMerc.Name = "dtGridMerc";
