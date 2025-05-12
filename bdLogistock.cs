@@ -439,7 +439,20 @@ namespace LogiStock
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO mercadorias (nome_produto, descricao_produto, id_categoria, id_fornecedor, custo_produto, valor_venda, quantidade, id_unidade, data_cadastro, status_produto) VALUES (@nome, @descricao, @categoria, @fornecedor, @custo, @valorVenda, @quantidade, @unidade, NOW(), 1);";
+
+                    string query = "SELECT MAX(codigo_barras) FROM mercadorias;";
+                    long codigoBarras = 7891234567900;
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        if (resultado != DBNull.Value)
+                        {
+                            codigoBarras = Convert.ToInt32(resultado) + 1;
+                        }
+                    }
+
+                    query = "INSERT INTO mercadorias (nome_produto, descricao_produto, id_categoria, id_fornecedor, custo_produto, valor_venda, quantidade, id_unidade, data_cadastro, status_produto, codigo_barras) VALUES (@nome, @descricao, @categoria, @fornecedor, @custo, @valorVenda, @quantidade, @unidade, NOW(), 1, @codigoBarras)";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -451,6 +464,7 @@ namespace LogiStock
                         cmd.Parameters.AddWithValue("@valorVenda", valorVenda);
                         cmd.Parameters.AddWithValue("@quantidade", quantidade);
                         cmd.Parameters.AddWithValue("@unidade", unidade);
+                        cmd.Parameters.AddWithValue("@codigoBarras", codigoBarras);
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Mercadoria Cadastrada com sucesso!");
