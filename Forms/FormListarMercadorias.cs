@@ -18,11 +18,51 @@ namespace LogiStock.Forms
         {
             InitializeComponent();
             bdLogistock.ListarMercadorias(dtGridMerc);
+
+
         }
 
-        private void FormListarMercadorias_Load(object sender, EventArgs e)
+        private void FormListarMercadorias_MouseClick(object sender, MouseEventArgs e)
         {
 
         }
+
+        private void dtGridMerc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var column = dtGridMerc.Columns[e.ColumnIndex];
+            if (column.ReadOnly)
+            {
+                MessageBox.Show("Essa campo não pode ser editado!");
+
+            }
+            
+
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            bdLogistock bd = new bdLogistock();
+
+            if (dtGridMerc.DataSource != null && dtGridMerc.DataSource is DataTable dt)
+            {
+                bd.SalvarMercadorias(dt);
+            }
+            else
+            {
+                MessageBox.Show("Nenhuma mercadoria carregada.");
+            }
+        }
+
+        private void dtGridMerc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            bdLogistock bd = new bdLogistock();
+            bd.DeletarMercadorias(dtGridMerc);
+        }
+
     }
 }

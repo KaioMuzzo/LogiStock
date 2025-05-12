@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListarMercadorias));
             dtGridMerc = new DataGridView();
+            btnSalvar = new Button();
+            btnExcluir = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).BeginInit();
             SuspendLayout();
             // 
@@ -40,20 +43,39 @@
             dtGridMerc.AllowUserToResizeColumns = false;
             dtGridMerc.AllowUserToResizeRows = false;
             dtGridMerc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtGridMerc.BackgroundColor = Color.White;
+            dtGridMerc.BackgroundColor = SystemColors.Window;
             dtGridMerc.BorderStyle = BorderStyle.None;
             dtGridMerc.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(dtGridMerc, "dtGridMerc");
             dtGridMerc.Name = "dtGridMerc";
             dtGridMerc.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dtGridMerc.CellClick += dtGridMerc_CellClick;
+            dtGridMerc.CellContentClick += dtGridMerc_CellContentClick;
+            // 
+            // btnSalvar
+            // 
+            resources.ApplyResources(btnSalvar, "btnSalvar");
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnExcluir
+            // 
+            resources.ApplyResources(btnExcluir, "btnExcluir");
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // FormListarMercadorias
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnExcluir);
+            Controls.Add(btnSalvar);
             Controls.Add(dtGridMerc);
             Name = "FormListarMercadorias";
-            Load += FormListarMercadorias_Load;
+
+            MouseClick += FormListarMercadorias_MouseClick;
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).EndInit();
             ResumeLayout(false);
         }
@@ -61,5 +83,8 @@
         #endregion
 
         private DataGridView dtGridMerc;
+        private Button btnSalvar;
+        private Button btnExcluir;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
