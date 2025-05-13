@@ -64,7 +64,7 @@ namespace LogiStock.Forms
 
             if (itens.Count > 0)
             {
-                string tipoMovimentacao = "saida";
+                string tipoMovimentacao = "entrada";
                 bdLogistock.CriarPedido(itens, tipoMovimentacao);
 
                 
@@ -73,8 +73,6 @@ namespace LogiStock.Forms
                 cmbProduto.SelectedIndex = -1;
                 cmbUnidade.SelectedIndex = -1;
                 nudQuantidade.Value = nudQuantidade.Minimum;
-
-                MessageBox.Show("Pedido concluído e itens apagados da lista.");
             }
             else
             {

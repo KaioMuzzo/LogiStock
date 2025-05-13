@@ -71,7 +71,7 @@
             btnEntrada.Name = "btnEntrada";
             btnEntrada.Padding = new Padding(20, 0, 0, 0);
             btnEntrada.Size = new Size(200, 60);
-            btnEntrada.TabIndex = 9;
+            btnEntrada.TabIndex = 7;
             btnEntrada.Text = "   Pedido Entrada";
             btnEntrada.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEntrada.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             btnSaida.Name = "btnSaida";
             btnSaida.Padding = new Padding(20, 0, 0, 0);
             btnSaida.Size = new Size(200, 60);
-            btnSaida.TabIndex = 8;
+            btnSaida.TabIndex = 6;
             btnSaida.Text = "   Pedido Saida";
             btnSaida.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSaida.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             btnCadastroMerc.Name = "btnCadastroMerc";
             btnCadastroMerc.Padding = new Padding(20, 0, 0, 0);
             btnCadastroMerc.Size = new Size(200, 60);
-            btnCadastroMerc.TabIndex = 7;
+            btnCadastroMerc.TabIndex = 5;
             btnCadastroMerc.Text = "   Cadastro Mercadoria";
             btnCadastroMerc.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCadastroMerc.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             btnCadastroForn.Name = "btnCadastroForn";
             btnCadastroForn.Padding = new Padding(20, 0, 0, 0);
             btnCadastroForn.Size = new Size(200, 60);
-            btnCadastroForn.TabIndex = 6;
+            btnCadastroForn.TabIndex = 4;
             btnCadastroForn.Text = "   Cadastro Fornecedor";
             btnCadastroForn.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCadastroForn.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             btnCadastrarMerc.Padding = new Padding(20, 0, 0, 0);
             btnCadastrarMerc.Size = new Size(200, 60);
             btnCadastrarMerc.TabIndex = 2;
-            btnCadastrarMerc.Text = "   Listar Mercadoria";
+            btnCadastrarMerc.Text = "   Mercadorias";
             btnCadastrarMerc.TextAlign = ContentAlignment.MiddleLeft;
             btnCadastrarMerc.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCadastrarMerc.UseVisualStyleBackColor = true;

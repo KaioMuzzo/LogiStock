@@ -14,6 +14,7 @@ namespace LogiStock
     {
         static string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
         public static string matriculaUsuarioAtual;
+        public static int cargoUsuarioAtual;
 
         public void CadastrarFuncionario(string txtNome, string txtMatricula, string txtUsuario, string txtEmail, string txtTelefone, string txtSenha)
         {
@@ -22,7 +23,7 @@ namespace LogiStock
             string usuario = txtUsuario;
             string email = txtEmail;
             string telefone = txtTelefone;
-            int cargo = 0;
+            int cargo = 1;
             string senha = Criptografia.GerarHash(txtSenha);
 
             using (MySqlConnection conn = new MySqlConnection(conexao))
@@ -277,6 +278,7 @@ namespace LogiStock
                 if (reader.Read())
                 {
                     matriculaUsuarioAtual = reader["matricula"].ToString();
+                    cargoUsuarioAtual = Convert.ToInt16(reader["cargo"].ToString());
                     return true;
                 }
                 else
@@ -311,6 +313,7 @@ namespace LogiStock
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Erro: ", ex.Message);
                 return false;
             }
         }
@@ -336,6 +339,7 @@ namespace LogiStock
             } 
             catch (Exception ex)
             {
+                MessageBox.Show("Erro: " + ex.Message);
                 return false;
             }
         }
@@ -344,42 +348,46 @@ namespace LogiStock
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
-                conn.Open();
-
-                using (MySqlTransaction transacao = conn.BeginTransaction())
+                try
                 {
-                    try
+                    conn.Open();
+
+                    string queryPedido = "INSERT INTO pedidos (matricula, data_pedido, tipo_movimentacao) VALUES (@matricula, NOW(), @tipo)";
+                    MySqlCommand cmdPedido = new MySqlCommand(queryPedido, conn);
+                    cmdPedido.Parameters.AddWithValue("@matricula", matriculaUsuarioAtual);
+                    cmdPedido.Parameters.AddWithValue("@tipo", tipo_movimentacao);
+                    cmdPedido.ExecuteNonQuery();
+
+                    long idPedido = cmdPedido.LastInsertedId;
+
+                    foreach (var item in itens)
                     {
-                        // 1. Cria o pedido e obtém o ID gerado
-                        string queryPedido = "INSERT INTO pedidos (matricula, data_pedido, tipo_movimentacao) VALUES (@matricula, NOW(), @tipo)";
-                        MySqlCommand cmdPedido = new MySqlCommand(queryPedido, conn, transacao);
-                        cmdPedido.Parameters.AddWithValue("@matricula", matriculaUsuarioAtual);
-                        cmdPedido.Parameters.AddWithValue("@tipo", tipo_movimentacao);
-                        cmdPedido.ExecuteNonQuery();
+                        string queryItem = @"INSERT INTO itens_pedido (id_pedido, id_produto, id_unidade, quantidade) 
+                                     VALUES (@id_pedido, @id_produto, @id_unidade, @quantidade)";
+                        MySqlCommand cmdItem = new MySqlCommand(queryItem, conn);
+                        cmdItem.Parameters.AddWithValue("@id_pedido", idPedido);
+                        cmdItem.Parameters.AddWithValue("@id_produto", item.idProduto);
+                        cmdItem.Parameters.AddWithValue("@id_unidade", item.idUnidade);
+                        cmdItem.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                        cmdItem.ExecuteNonQuery();
 
-                        long idPedido = cmdPedido.LastInsertedId;
-
-                        // 2. Insere os itens do pedido
-                        foreach (var item in itens)
+                        string queryUpdate = "UPDATE mercadorias SET quantidade = quantidade + @quantidade WHERE id_produto = @id_produto";
+                        if (tipo_movimentacao == "saida")
                         {
-                            string queryItem = @"INSERT INTO itens_pedido (id_pedido, id_produto, id_unidade, quantidade) 
-                                         VALUES (@id_pedido, @id_produto, @id_unidade, @quantidade)";
-                            MySqlCommand cmdItem = new MySqlCommand(queryItem, conn, transacao);
-                            cmdItem.Parameters.AddWithValue("@id_pedido", idPedido);
-                            cmdItem.Parameters.AddWithValue("@id_produto", item.idProduto);
-                            cmdItem.Parameters.AddWithValue("@id_unidade", item.idUnidade);
-                            cmdItem.Parameters.AddWithValue("@quantidade", item.Quantidade);
-                            cmdItem.ExecuteNonQuery();
+                            queryUpdate = "UPDATE mercadorias SET quantidade = quantidade - @quantidade WHERE id_produto = @id_produto";
                         }
 
-                        transacao.Commit();
-                        MessageBox.Show("Pedido criado com sucesso!");
+                        MySqlCommand cmdUpdate = new MySqlCommand(queryUpdate, conn);
+                        cmdUpdate.Parameters.AddWithValue("@quantidade", item.Quantidade);
+                        cmdUpdate.Parameters.AddWithValue("@id_produto", item.idProduto);
+                        cmdUpdate.ExecuteNonQuery();
                     }
-                    catch (Exception ex)
-                    {
-                        transacao.Rollback();
-                        MessageBox.Show("Erro ao criar pedido: " + ex.Message);
-                    }
+
+                    MessageBox.Show("Pedido feito com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
         }
@@ -403,7 +411,7 @@ namespace LogiStock
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao carregar a lista de fornecedores: " + ex.Message);
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
         }
@@ -450,7 +458,7 @@ namespace LogiStock
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Não foi possivel apagar o funcionário");
+                    MessageBox.Show("Erro: " + ex.Message);
                 }
             }
         }
@@ -598,6 +606,7 @@ namespace LogiStock
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
+<<<<<<< HEAD
                         object resultado = cmd.ExecuteScalar();
                         if (resultado != DBNull.Value)
                         {
@@ -606,6 +615,16 @@ namespace LogiStock
                     }
 
                     query = "INSERT INTO mercadorias (nome_produto, descricao_produto, id_categoria, id_fornecedor, custo_produto, valor_venda, quantidade, id_unidade, data_cadastro, status_produto, codigo_barras) VALUES (@nome, @descricao, @categoria, @fornecedor, @custo, @valorVenda, @quantidade, @unidade, NOW(), 1, @codigoBarras)";
+=======
+                        object result = cmd.ExecuteScalar();
+                        if (result != DBNull.Value)
+                        {
+                            codigoBarras = Convert.ToInt64(result) + 1;
+                        }
+                    }
+
+                    query = "INSERT INTO mercadorias (nome_produto, descricao_produto, id_categoria, id_fornecedor, custo_produto, valor_venda, quantidade, id_unidade, data_cadastro, status_produto, codigo_barras) VALUES (@nome, @descricao, @categoria, @fornecedor, @custo, @valorVenda, @quantidade, @unidade, NOW(), 1, @codigoBarras);";
+>>>>>>> origin/Kaio
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {

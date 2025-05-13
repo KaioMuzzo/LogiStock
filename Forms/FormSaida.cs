@@ -73,8 +73,6 @@ namespace LogiStock
                 cmbProduto.SelectedIndex = -1;
                 cmbUnidade.SelectedIndex = -1;
                 nudQuantidade.Value = nudQuantidade.Minimum;
-
-                MessageBox.Show("Pedido concluído e itens apagados da lista.");
             }
             else
             {

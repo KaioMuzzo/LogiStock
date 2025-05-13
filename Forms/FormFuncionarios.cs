@@ -42,14 +42,6 @@
             }
         }
 
-        private void txtFiltro_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                bdLogistock.FuncionariosFiltro(dataGridView1, cmbFiltro, txtFiltro.Text);
-            }
-        }
-
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
@@ -64,6 +56,7 @@
             }
         }
 
+<<<<<<< HEAD
         private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
 
@@ -72,6 +65,11 @@
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+=======
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            bdLogistock.FuncionariosFiltro(dataGridView1, cmbFiltro, txtFiltro.Text);
+>>>>>>> origin/Kaio
         }
     }
 }

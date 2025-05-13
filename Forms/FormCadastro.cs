@@ -13,7 +13,7 @@
         private void btnCadastro_Click(object sender, EventArgs e)
         {
             bd.CadastrarFuncionario(txtNome.Text, txtMatricula.Text, txtUsuario.Text, txtEmail.Text, txtTelefone.Text, txtSenha.Text);
-            this.Close();
+            logiStockMain.OpenChildForm(new Forms.FormFuncionarios(logiStockMain));
         }
     }
 }

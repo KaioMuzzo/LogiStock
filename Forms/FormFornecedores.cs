@@ -130,5 +130,10 @@ namespace LogiStock.Forms
             int id_categoria = Convert.ToInt16(cmbCategoria.SelectedValue);
             bdLogistock.AtribuirCategoriaForne(id_fornecedor, id_categoria);
         }
+
+        private void FormFornecedores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

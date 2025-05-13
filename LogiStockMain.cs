@@ -3,6 +3,8 @@ namespace LogiStock
     public partial class LogiStockMain : Form
     {
         private Form activeForm;
+        private int cargo { get; set; }
+
         public LogiStockMain()
         {
             InitializeComponent();
@@ -55,11 +57,15 @@ namespace LogiStock
         {
             btnAcess.Visible = false;
             btnCadastrarMerc.Visible = true;
-            btnFuncionario.Visible = true;
             btnCadastroForn.Visible = true;
             btnCadastroMerc.Visible = true;
             btnSaida.Visible = true;
             btnEntrada.Visible = true;
+
+            if (bdLogistock.cargoUsuarioAtual == 2)
+            {
+                btnFuncionario.Visible = true;
+            }
         }
 
         private void btnSaida_Click(object sender, EventArgs e)

@@ -120,7 +120,8 @@
             // 
             // cmbFornecedor
             // 
-            cmbFornecedor.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbFornecedor.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbFornecedor.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbFornecedor.FlatStyle = FlatStyle.Flat;
             cmbFornecedor.Font = new Font("Segoe UI", 20F);
             cmbFornecedor.FormattingEnabled = true;
@@ -131,7 +132,7 @@
             // 
             // cmbCategoria
             // 
-            cmbCategoria.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbCategoria.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbCategoria.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbCategoria.FlatStyle = FlatStyle.Flat;
             cmbCategoria.Font = new Font("Segoe UI", 20F);
@@ -235,6 +236,7 @@
             Controls.Add(txtNomeFornecedor);
             Name = "FormFornecedores";
             Text = "FormFornecedores";
+            Load += FormFornecedores_Load;
             ResumeLayout(false);
             PerformLayout();
         }
