@@ -635,7 +635,6 @@ namespace LogiStock
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-<<<<<<< HEAD
                         object resultado = cmd.ExecuteScalar();
                         if (resultado != DBNull.Value)
                         {
@@ -644,16 +643,6 @@ namespace LogiStock
                     }
 
                     query = "INSERT INTO mercadorias (nome_produto, descricao_produto, id_categoria, id_fornecedor, custo_produto, valor_venda, quantidade, id_unidade, data_cadastro, status_produto, codigo_barras) VALUES (@nome, @descricao, @categoria, @fornecedor, @custo, @valorVenda, @quantidade, @unidade, NOW(), 1, @codigoBarras)";
-=======
-                        object result = cmd.ExecuteScalar();
-                        if (result != DBNull.Value)
-                        {
-                            codigoBarras = Convert.ToInt64(result) + 1;
-                        }
-                    }
-
-                    query = "INSERT INTO mercadorias (nome_produto, descricao_produto, id_categoria, id_fornecedor, custo_produto, valor_venda, quantidade, id_unidade, data_cadastro, status_produto, codigo_barras) VALUES (@nome, @descricao, @categoria, @fornecedor, @custo, @valorVenda, @quantidade, @unidade, NOW(), 1, @codigoBarras);";
->>>>>>> origin/Kaio
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {

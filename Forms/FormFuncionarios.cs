@@ -55,21 +55,9 @@
                 MessageBox.Show("Seleciona pelo menos 1 funcionário para editar a informação dele.");
             }
         }
-
-<<<<<<< HEAD
-        private void txtFiltro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-=======
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             bdLogistock.FuncionariosFiltro(dataGridView1, cmbFiltro, txtFiltro.Text);
->>>>>>> origin/Kaio
         }
     }
 }

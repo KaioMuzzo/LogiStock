@@ -109,11 +109,6 @@
             txtFiltro.Name = "txtFiltro";
             txtFiltro.Size = new Size(922, 36);
             txtFiltro.TabIndex = 4;
-<<<<<<< HEAD
-            txtFiltro.TextChanged += txtFiltro_TextChanged;
-            txtFiltro.KeyDown += txtFiltro_KeyDown;
-=======
->>>>>>> origin/Kaio
             // 
             // cmbFiltro
             // 
@@ -124,7 +119,6 @@
             cmbFiltro.Name = "cmbFiltro";
             cmbFiltro.Size = new Size(278, 45);
             cmbFiltro.TabIndex = 5;
-            cmbFiltro.SelectedIndexChanged += cmbFiltro_SelectedIndexChanged;
             // 
             // btnAtualizar
             // 
