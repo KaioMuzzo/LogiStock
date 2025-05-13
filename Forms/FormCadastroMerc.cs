@@ -2,7 +2,8 @@
 {
     public partial class FormCadastroMerc : Form
     {
-        public FormCadastroMerc()
+        LogiStockMain logiStockMain;
+        public FormCadastroMerc(LogiStockMain logiStockMain)
         {
             InitializeComponent();
             bdLogistock.ListaProdutos(cmbProduto);
@@ -11,6 +12,7 @@
             bdLogistock.ListaCategorias(cmbCategoria);
             bdLogistock.ListaFornecedoresUnidades(cmbFornecedores, cmbCategoria.SelectedText);
             bdLogistock.ListaUnidades(cmbUnidade);
+            this.logiStockMain = logiStockMain;
         }
 
         private void btnRelacionar_Click(object sender, EventArgs e)
@@ -54,6 +56,11 @@
             nudValorVenda.Value = 0;
             nudQuantidade.Value = 0;
             cmbUnidade.SelectedValue = -1;
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            logiStockMain.OpenChildForm(new Forms.FormListarMercadorias(logiStockMain));
         }
     }
 }

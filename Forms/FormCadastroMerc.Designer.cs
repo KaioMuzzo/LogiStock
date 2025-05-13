@@ -127,6 +127,7 @@
             btnVoltar.TabIndex = 14;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = false;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // cmbCategoria
             // 

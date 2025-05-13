@@ -51,7 +51,7 @@ namespace LogiStock
 
         private void btnCadastroMerc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormCadastroMerc());
+            OpenChildForm(new Forms.FormCadastroMerc(this));
         }
 
         public void UsuarioConectado()
@@ -59,7 +59,6 @@ namespace LogiStock
             btnAcess.Visible = false;
             btnCadastrarMerc.Visible = true;
             btnCadastroForn.Visible = true;
-            btnCadastroMerc.Visible = true;
             btnSaida.Visible = true;
             btnEntrada.Visible = true;
 

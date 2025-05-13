@@ -15,17 +15,17 @@ namespace LogiStock.Forms
     public partial class FormFornecedores : Form
     {
         private LogiStockMain logiStockmain;
-        public FormFornecedores(LogiStockMain main)
+        public FormFornecedores(LogiStockMain logiStockmain)
         {
             InitializeComponent();
-            logiStockmain = main;
+            this.logiStockmain = logiStockmain;
             bdLogistock.ListaFornecedores(cmbFornecedor);
             bdLogistock.ListaCategorias(cmbCategoria);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            logiStockmain.OpenChildForm(new Forms.FormListarMercadorias(logiStockmain));
         }
 
         private void btnCadastrarFornecedor_Click(object sender, EventArgs e)
