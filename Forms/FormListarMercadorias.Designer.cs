@@ -35,6 +35,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             cmbFiltro = new ComboBox();
             txtFiltro = new TextBox();
+            btnCadastrarMercadoria = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).BeginInit();
             SuspendLayout();
             // 
@@ -92,10 +93,23 @@
             txtFiltro.TextChanged += txtFiltro_TextChanged;
             txtFiltro.KeyDown += txtFiltro_KeyDown;
             // 
+            // btnCadastrarMercadoria
+            // 
+            btnCadastrarMercadoria.BackColor = Color.Transparent;
+            btnCadastrarMercadoria.Cursor = Cursors.Hand;
+            btnCadastrarMercadoria.FlatAppearance.BorderSize = 0;
+            btnCadastrarMercadoria.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnCadastrarMercadoria.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            resources.ApplyResources(btnCadastrarMercadoria, "btnCadastrarMercadoria");
+            btnCadastrarMercadoria.Name = "btnCadastrarMercadoria";
+            btnCadastrarMercadoria.UseVisualStyleBackColor = false;
+            btnCadastrarMercadoria.Click += btnCadastrarMercadoria_Click;
+            // 
             // FormListarMercadorias
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnCadastrarMercadoria);
             Controls.Add(cmbFiltro);
             Controls.Add(txtFiltro);
             Controls.Add(btnExcluir);
@@ -117,5 +131,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private ComboBox cmbFiltro;
         private TextBox txtFiltro;
+        private Button btnCadastrarMercadoria;
     }
 }

@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtGridMerc.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnSalvar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSalvar.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnExcluir.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -199,7 +199,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnExcluir.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -229,7 +229,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbFiltro.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtFiltro.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 20pt</value>
@@ -253,7 +253,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFiltro.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="btnCadastrarMercadoria.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnCadastrarMercadoria.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 14.25pt, style=Bold</value>
+  </data>
+  <data name="btnCadastrarMercadoria.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCadastrarMercadoria.Location" type="System.Drawing.Point, System.Drawing">
+    <value>800, 846</value>
+  </data>
+  <data name="btnCadastrarMercadoria.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 52</value>
+  </data>
+  <data name="btnCadastrarMercadoria.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnCadastrarMercadoria.Text" xml:space="preserve">
+    <value>Cadastrar</value>
+  </data>
+  <data name="&gt;&gt;btnCadastrarMercadoria.Name" xml:space="preserve">
+    <value>btnCadastrarMercadoria</value>
+  </data>
+  <data name="&gt;&gt;btnCadastrarMercadoria.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCadastrarMercadoria.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCadastrarMercadoria.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -267,7 +300,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABrgAAAP5CAYAAABNai/QAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAk6xJREFUeF7s3QecZGWd7///7t2gu9511113r+6u667AkhQFVFAUBQkqiuScM0iW
+        vgAADr4B6kKxwAAAk6xJREFUeF7s3QecZGWd7///7t2gu9511113r+6u667AkhQFVFAUBQkqiuScM0iW
         nEGCSBYEBEmSkSBZcpAcJOcsYYhDGpLA+fuUp4aerl93n+rToZ4+7/fr9Xnd9aH7zNDTU9yp75yq/+//
         +58fFJIkSZIkSZIk5dLHZ/xO8cqaH2l16mKfDj9GE6uFvzTP1F/zLeabLfwYNazwUJIkSZIkSZKkHs3A
         1bwMXOooPJQkSZIkSZIkqUczcDUvA5c6Cg8lSZIkSZIkSerRDFzNy8CljsJDSZIkSZIkSZJ6NANX8zJw

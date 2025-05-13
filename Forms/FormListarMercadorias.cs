@@ -13,13 +13,15 @@ namespace LogiStock.Forms
 {
     public partial class FormListarMercadorias : Form
     {
+        LogiStockMain cadastrar;
         bdLogistock bd = new bdLogistock();
-        public FormListarMercadorias()
+        public FormListarMercadorias(LogiStockMain cadastrarMerc)
         {
             InitializeComponent();
             bdLogistock.ListarMercadorias(dtGridMerc);
             cmbFiltro.Items.AddRange(new string[] { "nome_produto", "descricao_produto", "custo_produto", "valor_venda", "quantidade", "data_cadastro", "codigo_barras" });
             cmbFiltro.SelectedIndex = 0;
+            cadastrar = cadastrarMerc;
 
         }
 
@@ -89,6 +91,13 @@ namespace LogiStock.Forms
             {
                 bdLogistock.MercadoriasFiltro(dtGridMerc, cmbFiltro, txtFiltro.Text);
             }
+        }
+
+        private void btnCadastrarMercadoria_Click(object sender, EventArgs e)
+        {
+
+            cadastrar.OpenChildForm(new Forms.FormCadastroMerc());
+
         }
     }
 }
