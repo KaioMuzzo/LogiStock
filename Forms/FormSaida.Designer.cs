@@ -104,11 +104,12 @@
             // listBox1
             // 
             listBox1.BorderStyle = BorderStyle.None;
+            listBox1.Font = new Font("Segoe UI", 15F);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(327, 368);
+            listBox1.ItemHeight = 28;
+            listBox1.Location = new Point(323, 379);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(437, 465);
+            listBox1.Size = new Size(437, 448);
             listBox1.TabIndex = 8;
             // 
             // FormSaida

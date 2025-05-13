@@ -102,11 +102,12 @@
             // listbox1
             // 
             listbox1.BorderStyle = BorderStyle.None;
+            listbox1.Font = new Font("Segoe UI", 15F);
             listbox1.FormattingEnabled = true;
-            listbox1.ItemHeight = 15;
+            listbox1.ItemHeight = 28;
             listbox1.Location = new Point(338, 354);
             listbox1.Name = "listbox1";
-            listbox1.Size = new Size(437, 465);
+            listbox1.Size = new Size(437, 448);
             listbox1.TabIndex = 13;
             // 
             // FormEntrada

@@ -57,7 +57,7 @@
             textBox3.Location = new Point(1198, 712);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(357, 36);
-            textBox3.TabIndex = 11;
+            textBox3.TabIndex = 12;
             // 
             // cmbProduto
             // 
@@ -69,7 +69,7 @@
             cmbProduto.Location = new Point(1198, 326);
             cmbProduto.Name = "cmbProduto";
             cmbProduto.Size = new Size(357, 45);
-            cmbProduto.TabIndex = 8;
+            cmbProduto.TabIndex = 9;
             // 
             // cmbUnidadeOrigem
             // 
@@ -81,7 +81,7 @@
             cmbUnidadeOrigem.Location = new Point(1198, 451);
             cmbUnidadeOrigem.Name = "cmbUnidadeOrigem";
             cmbUnidadeOrigem.Size = new Size(357, 45);
-            cmbUnidadeOrigem.TabIndex = 9;
+            cmbUnidadeOrigem.TabIndex = 10;
             // 
             // cmbUnidadeDestino
             // 
@@ -93,7 +93,7 @@
             cmbUnidadeDestino.Location = new Point(1198, 576);
             cmbUnidadeDestino.Name = "cmbUnidadeDestino";
             cmbUnidadeDestino.Size = new Size(357, 45);
-            cmbUnidadeDestino.TabIndex = 10;
+            cmbUnidadeDestino.TabIndex = 11;
             // 
             // btnRelacionar
             // 
@@ -107,7 +107,7 @@
             btnRelacionar.Location = new Point(1405, 798);
             btnRelacionar.Name = "btnRelacionar";
             btnRelacionar.Size = new Size(172, 59);
-            btnRelacionar.TabIndex = 12;
+            btnRelacionar.TabIndex = 13;
             btnRelacionar.Text = "Relacionar";
             btnRelacionar.UseVisualStyleBackColor = false;
             btnRelacionar.Click += btnRelacionar_Click;
@@ -124,7 +124,7 @@
             btnVoltar.Location = new Point(1405, 913);
             btnVoltar.Name = "btnVoltar";
             btnVoltar.Size = new Size(214, 59);
-            btnVoltar.TabIndex = 13;
+            btnVoltar.TabIndex = 14;
             btnVoltar.Text = "Voltar";
             btnVoltar.UseVisualStyleBackColor = false;
             // 
@@ -188,6 +188,7 @@
             // btnCadastrar
             // 
             btnCadastrar.BackColor = Color.Transparent;
+            btnCadastrar.Cursor = Cursors.Hand;
             btnCadastrar.FlatAppearance.BorderSize = 0;
             btnCadastrar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnCadastrar.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -196,7 +197,7 @@
             btnCadastrar.Location = new Point(774, 798);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(172, 59);
-            btnCadastrar.TabIndex = 7;
+            btnCadastrar.TabIndex = 8;
             btnCadastrar.Text = "Cadastrar";
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
@@ -204,6 +205,7 @@
             // txtDescricao
             // 
             txtDescricao.BorderStyle = BorderStyle.None;
+            txtDescricao.Font = new Font("Segoe UI", 15F);
             txtDescricao.Location = new Point(132, 410);
             txtDescricao.Multiline = true;
             txtDescricao.Name = "txtDescricao";
@@ -229,7 +231,7 @@
             cmbUnidade.Location = new Point(592, 660);
             cmbUnidade.Name = "cmbUnidade";
             cmbUnidade.Size = new Size(340, 45);
-            cmbUnidade.TabIndex = 14;
+            cmbUnidade.TabIndex = 7;
             // 
             // FormCadastroMerc
             // 

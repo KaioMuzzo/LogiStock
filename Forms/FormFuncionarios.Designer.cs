@@ -35,6 +35,7 @@
             btnExcluir = new Button();
             txtFiltro = new TextBox();
             cmbFiltro = new ComboBox();
+            btnAtualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -108,7 +109,6 @@
             txtFiltro.Name = "txtFiltro";
             txtFiltro.Size = new Size(922, 36);
             txtFiltro.TabIndex = 4;
-            txtFiltro.KeyDown += txtFiltro_KeyDown;
             // 
             // cmbFiltro
             // 
@@ -120,12 +120,29 @@
             cmbFiltro.Size = new Size(278, 45);
             cmbFiltro.TabIndex = 5;
             // 
+            // btnAtualizar
+            // 
+            btnAtualizar.BackColor = Color.Transparent;
+            btnAtualizar.BackgroundImageLayout = ImageLayout.None;
+            btnAtualizar.FlatAppearance.BorderSize = 0;
+            btnAtualizar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnAtualizar.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnAtualizar.FlatStyle = FlatStyle.Flat;
+            btnAtualizar.Location = new Point(12, 943);
+            btnAtualizar.Name = "btnAtualizar";
+            btnAtualizar.Size = new Size(75, 23);
+            btnAtualizar.TabIndex = 6;
+            btnAtualizar.UseVisualStyleBackColor = false;
+            btnAtualizar.Click += btnAtualizar_Click;
+            // 
             // FormFuncionarios
             // 
+            AcceptButton = btnAtualizar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1704, 978);
+            Controls.Add(btnAtualizar);
             Controls.Add(cmbFiltro);
             Controls.Add(txtFiltro);
             Controls.Add(btnExcluir);
@@ -148,5 +165,6 @@
         private Button btnExcluir;
         private TextBox txtFiltro;
         private ComboBox cmbFiltro;
+        private Button btnAtualizar;
     }
 }
