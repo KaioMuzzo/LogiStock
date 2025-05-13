@@ -35,7 +35,8 @@ namespace LogiStock
 
         private void btnCadastrarMerc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormListarMercadorias());
+            OpenChildForm(new Forms.FormListarMercadorias(this));
+
         }
 
         private void btnFuncionario_Click(object sender, EventArgs e)

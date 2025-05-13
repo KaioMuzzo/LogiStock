@@ -33,6 +33,9 @@
             btnSalvar = new Button();
             btnExcluir = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            cmbFiltro = new ComboBox();
+            txtFiltro = new TextBox();
+            btnCadastrarMercadoria = new Button();
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).BeginInit();
             SuspendLayout();
             // 
@@ -54,30 +57,70 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.BackColor = Color.Transparent;
+            btnSalvar.Cursor = Cursors.Hand;
+            btnSalvar.FlatAppearance.BorderSize = 0;
+            btnSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             resources.ApplyResources(btnSalvar, "btnSalvar");
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // btnExcluir
             // 
+            btnExcluir.BackColor = Color.Transparent;
+            btnExcluir.Cursor = Cursors.Hand;
+            btnExcluir.FlatAppearance.BorderSize = 0;
+            btnExcluir.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnExcluir.FlatAppearance.MouseOverBackColor = Color.Transparent;
             resources.ApplyResources(btnExcluir, "btnExcluir");
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
+            // 
+            // cmbFiltro
+            // 
+            resources.ApplyResources(cmbFiltro, "cmbFiltro");
+            cmbFiltro.FormattingEnabled = true;
+            cmbFiltro.Name = "cmbFiltro";
+            // 
+            // txtFiltro
+            // 
+            txtFiltro.BorderStyle = BorderStyle.None;
+            resources.ApplyResources(txtFiltro, "txtFiltro");
+            txtFiltro.Name = "txtFiltro";
+            txtFiltro.TextChanged += txtFiltro_TextChanged;
+            txtFiltro.KeyDown += txtFiltro_KeyDown;
+            // 
+            // btnCadastrarMercadoria
+            // 
+            btnCadastrarMercadoria.BackColor = Color.Transparent;
+            btnCadastrarMercadoria.Cursor = Cursors.Hand;
+            btnCadastrarMercadoria.FlatAppearance.BorderSize = 0;
+            btnCadastrarMercadoria.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnCadastrarMercadoria.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            resources.ApplyResources(btnCadastrarMercadoria, "btnCadastrarMercadoria");
+            btnCadastrarMercadoria.Name = "btnCadastrarMercadoria";
+            btnCadastrarMercadoria.UseVisualStyleBackColor = false;
+            btnCadastrarMercadoria.Click += btnCadastrarMercadoria_Click;
             // 
             // FormListarMercadorias
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnCadastrarMercadoria);
+            Controls.Add(cmbFiltro);
+            Controls.Add(txtFiltro);
             Controls.Add(btnExcluir);
             Controls.Add(btnSalvar);
             Controls.Add(dtGridMerc);
             Name = "FormListarMercadorias";
-
+            Load += FormListarMercadorias_Load;
             MouseClick += FormListarMercadorias_MouseClick;
             ((System.ComponentModel.ISupportInitialize)dtGridMerc).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -86,5 +129,8 @@
         private Button btnSalvar;
         private Button btnExcluir;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private ComboBox cmbFiltro;
+        private TextBox txtFiltro;
+        private Button btnCadastrarMercadoria;
     }
 }

@@ -61,7 +61,8 @@ namespace LogiStock
                                "mercadorias.valor_venda AS `Valor Produto`, " +
                                "mercadorias.id_fornecedor AS ID_Fornecedor, " +
                                "mercadorias.codigo_barras AS `Código Barra`, " +
-                               "mercadorias.data_cadastro AS `Data Cadastro` " +
+                               "mercadorias.quantidade AS `Quantidade`," +
+                               "mercadorias.data_cadastro AS `Data Cadastro` " +                              
                                "FROM mercadorias " +
                                "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
                                "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor";
@@ -112,15 +113,27 @@ namespace LogiStock
                 tblGrid.Columns.Add(cmbFornecedor);
 
                 
-                tblGrid.Columns["ID"].Visible = false;
-                tblGrid.Columns["Código Barra"].ReadOnly = true;
+                tblGrid.Columns["ID"].Visible = false;               
                 tblGrid.Columns["ID_Fornecedor"].Visible = false;
                 tblGrid.Columns["ID_Categoria"].Visible = false;
+                tblGrid.Columns["Código Barra"].ReadOnly = true;
+                tblGrid.Columns["Quantidade"].ReadOnly = true;
 
                 foreach (DataGridViewColumn column in tblGrid.Columns)
                 {
                     column.SortMode = DataGridViewColumnSortMode.Automatic;
                 }
+
+                DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn
+                {
+                    HeaderText = "",
+                    Text = "✏",
+                    UseColumnTextForButtonValue = true,
+                    FlatStyle = FlatStyle.Flat,
+                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                };
+                tblGrid.Columns.Add(btnEditar);
+                btnEditar.DefaultCellStyle.BackColor = tblGrid.DefaultCellStyle.BackColor;
 
             }
         }
@@ -149,9 +162,9 @@ namespace LogiStock
                             "valor_venda = @valor, " +
                             "codigo_barras = @codigo, " +
                             "data_cadastro = @cadastro, " +
-                            "data_validade = @validade, " +
                             "id_fornecedor = @id_fornecedor, " +
-                            "id_categoria = @id_categoria " +
+                            "id_categoria = @id_categoria, " +
+                            "quantidade = @quantidade " +
                             "WHERE id_produto = @id";
 
                         using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
@@ -161,8 +174,8 @@ namespace LogiStock
                             cmd.Parameters.AddWithValue("@custo", row["Custo Produto"]);
                             cmd.Parameters.AddWithValue("@valor", row["Valor Produto"]);
                             cmd.Parameters.AddWithValue("@codigo", row["Código Barra"]);
-                            cmd.Parameters.AddWithValue("@cadastro", Convert.ToDateTime(row["Data Cadastro"]));
-                            cmd.Parameters.AddWithValue("@validade", Convert.ToDateTime(row["Data Validade"]));
+                            cmd.Parameters.AddWithValue("@quantidade", row["Quantidade"]);
+                            cmd.Parameters.AddWithValue("@cadastro", Convert.ToDateTime(row["Data Cadastro"]));                            
                             cmd.Parameters.AddWithValue("@id_fornecedor", row["ID_Fornecedor"]);
                             cmd.Parameters.AddWithValue("@id_categoria", row["ID_Categoria"]);
                             cmd.Parameters.AddWithValue("@id", row["ID"]);
@@ -204,8 +217,24 @@ namespace LogiStock
                 }
                 MessageBox.Show("Produto(s) excluído(s) com sucesso!");
             }
+        }
 
-
+        public static void MercadoriasFiltro(DataGridView tblGrid, ComboBox cmbFiltro, string valor)
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                conn.Open();
+                if (cmbFiltro.SelectedIndex != -1)
+                {
+                    string query = $"SELECT nome_produto, descricao_produto, custo_produto, valor_venda, quantidade, data_cadastro, codigo_barras FROM mercadorias WHERE {cmbFiltro.Text} LIKE @valor";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
+                    MySqlDataAdapter listarMercadoriaFiltro = new MySqlDataAdapter(cmd);
+                    DataTable dataTable = new DataTable();
+                    listarMercadoriaFiltro.Fill(dataTable);
+                    tblGrid.DataSource = dataTable;
+                }
+            }
         }
 
 
