@@ -18,7 +18,8 @@ namespace LogiStock.Forms
         {
             InitializeComponent();
             bdLogistock.ListarMercadorias(dtGridMerc);
-
+            cmbFiltro.Items.AddRange(new string[] { "nome_produto", "descricao_produto", "custo_produto", "valor_venda", "quantidade", "data_cadastro", "codigo_barras" });
+            cmbFiltro.SelectedIndex = 0;
 
         }
 
@@ -29,13 +30,21 @@ namespace LogiStock.Forms
 
         private void dtGridMerc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var column = dtGridMerc.Columns[e.ColumnIndex];
-            if (column.ReadOnly)
+            try
             {
-                MessageBox.Show("Essa campo não pode ser editado!");
+                var column = dtGridMerc.Columns[e.ColumnIndex];
+                if (column.ReadOnly)
+                {
+                    MessageBox.Show("Essa campo não pode ser editado!");
+
+                }
+            }
+            catch (Exception ex)
+            {
 
             }
-            
+
+
 
         }
 
@@ -64,5 +73,22 @@ namespace LogiStock.Forms
             bd.DeletarMercadorias(dtGridMerc);
         }
 
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormListarMercadorias_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFiltro_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bdLogistock.MercadoriasFiltro(dtGridMerc, cmbFiltro, txtFiltro.Text);
+            }
+        }
     }
 }
