@@ -3,7 +3,6 @@ namespace LogiStock
     public partial class LogiStockMain : Form
     {
         private Form activeForm;
-        private int cargo { get; set; }
 
         public LogiStockMain()
         {

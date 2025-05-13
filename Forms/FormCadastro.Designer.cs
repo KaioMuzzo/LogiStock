@@ -29,29 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formRegister));
-            btnCadastro = new Button();
             txtNome = new TextBox();
             txtMatricula = new TextBox();
             txtUsuario = new TextBox();
             txtEmail = new TextBox();
             txtTelefone = new TextBox();
             txtSenha = new TextBox();
+            btnCadastro = new Button();
             SuspendLayout();
-            // 
-            // btnCadastro
-            // 
-            btnCadastro.BackColor = Color.Transparent;
-            btnCadastro.Cursor = Cursors.Hand;
-            btnCadastro.FlatAppearance.BorderSize = 0;
-            btnCadastro.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            btnCadastro.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            btnCadastro.FlatStyle = FlatStyle.Flat;
-            btnCadastro.Location = new Point(657, 810);
-            btnCadastro.Name = "btnCadastro";
-            btnCadastro.Size = new Size(396, 90);
-            btnCadastro.TabIndex = 0;
-            btnCadastro.UseVisualStyleBackColor = false;
-            btnCadastro.Click += btnCadastro_Click;
             // 
             // txtNome
             // 
@@ -67,12 +52,14 @@
             // 
             // txtMatricula
             // 
+            txtMatricula.BackColor = Color.White;
             txtMatricula.BorderStyle = BorderStyle.None;
             txtMatricula.CausesValidation = false;
             txtMatricula.Cursor = Cursors.IBeam;
             txtMatricula.Font = new Font("Segoe UI", 27.75F);
             txtMatricula.Location = new Point(955, 311);
             txtMatricula.Name = "txtMatricula";
+            txtMatricula.ReadOnly = true;
             txtMatricula.Size = new Size(475, 50);
             txtMatricula.TabIndex = 2;
             txtMatricula.TextAlign = HorizontalAlignment.Center;
@@ -126,21 +113,33 @@
             txtSenha.TextAlign = HorizontalAlignment.Center;
             txtSenha.UseSystemPasswordChar = true;
             // 
+            // btnCadastro
+            // 
+            btnCadastro.BackColor = Color.Transparent;
+            btnCadastro.FlatAppearance.BorderSize = 0;
+            btnCadastro.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnCadastro.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btnCadastro.FlatStyle = FlatStyle.Flat;
+            btnCadastro.Location = new Point(659, 811);
+            btnCadastro.Name = "btnCadastro";
+            btnCadastro.Size = new Size(394, 89);
+            btnCadastro.TabIndex = 7;
+            btnCadastro.UseVisualStyleBackColor = false;
+            // 
             // formRegister
             // 
-            AcceptButton = btnCadastro;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(1704, 978);
+            Controls.Add(btnCadastro);
             Controls.Add(txtSenha);
             Controls.Add(txtTelefone);
             Controls.Add(txtEmail);
             Controls.Add(txtUsuario);
             Controls.Add(txtMatricula);
             Controls.Add(txtNome);
-            Controls.Add(btnCadastro);
             MaximizeBox = false;
             MaximumSize = new Size(1720, 1017);
             MinimizeBox = false;
@@ -152,13 +151,12 @@
         }
 
         #endregion
-
-        private Button btnCadastro;
         private TextBox txtNome;
         private TextBox txtMatricula;
         private TextBox txtUsuario;
         private TextBox txtEmail;
         private TextBox txtTelefone;
         private TextBox txtSenha;
+        private Button btnCadastro;
     }
 }

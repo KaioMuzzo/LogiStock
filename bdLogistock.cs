@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using System.Data.Common;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices.Marshalling;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Windows.Forms;
@@ -620,6 +621,30 @@ namespace LogiStock
                     MessageBox.Show("Erro ao inserir o de/para de fornecedor com categoria: " + ex.Message);
                 }
             }
+        }
+
+        public static int PegarMatricula() 
+        {
+            using (MySqlConnection conn = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = "SELECT MAX(matricula) FROM usuarios";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        object resultado = cmd.ExecuteScalar();
+                        return Convert.ToInt32(resultado) + 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: ", ex.Message);
+                }
+            }
+            return 1;
         }
 
         public static void CadastrarMercadoria(string nome, string descricao, int categoria, int fornecedor, decimal custo, decimal valorVenda, int quantidade, int unidade)

@@ -34,8 +34,8 @@
             txtSenha = new TextBox();
             txtEmail = new TextBox();
             txtUsuario = new TextBox();
-            txtMatricula = new TextBox();
             btnSalvar = new Button();
+            txtMatricula = new TextBox();
             SuspendLayout();
             // 
             // txtNome
@@ -77,7 +77,7 @@
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Cursor = Cursors.IBeam;
             txtEmail.Font = new Font("Segoe UI", 27.75F);
-            txtEmail.Location = new Point(959, 487);
+            txtEmail.Location = new Point(958, 487);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(472, 50);
             txtEmail.TabIndex = 3;
@@ -94,18 +94,6 @@
             txtUsuario.TabIndex = 4;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtMatricula
-            // 
-            txtMatricula.BorderStyle = BorderStyle.None;
-            txtMatricula.Cursor = Cursors.IBeam;
-            txtMatricula.Font = new Font("Segoe UI", 27.75F);
-            txtMatricula.Location = new Point(959, 310);
-            txtMatricula.Name = "txtMatricula";
-            txtMatricula.ReadOnly = true;
-            txtMatricula.Size = new Size(472, 50);
-            txtMatricula.TabIndex = 5;
-            txtMatricula.TextAlign = HorizontalAlignment.Center;
-            // 
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.Transparent;
@@ -121,6 +109,17 @@
             btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
             // 
+            // txtMatricula
+            // 
+            txtMatricula.BackColor = Color.White;
+            txtMatricula.BorderStyle = BorderStyle.None;
+            txtMatricula.Font = new Font("Segoe UI", 27.75F);
+            txtMatricula.Location = new Point(959, 312);
+            txtMatricula.Name = "txtMatricula";
+            txtMatricula.ReadOnly = true;
+            txtMatricula.Size = new Size(471, 50);
+            txtMatricula.TabIndex = 7;
+            // 
             // FormEditar
             // 
             AcceptButton = btnSalvar;
@@ -128,8 +127,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1704, 978);
-            Controls.Add(btnSalvar);
             Controls.Add(txtMatricula);
+            Controls.Add(btnSalvar);
             Controls.Add(txtUsuario);
             Controls.Add(txtEmail);
             Controls.Add(txtSenha);
@@ -149,7 +148,7 @@
         private TextBox txtSenha;
         private TextBox txtEmail;
         private TextBox txtUsuario;
-        private TextBox txtMatricula;
         private Button btnSalvar;
+        private TextBox txtMatricula;
     }
 }
