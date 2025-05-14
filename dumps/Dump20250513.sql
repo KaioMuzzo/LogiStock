@@ -19,6 +19,9 @@
 -- Table structure for table `categorias`
 --
 
+CREATE DATABASE Logistock;
+USE Logistock;
+
 DROP TABLE IF EXISTS `categorias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -26,7 +29,7 @@ CREATE TABLE `categorias` (
   `id_categoria` int NOT NULL AUTO_INCREMENT,
   `tipo_categoria` varchar(255) DEFAULT NULL,
   `descricao` text,
-  `data_cadastro` date DEFAULT (curdate()),
+  `data_cadastro` date,
   PRIMARY KEY (`id_categoria`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
