@@ -55,5 +55,10 @@
             nudQuantidade.Value = 0;
             cmbUnidade.SelectedValue = -1;
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

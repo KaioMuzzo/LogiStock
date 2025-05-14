@@ -223,14 +223,69 @@ namespace LogiStock
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 conn.Open();
+
                 if (cmbFiltro.SelectedIndex != -1)
                 {
-                    string query = $"SELECT nome_produto, descricao_produto, custo_produto, valor_venda, quantidade, data_cadastro, codigo_barras FROM mercadorias WHERE {cmbFiltro.Text} LIKE @valor";
+                    string coluna = "";
+
+                    switch (cmbFiltro.SelectedItem.ToString())
+                    {
+                        case "Produto":
+                            coluna = "mercadorias.nome_produto";
+                            break;
+                        case "Descrição":
+                            coluna = "mercadorias.descricao_produto";
+                            break;
+                        case "Custo Produto":
+                            coluna = "mercadorias.custo_produto";
+                            break;
+                        case "Valor Produto":
+                            coluna = "mercadorias.valor_venda";
+                            break;
+                        case "Código Barra":
+                            coluna = "mercadorias.codigo_barras";
+                            break;
+                        case "Quantidade":
+                            coluna = "mercadorias.quantidade";
+                            break;
+                        case "Data Cadastro":
+                            coluna = "mercadorias.data_cadastro";
+                            break;
+                        case "Categoria":
+                            coluna = "categorias.tipo_categoria";
+                            break;
+                        case "Fornecedor":
+                            coluna = "fornecedores.nome";
+                            break;
+                        default:
+                            coluna = "mercadorias.nome_produto";
+                            break;
+                    }
+
+                    string query = "SELECT " +
+                                   "mercadorias.id_produto AS ID, " +
+                                   "mercadorias.nome_produto AS Produto, " +
+                                   "mercadorias.descricao_produto AS Descrição, " +
+                                   "mercadorias.id_categoria AS ID_Categoria, " +
+                                   "categorias.tipo_categoria AS Categoria, " +
+                                   "mercadorias.custo_produto AS `Custo Produto`, " +
+                                   "mercadorias.valor_venda AS `Valor Produto`, " +
+                                   "mercadorias.id_fornecedor AS ID_Fornecedor, " +
+                                   "fornecedores.nome AS Fornecedor, " +
+                                   "mercadorias.codigo_barras AS `Código Barra`, " +
+                                   "mercadorias.quantidade AS Quantidade, " +
+                                   "mercadorias.data_cadastro AS `Data Cadastro` " +
+                                   "FROM mercadorias " +
+                                   "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
+                                   "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor " +
+                                   $"WHERE {coluna} LIKE @valor";
+
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
-                    MySqlDataAdapter listarMercadoriaFiltro = new MySqlDataAdapter(cmd);
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dataTable = new DataTable();
-                    listarMercadoriaFiltro.Fill(dataTable);
+                    adapter.Fill(dataTable);
                     tblGrid.DataSource = dataTable;
                 }
             }
