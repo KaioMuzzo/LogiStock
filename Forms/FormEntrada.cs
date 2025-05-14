@@ -43,6 +43,12 @@ namespace LogiStock.Forms
                 };
 
                 listbox1.Items.Add(item);
+
+                cmbProduto.SelectedIndex = -1;
+                cmbUnidade.SelectedIndex = -1;
+                nudQuantidade.Value = 1;
+
+                cmbProduto.Focus();
             }
             else
             {
@@ -66,7 +72,6 @@ namespace LogiStock.Forms
             {
                 string tipoMovimentacao = "entrada";
                 bdLogistock.CriarPedido(itens, tipoMovimentacao);
-
                 
                 listbox1.Items.Clear();
 

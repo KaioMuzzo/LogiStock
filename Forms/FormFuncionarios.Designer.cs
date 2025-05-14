@@ -48,7 +48,7 @@
             dataGridView1.Location = new Point(134, 319);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(1325, 433);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.TabIndex = 5;
             // 
             // Cadastrar
             // 
@@ -62,7 +62,7 @@
             Cadastrar.Location = new Point(781, 839);
             Cadastrar.Name = "Cadastrar";
             Cadastrar.Size = new Size(207, 66);
-            Cadastrar.TabIndex = 1;
+            Cadastrar.TabIndex = 2;
             Cadastrar.Text = "Cadastrar";
             Cadastrar.UseVisualStyleBackColor = false;
             Cadastrar.Click += Cadastrar_Click;
@@ -79,7 +79,7 @@
             btnEditar.Location = new Point(1029, 839);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(206, 66);
-            btnEditar.TabIndex = 2;
+            btnEditar.TabIndex = 3;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
@@ -96,7 +96,7 @@
             btnExcluir.Location = new Point(1271, 839);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(208, 66);
-            btnExcluir.TabIndex = 3;
+            btnExcluir.TabIndex = 4;
             btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
@@ -108,7 +108,7 @@
             txtFiltro.Location = new Point(115, 199);
             txtFiltro.Name = "txtFiltro";
             txtFiltro.Size = new Size(922, 36);
-            txtFiltro.TabIndex = 4;
+            txtFiltro.TabIndex = 0;
             // 
             // cmbFiltro
             // 
@@ -118,7 +118,7 @@
             cmbFiltro.Location = new Point(1172, 194);
             cmbFiltro.Name = "cmbFiltro";
             cmbFiltro.Size = new Size(278, 45);
-            cmbFiltro.TabIndex = 5;
+            cmbFiltro.TabIndex = 1;
             // 
             // btnAtualizar
             // 
@@ -133,6 +133,7 @@
             btnAtualizar.Size = new Size(75, 23);
             btnAtualizar.TabIndex = 6;
             btnAtualizar.UseVisualStyleBackColor = false;
+            btnAtualizar.Visible = false;
             btnAtualizar.Click += btnAtualizar_Click;
             // 
             // FormFuncionarios

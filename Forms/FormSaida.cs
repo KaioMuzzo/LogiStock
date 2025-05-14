@@ -43,6 +43,12 @@ namespace LogiStock
                 };
 
                 listBox1.Items.Add(item);
+
+                cmbProduto.SelectedIndex = -1;
+                cmbUnidade.SelectedIndex = -1;
+                nudQuantidade.Value = 1;
+
+                cmbProduto.Focus();
             }
             else
             {

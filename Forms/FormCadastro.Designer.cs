@@ -47,7 +47,7 @@
             txtNome.Location = new Point(302, 311);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(475, 50);
-            txtNome.TabIndex = 1;
+            txtNome.TabIndex = 0;
             txtNome.TextAlign = HorizontalAlignment.Center;
             // 
             // txtMatricula
@@ -61,7 +61,7 @@
             txtMatricula.Name = "txtMatricula";
             txtMatricula.ReadOnly = true;
             txtMatricula.Size = new Size(475, 50);
-            txtMatricula.TabIndex = 2;
+            txtMatricula.TabIndex = 3;
             txtMatricula.TextAlign = HorizontalAlignment.Center;
             // 
             // txtUsuario
@@ -73,7 +73,7 @@
             txtUsuario.Location = new Point(302, 487);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(475, 50);
-            txtUsuario.TabIndex = 3;
+            txtUsuario.TabIndex = 1;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
             // 
             // txtEmail
@@ -97,7 +97,7 @@
             txtTelefone.Location = new Point(302, 668);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(475, 50);
-            txtTelefone.TabIndex = 5;
+            txtTelefone.TabIndex = 2;
             txtTelefone.TextAlign = HorizontalAlignment.Center;
             // 
             // txtSenha
@@ -109,22 +109,24 @@
             txtSenha.Location = new Point(955, 668);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(475, 50);
-            txtSenha.TabIndex = 6;
+            txtSenha.TabIndex = 5;
             txtSenha.TextAlign = HorizontalAlignment.Center;
             txtSenha.UseSystemPasswordChar = true;
             // 
             // btnCadastro
             // 
             btnCadastro.BackColor = Color.Transparent;
+            btnCadastro.Cursor = Cursors.Hand;
             btnCadastro.FlatAppearance.BorderSize = 0;
             btnCadastro.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnCadastro.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnCadastro.FlatStyle = FlatStyle.Flat;
-            btnCadastro.Location = new Point(659, 811);
+            btnCadastro.Location = new Point(658, 810);
             btnCadastro.Name = "btnCadastro";
-            btnCadastro.Size = new Size(394, 89);
-            btnCadastro.TabIndex = 7;
+            btnCadastro.Size = new Size(395, 90);
+            btnCadastro.TabIndex = 6;
             btnCadastro.UseVisualStyleBackColor = false;
+            btnCadastro.Click += btnCadastro_Click;
             // 
             // formRegister
             // 

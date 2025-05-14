@@ -53,9 +53,9 @@
             btnAcessar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnAcessar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnAcessar.FlatStyle = FlatStyle.Flat;
-            btnAcessar.Location = new Point(660, 782);
+            btnAcessar.Location = new Point(658, 780);
             btnAcessar.Name = "btnAcessar";
-            btnAcessar.Size = new Size(396, 90);
+            btnAcessar.Size = new Size(400, 95);
             btnAcessar.TabIndex = 2;
             btnAcessar.UseVisualStyleBackColor = false;
             btnAcessar.Click += btnAcessar_Click;

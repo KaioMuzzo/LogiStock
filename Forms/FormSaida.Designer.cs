@@ -40,27 +40,32 @@
             // 
             // cmbUnidade
             // 
+            cmbUnidade.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbUnidade.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbUnidade.FlatStyle = FlatStyle.Flat;
             cmbUnidade.Font = new Font("Segoe UI", 20F);
             cmbUnidade.FormattingEnabled = true;
             cmbUnidade.Location = new Point(948, 678);
             cmbUnidade.Name = "cmbUnidade";
             cmbUnidade.Size = new Size(376, 45);
-            cmbUnidade.TabIndex = 1;
+            cmbUnidade.TabIndex = 2;
             // 
             // cmbProduto
             // 
+            cmbProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbProduto.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbProduto.FlatStyle = FlatStyle.Flat;
             cmbProduto.Font = new Font("Segoe UI", 20F);
             cmbProduto.FormattingEnabled = true;
             cmbProduto.Location = new Point(948, 382);
             cmbProduto.Name = "cmbProduto";
             cmbProduto.Size = new Size(376, 45);
-            cmbProduto.TabIndex = 2;
+            cmbProduto.TabIndex = 0;
             // 
             // btnInserir
             // 
             btnInserir.BackColor = Color.Transparent;
+            btnInserir.BackgroundImageLayout = ImageLayout.None;
             btnInserir.Cursor = Cursors.Hand;
             btnInserir.FlatAppearance.BorderSize = 0;
             btnInserir.FlatAppearance.MouseDownBackColor = Color.Transparent;
@@ -70,7 +75,7 @@
             btnInserir.Location = new Point(910, 793);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(203, 66);
-            btnInserir.TabIndex = 4;
+            btnInserir.TabIndex = 3;
             btnInserir.Text = "Inserir";
             btnInserir.UseVisualStyleBackColor = false;
             btnInserir.Click += btnInserir_Click;
@@ -87,7 +92,7 @@
             btnConcluir.Location = new Point(1163, 792);
             btnConcluir.Name = "btnConcluir";
             btnConcluir.Size = new Size(199, 67);
-            btnConcluir.TabIndex = 5;
+            btnConcluir.TabIndex = 4;
             btnConcluir.Text = "Concluir";
             btnConcluir.UseVisualStyleBackColor = false;
             btnConcluir.Click += btnConcluir_Click;
@@ -97,9 +102,10 @@
             nudQuantidade.BorderStyle = BorderStyle.None;
             nudQuantidade.Font = new Font("Segoe UI", 20F);
             nudQuantidade.Location = new Point(948, 525);
+            nudQuantidade.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             nudQuantidade.Name = "nudQuantidade";
             nudQuantidade.Size = new Size(376, 39);
-            nudQuantidade.TabIndex = 7;
+            nudQuantidade.TabIndex = 1;
             // 
             // listBox1
             // 
@@ -110,7 +116,7 @@
             listBox1.Location = new Point(323, 379);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(437, 448);
-            listBox1.TabIndex = 8;
+            listBox1.TabIndex = 5;
             // 
             // FormSaida
             // 

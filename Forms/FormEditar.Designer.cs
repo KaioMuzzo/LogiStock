@@ -57,7 +57,7 @@
             txtTelefone.Location = new Point(309, 669);
             txtTelefone.Name = "txtTelefone";
             txtTelefone.Size = new Size(458, 50);
-            txtTelefone.TabIndex = 1;
+            txtTelefone.TabIndex = 2;
             txtTelefone.TextAlign = HorizontalAlignment.Center;
             // 
             // txtSenha
@@ -68,7 +68,7 @@
             txtSenha.Location = new Point(959, 669);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(472, 50);
-            txtSenha.TabIndex = 2;
+            txtSenha.TabIndex = 5;
             txtSenha.TextAlign = HorizontalAlignment.Center;
             txtSenha.UseSystemPasswordChar = true;
             // 
@@ -80,7 +80,7 @@
             txtEmail.Location = new Point(958, 487);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(472, 50);
-            txtEmail.TabIndex = 3;
+            txtEmail.TabIndex = 4;
             txtEmail.TextAlign = HorizontalAlignment.Center;
             // 
             // txtUsuario
@@ -91,20 +91,21 @@
             txtUsuario.Location = new Point(309, 487);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(458, 50);
-            txtUsuario.TabIndex = 4;
+            txtUsuario.TabIndex = 1;
             txtUsuario.TextAlign = HorizontalAlignment.Center;
             // 
             // btnSalvar
             // 
             btnSalvar.BackColor = Color.Transparent;
             btnSalvar.Cursor = Cursors.Hand;
+            btnSalvar.FlatAppearance.BorderColor = Color.FromArgb(0, 34, 80);
             btnSalvar.FlatAppearance.BorderSize = 0;
             btnSalvar.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btnSalvar.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnSalvar.FlatStyle = FlatStyle.Flat;
-            btnSalvar.Location = new Point(660, 810);
+            btnSalvar.Location = new Point(657, 808);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(394, 90);
+            btnSalvar.Size = new Size(398, 95);
             btnSalvar.TabIndex = 6;
             btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
@@ -118,7 +119,8 @@
             txtMatricula.Name = "txtMatricula";
             txtMatricula.ReadOnly = true;
             txtMatricula.Size = new Size(471, 50);
-            txtMatricula.TabIndex = 7;
+            txtMatricula.TabIndex = 3;
+            txtMatricula.TextAlign = HorizontalAlignment.Center;
             // 
             // FormEditar
             // 

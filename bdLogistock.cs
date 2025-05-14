@@ -14,10 +14,11 @@ namespace LogiStock
     class bdLogistock
     {
         static string conexao = "server=localhost; port=3307; user=root; password=senacJBQ; database=logistock";
+        //static string conexao = "server=localhost; port=3306; user=root; password=root; database=logistock"; // casa kaio
         public static string matriculaUsuarioAtual;
         public static int cargoUsuarioAtual;
 
-        public void CadastrarFuncionario(string txtNome, string txtMatricula, string txtUsuario, string txtEmail, string txtTelefone, string txtSenha)
+        public void CadastrarFuncionario(string txtNome, string txtMatricula, string txtUsuario, string txtEmail, string txtTelefone, string txtSenha) // ok
         {
             string nome = txtNome;
             int matricula = Convert.ToInt32(txtMatricula);
@@ -46,97 +47,95 @@ namespace LogiStock
             }
         }
 
-
-        public static void ListarMercadorias(DataGridView tblGrid)
+        public static void ListarMercadorias(DataGridView tblGrid) // ok
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
                 conn.Open();
 
-                
                 string query = "SELECT mercadorias.id_produto AS ID, " +
                                "mercadorias.nome_produto AS Produto, " +
-                               "mercadorias.descricao_produto AS Descrição, " +                               
-                               "mercadorias.id_categoria AS ID_Categoria, " +                               
+                               "mercadorias.descricao_produto AS Descrição, " +
+                               "mercadorias.id_categoria AS ID_Categoria, " +
                                "mercadorias.custo_produto AS `Custo Produto`, " +
                                "mercadorias.valor_venda AS `Valor Produto`, " +
                                "mercadorias.id_fornecedor AS ID_Fornecedor, " +
                                "mercadorias.codigo_barras AS `Código Barra`, " +
                                "mercadorias.quantidade AS `Quantidade`," +
-                               "mercadorias.data_cadastro AS `Data Cadastro` " +                              
+                               "mercadorias.data_cadastro AS `Data Cadastro` " +
                                "FROM mercadorias " +
                                "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
-                               "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor";
+                               "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor " +
+                               "WHERE status_produto = 1";
 
                 MySqlDataAdapter listMercadorias = new MySqlDataAdapter(query, conn);
                 DataTable dataTable = new DataTable();
                 listMercadorias.Fill(dataTable);
 
-                
-                DataTable categoriasTable = new DataTable();
-                string queryCategorias = "SELECT id_categoria, tipo_categoria FROM categorias";
-                new MySqlDataAdapter(queryCategorias, conn).Fill(categoriasTable);
-
-                
-                DataTable fornecedoresTable = new DataTable();
-                string queryFornecedores = "SELECT id_fornecedor, nome FROM fornecedores";
-                new MySqlDataAdapter(queryFornecedores, conn).Fill(fornecedoresTable);
-
-                
                 tblGrid.Columns.Clear();
+                tblGrid.DataSource = null;
                 tblGrid.DataSource = dataTable;
                 tblGrid.ReadOnly = false;
                 tblGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-                
-                DataGridViewComboBoxColumn cmbCategoria = new DataGridViewComboBoxColumn
-                {
-                    HeaderText = "Categoria",
-                    DataPropertyName = "ID_Categoria",
-                    DataSource = categoriasTable,
-                    DisplayMember = "tipo_categoria",
-                    ValueMember = "id_categoria",
-                    FlatStyle = FlatStyle.Flat
-                };
-                tblGrid.Columns.Add(cmbCategoria);
-
-                
-                DataGridViewComboBoxColumn cmbFornecedor = new DataGridViewComboBoxColumn
-                {
-                    HeaderText = "Fornecedor",
-                    DataPropertyName = "ID_Fornecedor",
-                    DataSource = fornecedoresTable,
-                    DisplayMember = "nome",
-                    ValueMember = "id_fornecedor",
-                    FlatStyle = FlatStyle.Flat
-                    
-                };
-                tblGrid.Columns.Add(cmbFornecedor);
-
-                
-                tblGrid.Columns["ID"].Visible = false;               
-                tblGrid.Columns["ID_Fornecedor"].Visible = false;
-                tblGrid.Columns["ID_Categoria"].Visible = false;
-                tblGrid.Columns["Código Barra"].ReadOnly = true;
-                tblGrid.Columns["Quantidade"].ReadOnly = true;
 
                 foreach (DataGridViewColumn column in tblGrid.Columns)
                 {
                     column.SortMode = DataGridViewColumnSortMode.Automatic;
                 }
 
-                DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn
-                {
-                    HeaderText = "",
-                    Text = "✏",
-                    UseColumnTextForButtonValue = true,
-                    FlatStyle = FlatStyle.Flat,
-                    AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                };
-                tblGrid.Columns.Add(btnEditar);
-                btnEditar.DefaultCellStyle.BackColor = tblGrid.DefaultCellStyle.BackColor;
-
+                TratarColunasMercadorias(tblGrid, conn);
             }
+        }
+
+        private static void TratarColunasMercadorias(DataGridView tblGrid, MySqlConnection conn)
+        {
+            tblGrid.Columns["ID"].Visible = false;
+            tblGrid.Columns["ID_Fornecedor"].Visible = false;
+            tblGrid.Columns["ID_Categoria"].Visible = false;
+            tblGrid.Columns["Código Barra"].ReadOnly = true;
+            tblGrid.Columns["Quantidade"].ReadOnly = true;
+
+            DataTable categoriasTable = new DataTable();
+            string queryCategorias = "SELECT id_categoria, tipo_categoria FROM categorias";
+            new MySqlDataAdapter(queryCategorias, conn).Fill(categoriasTable);
+
+
+            DataTable fornecedoresTable = new DataTable();
+            string queryFornecedores = "SELECT id_fornecedor, nome FROM fornecedores";
+            new MySqlDataAdapter(queryFornecedores, conn).Fill(fornecedoresTable);
+
+            DataGridViewComboBoxColumn cmbCategoria = new DataGridViewComboBoxColumn
+            {
+                HeaderText = "Categoria",
+                DataPropertyName = "ID_Categoria",
+                DataSource = categoriasTable,
+                DisplayMember = "tipo_categoria",
+                ValueMember = "id_categoria",
+                FlatStyle = FlatStyle.Flat
+            };
+            tblGrid.Columns.Add(cmbCategoria);
+
+            DataGridViewComboBoxColumn cmbFornecedor = new DataGridViewComboBoxColumn
+            {
+                HeaderText = "Fornecedor",
+                DataPropertyName = "ID_Fornecedor",
+                DataSource = fornecedoresTable,
+                DisplayMember = "nome",
+                ValueMember = "id_fornecedor",
+                FlatStyle = FlatStyle.Flat
+            };
+            tblGrid.Columns.Add(cmbFornecedor);
+
+            DataGridViewButtonColumn btnEditar = new DataGridViewButtonColumn
+            {
+                HeaderText = "",
+                Text = "✏",
+                UseColumnTextForButtonValue = true,
+                FlatStyle = FlatStyle.Flat,
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            };
+            tblGrid.Columns.Add(btnEditar);
+            btnEditar.DefaultCellStyle.BackColor = tblGrid.DefaultCellStyle.BackColor;
         }
 
         public void SalvarMercadorias(DataTable dataTable)
@@ -192,7 +191,7 @@ namespace LogiStock
         }
 
 
-        public void DeletarMercadorias(DataGridView tblGrid)
+        public void DeletarMercadorias(DataGridView tblGrid) // ok
         {
             if (tblGrid.SelectedRows.Count > 0)
             {
@@ -206,7 +205,7 @@ namespace LogiStock
                     {
                         int idProduto = Convert.ToInt32(row.Cells["ID"].Value);
 
-                        string deleteQuery = "DELETE FROM mercadorias WHERE id_produto = @id";
+                        string deleteQuery = "UPDATE mercadorias SET status_produto = 0 WHERE id_produto = @id";
 
                         using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
                         {
@@ -265,22 +264,21 @@ namespace LogiStock
                     }
 
                     string query = "SELECT " +
-                                   "mercadorias.id_produto AS ID, " +
-                                   "mercadorias.nome_produto AS Produto, " +
-                                   "mercadorias.descricao_produto AS Descrição, " +
-                                   "mercadorias.id_categoria AS ID_Categoria, " +
-                                   "categorias.tipo_categoria AS Categoria, " +
+                                   "mercadorias.id_produto AS ID, " + 
+                                   "mercadorias.nome_produto AS Produto, " + 
+                                   "mercadorias.descricao_produto AS Descrição, " + 
+                                   "mercadorias.id_categoria AS ID_Categoria, " + 
                                    "mercadorias.custo_produto AS `Custo Produto`, " +
                                    "mercadorias.valor_venda AS `Valor Produto`, " +
                                    "mercadorias.id_fornecedor AS ID_Fornecedor, " +
-                                   "fornecedores.nome AS Fornecedor, " +
                                    "mercadorias.codigo_barras AS `Código Barra`, " +
                                    "mercadorias.quantidade AS Quantidade, " +
                                    "mercadorias.data_cadastro AS `Data Cadastro` " +
                                    "FROM mercadorias " +
                                    "INNER JOIN categorias ON mercadorias.id_categoria = categorias.id_categoria " +
                                    "INNER JOIN fornecedores ON mercadorias.id_fornecedor = fornecedores.id_fornecedor " +
-                                   $"WHERE {coluna} LIKE @valor";
+                                   $"WHERE {coluna} LIKE @valor " +
+                                   $"AND status_produto = 1";
 
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@valor", "%" + valor + "%");
@@ -288,13 +286,18 @@ namespace LogiStock
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
+
+                    tblGrid.Columns.Clear();
+                    tblGrid.DataSource = null;
                     tblGrid.DataSource = dataTable;
+
+                    TratarColunasMercadorias(tblGrid, conn);
                 }
             }
         }
 
 
-        public static void ListarFuncionarios(DataGridView tblGrid)
+        public static void ListarFuncionarios(DataGridView tblGrid) // ok
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -308,7 +311,7 @@ namespace LogiStock
         }
 
 
-        public static void FuncionariosFiltro(DataGridView tblGrid, ComboBox cmbFiltro, string valor)
+        public static void FuncionariosFiltro(DataGridView tblGrid, ComboBox cmbFiltro, string valor) // ok
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -326,7 +329,7 @@ namespace LogiStock
             }
         }
 
-        public static void EditarFuncionarios(string matricula, Dictionary<string, string> campos)
+        public static void EditarFuncionarios(string matricula, Dictionary<string, string> campos) // ok
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -349,7 +352,7 @@ namespace LogiStock
             }
         }
 
-        public static bool FazerLogin(string usuario, string senha)
+        public static bool FazerLogin(string usuario, string senha) // ok
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
@@ -373,7 +376,7 @@ namespace LogiStock
             }
         }
 
-        public static bool CadastrarFornecedor(string nome, string endereco, string telefone, string email, string site, string cnpj)
+        public static bool CadastrarFornecedor(string nome, string endereco, string telefone, string email, string site, string cnpj)// ok
         {
             try 
             {
@@ -403,7 +406,7 @@ namespace LogiStock
             }
         }
 
-        public static bool CadastrarCategoria(string tipo_categoria, string descricao)
+        public static bool CadastrarCategoria(string tipo_categoria, string descricao) // ok
         {
             try
             {
@@ -445,8 +448,24 @@ namespace LogiStock
 
                     long idPedido = cmdPedido.LastInsertedId;
 
+                    List<string> produtosPulados = new List<string>();
+
                     foreach (var item in itens)
                     {
+                        if (tipo_movimentacao == "saida")
+                        {
+                            string queryEstoque = "SELECT quantidade FROM mercadorias WHERE id_produto = @id";
+                            MySqlCommand cmdEstoque = new MySqlCommand(queryEstoque, conn);
+                            cmdEstoque.Parameters.AddWithValue("@id", item.idProduto);
+                            object resultado = cmdEstoque.ExecuteScalar();
+
+                            if (resultado != null && Convert.ToInt32(resultado) < item.Quantidade)
+                            {
+                                produtosPulados.Add(item.NomeProduto);
+                                continue;
+                            }
+                        }
+
                         string queryItem = @"INSERT INTO itens_pedido (id_pedido, id_produto, id_unidade, quantidade) 
                                      VALUES (@id_pedido, @id_produto, @id_unidade, @quantidade)";
                         MySqlCommand cmdItem = new MySqlCommand(queryItem, conn);
@@ -456,19 +475,27 @@ namespace LogiStock
                         cmdItem.Parameters.AddWithValue("@quantidade", item.Quantidade);
                         cmdItem.ExecuteNonQuery();
 
-                        string queryUpdate = "UPDATE mercadorias SET quantidade = quantidade + @quantidade WHERE id_produto = @id_produto";
+                        string query = "UPDATE mercadorias SET quantidade = quantidade + @quantidade WHERE id_produto = @id_produto";
+
                         if (tipo_movimentacao == "saida")
                         {
-                            queryUpdate = "UPDATE mercadorias SET quantidade = quantidade - @quantidade WHERE id_produto = @id_produto";
+                            query = "UPDATE mercadorias SET quantidade = quantidade - @quantidade WHERE id_produto = @id_produto";
                         }
 
-                        MySqlCommand cmdUpdate = new MySqlCommand(queryUpdate, conn);
+                        MySqlCommand cmdUpdate = new MySqlCommand(query, conn);
                         cmdUpdate.Parameters.AddWithValue("@quantidade", item.Quantidade);
                         cmdUpdate.Parameters.AddWithValue("@id_produto", item.idProduto);
                         cmdUpdate.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Pedido feito com sucesso!");
+                    string msg = "Pedido feito com sucesso!";
+                    if (produtosPulados.Count > 0)
+                    {
+                        msg += "\n\nOs seguintes produtos não foram processados por falta de estoque:\n" +
+                            string.Join(", ", produtosPulados);
+                    }
+
+                    MessageBox.Show(msg);
                 }
                 catch (Exception ex)
                 {
@@ -484,7 +511,7 @@ namespace LogiStock
                 try
                 {
                     conn.Open();
-                    string query = "SELECT id_fornecedor, nome FROM fornecedores";
+                    string query = "SELECT id_fornecedor, nome FROM fornecedores ORDER BY nome ASC";
                     MySqlDataAdapter listaFornecedores = new MySqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     listaFornecedores.Fill(dt);
@@ -555,7 +582,7 @@ namespace LogiStock
                 try
                 {
                     conn.Open();
-                    string query = "SELECT id_categoria, tipo_categoria FROM categorias";
+                    string query = "SELECT id_categoria, tipo_categoria FROM categorias ORDER BY tipo_categoria ASC";
                     MySqlDataAdapter listaFornecedores = new MySqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     listaFornecedores.Fill(dt);
@@ -579,7 +606,7 @@ namespace LogiStock
                 try
                 {
                     conn.Open();
-                    string query = "SELECT id_produto, nome_produto FROM mercadorias";
+                    string query = "SELECT id_produto, nome_produto FROM mercadorias ORDER BY nome_produto ASC";
                     MySqlDataAdapter listaProdutos = new MySqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     listaProdutos.Fill(dt);
@@ -603,7 +630,7 @@ namespace LogiStock
                 try
                 {
                     conn.Open();
-                    string query = "SELECT id_unidade, sigla FROM unidades";
+                    string query = "SELECT id_unidade, sigla FROM unidades ORDER BY sigla ASC";
                     MySqlDataAdapter listaProdutos = new MySqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
                     listaProdutos.Fill(dt);
@@ -718,7 +745,7 @@ namespace LogiStock
                         object resultado = cmd.ExecuteScalar();
                         if (resultado != DBNull.Value)
                         {
-                            codigoBarras = Convert.ToInt32(resultado) + 1;
+                            codigoBarras = Convert.ToInt64(resultado) + 1;
                         }
                     }
 

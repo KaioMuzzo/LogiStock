@@ -50,7 +50,7 @@
             btnInserir.Location = new Point(916, 764);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(209, 78);
-            btnInserir.TabIndex = 5;
+            btnInserir.TabIndex = 3;
             btnInserir.UseVisualStyleBackColor = false;
             btnInserir.Click += btnInserir_Click;
             // 
@@ -66,7 +66,7 @@
             btnConcluir.Location = new Point(1169, 764);
             btnConcluir.Name = "btnConcluir";
             btnConcluir.Size = new Size(209, 78);
-            btnConcluir.TabIndex = 6;
+            btnConcluir.TabIndex = 4;
             btnConcluir.UseVisualStyleBackColor = false;
             btnConcluir.Click += btnConcluir_Click;
             // 
@@ -74,30 +74,35 @@
             // 
             nudQuantidade.BorderStyle = BorderStyle.None;
             nudQuantidade.Font = new Font("Segoe UI", 20F);
-            nudQuantidade.Location = new Point(970, 528);
+            nudQuantidade.Location = new Point(963, 528);
+            nudQuantidade.Maximum = new decimal(new int[] { 999999, 0, 0, 0 });
             nudQuantidade.Name = "nudQuantidade";
             nudQuantidade.Size = new Size(376, 39);
-            nudQuantidade.TabIndex = 10;
+            nudQuantidade.TabIndex = 1;
             // 
             // cmbProduto
             // 
+            cmbProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbProduto.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbProduto.FlatStyle = FlatStyle.Flat;
             cmbProduto.Font = new Font("Segoe UI", 20F);
             cmbProduto.FormattingEnabled = true;
-            cmbProduto.Location = new Point(970, 378);
+            cmbProduto.Location = new Point(963, 381);
             cmbProduto.Name = "cmbProduto";
             cmbProduto.Size = new Size(376, 45);
-            cmbProduto.TabIndex = 11;
+            cmbProduto.TabIndex = 0;
             // 
             // cmbUnidade
             // 
+            cmbUnidade.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbUnidade.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbUnidade.FlatStyle = FlatStyle.Flat;
             cmbUnidade.Font = new Font("Segoe UI", 20F);
             cmbUnidade.FormattingEnabled = true;
-            cmbUnidade.Location = new Point(970, 668);
+            cmbUnidade.Location = new Point(963, 668);
             cmbUnidade.Name = "cmbUnidade";
             cmbUnidade.Size = new Size(376, 45);
-            cmbUnidade.TabIndex = 12;
+            cmbUnidade.TabIndex = 2;
             // 
             // listbox1
             // 
@@ -108,7 +113,7 @@
             listbox1.Location = new Point(338, 354);
             listbox1.Name = "listbox1";
             listbox1.Size = new Size(437, 448);
-            listbox1.TabIndex = 13;
+            listbox1.TabIndex = 5;
             // 
             // FormEntrada
             // 

@@ -84,7 +84,6 @@
             resources.ApplyResources(cmbFiltro, "cmbFiltro");
             cmbFiltro.FormattingEnabled = true;
             cmbFiltro.Name = "cmbFiltro";
-
             // 
             // txtFiltro
             // 

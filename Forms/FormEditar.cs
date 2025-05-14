@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace LogiStock.Forms
+﻿namespace LogiStock.Forms
 {
     public partial class FormEditar : Form
     {
+        private LogiStockMain logiStockMain;
         private string matricula;
         private string nome;
         private string usuario;
@@ -19,7 +10,7 @@ namespace LogiStock.Forms
         private string email;
         private string senha;
 
-        public FormEditar(string matricula, string nome, string usuario, string telefone, string email)
+        public FormEditar(string matricula, string nome, string usuario, string telefone, string email, LogiStockMain logiStockMain)
         {
             InitializeComponent();
 
@@ -28,6 +19,7 @@ namespace LogiStock.Forms
             this.usuario = usuario;
             this.telefone = telefone;
             this.email = email;
+            this.logiStockMain = logiStockMain;
         }
 
         private void FormEditar_Load(object sender, EventArgs e)
@@ -93,7 +85,7 @@ namespace LogiStock.Forms
 
             bdLogistock.EditarFuncionarios(matricula, camposAlterados);
             MessageBox.Show("Funcionário atualizado com sucesso!");
-            this.Close();
+            logiStockMain.OpenChildForm(new Forms.FormFuncionarios(logiStockMain));
         }
     }
 }

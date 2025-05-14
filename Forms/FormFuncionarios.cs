@@ -34,7 +34,7 @@
                 string telefone = row.Cells["telefone"].Value.ToString();
                 string email = row.Cells["email"].Value.ToString();
 
-                logiStockMain.OpenChildForm(new Forms.FormEditar(matricula, nome, usuario, telefone, email));
+                logiStockMain.OpenChildForm(new Forms.FormEditar(matricula, nome, usuario, telefone, email, logiStockMain));
             }
             else
             {
