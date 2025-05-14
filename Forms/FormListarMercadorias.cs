@@ -19,7 +19,19 @@ namespace LogiStock.Forms
         {
             InitializeComponent();
             bdLogistock.ListarMercadorias(dtGridMerc);
-            cmbFiltro.Items.AddRange(new string[] { "nome_produto", "descricao_produto", "custo_produto", "valor_venda", "quantidade", "data_cadastro", "codigo_barras" });
+            cmbFiltro.Items.Clear();
+            cmbFiltro.Items.AddRange(new string[]
+            {
+                "Produto",
+                "Descrição",
+                "Custo Produto",
+                "Valor Produto",
+                "Código Barra",
+                "Quantidade",
+                "Data Cadastro",
+                "Categoria",
+                "Fornecedor"
+            });
             cmbFiltro.SelectedIndex = 0;
             this.logiStockMain = logiStockMain;
 
