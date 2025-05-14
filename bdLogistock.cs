@@ -623,7 +623,7 @@ namespace LogiStock
             }
         }
 
-        public static int PegarMatricula() 
+        public static int PegarMatricula()
         {
             using (MySqlConnection conn = new MySqlConnection(conexao))
             {
